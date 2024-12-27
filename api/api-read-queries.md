@@ -1,6 +1,5 @@
 ---
-sidebar_position: 2
-id: api-read-queries
+title: API Read Queries
 ---
 # API - Read Queries
 

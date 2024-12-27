@@ -1,6 +1,5 @@
 ---
-id: api-write-queries
-sidebar_position: 3
+title: API Write Queries
 ---
 # API - Write Queries
 

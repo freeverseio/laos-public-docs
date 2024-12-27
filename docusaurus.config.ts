@@ -26,11 +26,7 @@ const config: Config = {
       'classic',
       {
         // Renamed main docs from "docs" to "learn"
-        docs: {
-          path: 'learn',
-          routeBasePath: 'learn',
-          sidebarPath: require.resolve('./sidebars.ts'),
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -58,7 +54,7 @@ const config: Config = {
         id: 'api',
         path: 'api',
         routeBasePath: 'api',
-        sidebarPath: require.resolve('./sidebars.ts'),
+        sidebarPath: require.resolve('./sidebarsApi.ts'),
       },
     ],
     [
@@ -100,13 +96,7 @@ const config: Config = {
       },
       items: [
         // Updated the main docs link to use learnSidebar (renamed)
-        {
-          type: 'docSidebar',
-          sidebarId: 'learnSidebar',
-          // no docsPluginId means it uses the default (the one in presets)
-          position: 'left',
-          label: 'Learn',
-        },
+        
         { to: '/blog', label: 'Blog', position: 'left' },
         {
           type: 'docSidebar',
