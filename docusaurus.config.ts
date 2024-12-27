@@ -51,6 +51,15 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'learn',
+        path: 'learn',
+        routeBasePath: 'learn',
+        sidebarPath: require.resolve('./sidebarsLearn.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'api',
         path: 'api',
         routeBasePath: 'api',
@@ -95,10 +104,14 @@ const config: Config = {
         src: 'img/logo.png',
       },
       items: [
-        // Updated the main docs link to use learnSidebar (renamed)
-        
-        { to: '/blog', label: 'Blog', position: 'left' },
+        // Updated the main docs link to use learnSidebar (rename
         {
+          type: 'docSidebar',
+          docsPluginId: 'learn',
+          sidebarId: 'learnSidebar',
+          position: 'left',
+          label: 'Learn',
+        }, {
           type: 'docSidebar',
           docsPluginId: 'guides',
           sidebarId: 'guidesSidebar',
