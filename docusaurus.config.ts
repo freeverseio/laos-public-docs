@@ -7,11 +7,11 @@ const config: Config = {
   tagline: 'The Layer-1 to create millions of assets on any EVM chain',
   favicon: 'img/favicon.ico',
 
-    url: 'https://your-docusaurus-site.example.com',
+  url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
 
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'laos',
+  projectName: 'laos',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -90,7 +90,7 @@ const config: Config = {
         id: 'evm',
         path: 'evm',
         routeBasePath: 'evm',
-        sidebarPath: require.resolve('./sidebars.ts'),
+        sidebarPath: require.resolve('./sidebarsEvm.ts'),
       },
     ],
   ],
@@ -152,28 +152,31 @@ const config: Config = {
       links: [
         {
           title: 'Docs',
-          items: [{ label: 'Learn', to: '/learn/intro' }],
+          items: [{ label: 'Learn', to: '/learn/introduction/goals' },
+            { label: 'Guides', to: '/guides/introduction-guides' },
+            { label: 'Indexers', to: '/indexers/introduction' },
+            { label: 'API', to: '/api/introduction' },
+            { label: 'EVM', to: '/evm/introduction-evm' }],
         },
         {
           title: 'Community',
           items: [
-            { label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/docusaurus' },
-            { label: 'Discord', href: 'https://discordapp.com/invite/docusaurus' },
-            { label: 'X', href: 'https://x.com/docusaurus' },
+            { label: 'Discord', href: 'https://discord.com/invite/gZcxsJcdPy' },
+            { label: 'X', href: 'https://x.com/laosnetwork' },
           ],
         },
         {
           title: 'More',
           items: [
-            { label: 'Blog', to: '/blog' },
-            { label: 'GitHub', href: 'https://github.com/facebook/docusaurus' },
+            { label: 'Blog', to: 'https://medium.com/laosnetwork' },
+            { label: 'GitHub', href: 'https://github.com/freeverseio/laos' },
           ],
         },
       ],
       copyright: `
         Copyright © ${
           new Date().getFullYear()
-        } My Project, Inc. Built with Docusaurus.
+        } LAOS Network
       `,
     },
 

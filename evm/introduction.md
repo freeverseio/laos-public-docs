@@ -1,23 +1,33 @@
 ---
-id: introductionevm
-
+id: introduction-evm
 ---
 # Introduction
 
-Bridgeless Minting enables secure scaling of NFT creation, as well as traceable evolution, on any EVM chain. As described above, the pattern involves two consensus systems:
+LAOS if a fully EVM compliant blockchain. The node is written in Rust using the Substrate framework, and it exposes a standard Ethereum compatible interface, enabling all DApps already familiar with EVM blockchains to use LAOS by simply connecting to the appropriate RPC endpoints.
 
-* An **EVM ownership chain** (e.g., Ethereum, Base, etc.) to manage asset ownership, trading, DeFi, and other functionalities.
-* **The LAOS Network** to handle minting and asset evolution, thereby offloading blockspace and gas costs to a purpose-built chain.
+Check [this section](/learn/introduction/laos-and-its-testnet) to consult the available public endpoints and the corresponding EVM chainIds.
 
-All existing DApps, including marketplaces, that already operate on the ownership chain can natively allow users to trade bridgeslessly minted assets, by simply letting their indexers monitor (aka subscribe to) events produced on the LAOS Network.
+Leveraging innovations within the Polkadot ecosystem, especially by [Moonbeam](https://docs.moonbeam.network/builders/ethereum/precompiles/) and [Astar](https://docs.astar.network/docs/build/EVM/precompiles/), LAOS exposes some of the functionalities that are built in at protocol level via precompile contracts, accessible via a standard Solidity interface.
 
-For DApps that are not yet natively integrated, users and developers can perform a one-time broadcast of the assets they wish to trade, as explained in the  [broadcast query](../laos-api/api-write-queries.md#broadcast) section.
+For example, the creation of collections on LAOS, ready to be used as siblings for ERC721 contracts deployed in other chains, such as Ethereum, is done via a precompile at the following hardcoded address:
 
-Since most DApps and marketplaces rely on _**indexers**_ to monitor all events related to NFT minting and trading, the LAOS Foundation has:
+Address of precompile for creation of collections on LAOS:
+```solidity
+0x0000000000000000000000000000000000000403
+```
+At this address, the following interface is exposed:
+```solidity
+interface EvolutionCollectionFactory {
+    /// @notice Event emitted when a new collection is created
+    /// @param _owner the owner of the newly created collection
+    /// @param _collectionAddress the address of the newly created collection
+    event NewCollection(address indexed _owner, address _collectionAddress);
 
-* Developed a simple [open-source indexer](https://github.com/freeverseio/laos-apis/tree/main/laos-indexer), built as a minimal extension of Subsquid's framework. This leverages Subsquid's multi-chain indexing capabilities to track events on both the EVM chain and the LAOS Network. Developers can easily deploy the indexer to suit their specific needs.
-* Maintains a set of publicly available indexers, which are ideal for getting started and testing:
-  * [Ethereum Mainnet - LAOS](https://ethereum-indexer.laosnetwork.io/graphql) Indexer,
-  * [Polygon PoS - LAOS](https://polygon-indexer.laosnetwork.io/graphql) Indexer,
-  * [Hedera Mainnet - LAOS](https://hedera-indexer.laosnetwork.io/graphql) Indexer,
-  * [Hedera Testnet - LAOS](https://laos-mainnet.hedera-testnet-indexer.laosnetwork.io/graphql) Indexer,
+    /// @notice Creates a new collection
+    /// @dev Call this function to create a new collection
+    /// @param _owner the owner of the newly created collection
+    /// @return the address of the newly created collection
+    function createCollection(address _owner) external returns (address);
+}
+```
+The rest of this section details all precompiles currently available on LAOS.

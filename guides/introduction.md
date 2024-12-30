@@ -1,5 +1,5 @@
 ---
-id: introductionguides
+id: introduction-guides
 title: API Introduction
 ---
 

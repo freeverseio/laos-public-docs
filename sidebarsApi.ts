@@ -8,8 +8,8 @@ const sidebarsApi: SidebarsConfig = {
         label: 'API Overview',
         items: [
           'introduction',
-          'api-write-queries',
-          'api-read-queries', // maps to api/introduction.md
+          'api-read-queries',
+          'api-write-queries', // maps to api/introduction.md
           // maps to api/endpoints.md
         ],
       },
