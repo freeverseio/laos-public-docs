@@ -1,0 +1,28 @@
+{{- if hasKey .Values "host" }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: laos-public-docs-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/auth-tls-verify-client: "on"
+    nginx.ingress.kubernetes.io/auth-tls-verify-depth: "1"
+    nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-freeverse
+spec:
+  tls:
+    - hosts:
+        - {{ .Values.host }}
+      secretName: laos-public-docs-tls
+  rules:
+    - host: {{ .Values.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: laos-public-docs
+                port: 
+                  number: 80
+{{- end }}

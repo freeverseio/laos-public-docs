@@ -1,0 +1,10 @@
+releases:
+  - name: laos-public-docs-release
+    namespace: '{{ .Values.namespace }}'
+    createNamespace: false
+    chart: .
+    values:
+      - imageTag: {{ .Values.imageTag }}
+      {{- if hasKey .Values "host" }}
+      - host: {{ .Values.host }}
+      {{- end }}

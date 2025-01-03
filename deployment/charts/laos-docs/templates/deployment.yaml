@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laos-public-docs
+  labels:
+    app.kubernetes.io/app: laos-public-docs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/app: laos-public-docs
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/app: laos-public-docs
+    spec:
+      containers:
+      - name: laos-public-docs
+        image: freeverseio/laos-public-docs:{{ .Values.imageTag }}
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+        imagePullPolicy: Always
+      imagePullSecrets:
+      - name: docker-secret
