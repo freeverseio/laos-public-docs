@@ -1,6 +1,6 @@
 ---
 id: introduction-guides
-title: API Introduction
+title: Introduction
 ---
 
-Welcome to the API reference.
+Welcome to the LAOS Guides
