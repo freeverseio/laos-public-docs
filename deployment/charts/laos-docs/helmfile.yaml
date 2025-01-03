@@ -5,4 +5,6 @@ releases:
     chart: .
     values:
       - imageTag: {{ .Values.imageTag }}
+      {{- if hasKey .Values "host" }}
       - host: {{ .Values.host }}
+      {{- end }}
