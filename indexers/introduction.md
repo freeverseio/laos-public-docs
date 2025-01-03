@@ -7,7 +7,7 @@ Bridgeless Minting enables secure scaling of NFT creation, as well as traceable 
 
 All existing DApps, including marketplaces, that already operate on the ownership chain can natively allow users to trade bridgeslessly minted assets, by simply letting their indexers monitor (aka subscribe to) events produced on the LAOS Network.
 
-For DApps that are not yet natively integrated, users and developers can perform a one-time broadcast of the assets they wish to trade, as explained in the  [broadcast query](../laos-api/api-write-queries.md#broadcast) section.
+For DApps that are not yet natively integrated, users and developers can perform a one-time broadcast of the assets they wish to trade, as explained in the  [broadcast query](../api/api-write-queries#broadcast) section.
 
 Since most DApps and marketplaces rely on _**indexers**_ to monitor all events related to NFT minting and trading, the LAOS Foundation has:
 
