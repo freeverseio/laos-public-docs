@@ -5,7 +5,7 @@ sidebar_position: 4
 
 The spec for constructing Universal Locations was drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).&#x20;
 
-In this section we illustrate its usage for Bridgeless Minting, allowing any chain to point to a LAOS sibling collection. The [second main usage](../decentralized-asset-metadata-extensions/universal-location-for-dame.md) serves DAME, allowing LAOS to point to any asset in any chain.
+In this section we illustrate its usage for Bridgeless Minting, allowing any chain to point to a LAOS sibling collection. The [second main usage](../decentralized-asset-metadata/universal-location-for-dame.md) serves DAME, allowing LAOS to point to any asset in any chain.
 
 ### Universal Location to be used as BaseURI
 
