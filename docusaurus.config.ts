@@ -147,8 +147,7 @@ const config: Config = {
         {
           title: 'Docs',
           items: [{ label: 'Learn', to: '/learn/introduction/goals' },
-          { label: 'Guides', to: '/guides/introduction-guides' },
-          { label: 'Indexers', to: '/indexers/introduction' },
+          { label: 'Indexer', to: '/indexers/introduction' },
           { label: 'API', to: '/api/introduction' },
           { label: 'EVM', to: '/evm/introduction-evm' }],
         },
