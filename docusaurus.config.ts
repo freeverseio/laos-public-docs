@@ -111,12 +111,6 @@ const config: Config = {
           sidebarId: 'learnSidebar',
           position: 'left',
           label: 'Learn',
-        }, {
-          type: 'docSidebar',
-          docsPluginId: 'guides',
-          sidebarId: 'guidesSidebar',
-          position: 'left',
-          label: 'Guides',
         },
         {
           type: 'docSidebar',
@@ -153,10 +147,10 @@ const config: Config = {
         {
           title: 'Docs',
           items: [{ label: 'Learn', to: '/learn/introduction/goals' },
-            { label: 'Guides', to: '/guides/introduction-guides' },
-            { label: 'Indexers', to: '/indexers/introduction' },
-            { label: 'API', to: '/api/introduction' },
-            { label: 'EVM', to: '/evm/introduction-evm' }],
+          { label: 'Guides', to: '/guides/introduction-guides' },
+          { label: 'Indexers', to: '/indexers/introduction' },
+          { label: 'API', to: '/api/introduction' },
+          { label: 'EVM', to: '/evm/introduction-evm' }],
         },
         {
           title: 'Community',
@@ -174,8 +168,7 @@ const config: Config = {
         },
       ],
       copyright: `
-        Copyright © ${
-          new Date().getFullYear()
+        Copyright © ${new Date().getFullYear()
         } LAOS Network
       `,
     },
