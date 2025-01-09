@@ -69,15 +69,6 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'guides',
-        path: 'guides',
-        routeBasePath: 'guides',
-        sidebarPath: require.resolve('./sidebars.ts'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'indexers',
         path: 'indexers',
         routeBasePath: 'indexers',
@@ -147,7 +138,6 @@ const config: Config = {
         {
           title: 'Docs',
           items: [{ label: 'Learn', to: '/learn/introduction/goals' },
-          { label: 'Guides', to: '/guides/introduction-guides' },
           { label: 'Indexers', to: '/indexers/introduction' },
           { label: 'API', to: '/api/introduction' },
           { label: 'EVM', to: '/evm/introduction-evm' }],
