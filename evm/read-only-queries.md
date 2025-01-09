@@ -1,4 +1,4 @@
-# Read Only Queries
+# Read Only Methods
 
 The rest of the interface exposed at the `collectionAddress` obtained when [creating the collection](/evm/creating-a-sibling-collection-in-LAOS) contains the following read-only methods.
 ```solidity

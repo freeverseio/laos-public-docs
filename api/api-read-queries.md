@@ -1,6 +1,3 @@
----
-title: API Read Queries
----
 # API - Read Queries
 
 ### Useful Queries

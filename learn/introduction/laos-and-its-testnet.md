@@ -1,7 +1,3 @@
----
-sidebar_position: 2
-title: LAOS and its Testnet
----
 # LAOS and its Testnet
 
 LAOS began producing blocks as a Parachain on Polkadot on July 7, 2024.

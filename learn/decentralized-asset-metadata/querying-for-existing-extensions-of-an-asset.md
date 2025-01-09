@@ -1,6 +1,3 @@
----
-sidebar_position: 5
----
 # Querying for Existing Extensions of an Asset
 
 The following view methods can be used to find extensions about particular asset, or by a particular web3 address.

@@ -1,6 +1,3 @@
----
-sidebar_position: 2
----
 # Universal Location for DAME
 
 While a [previous section](../bridgeless-minting/universal-location-for-bridgeless-minting.md) detailed the usage of Universal Location for Bridgeless Minting, allowing any chain to point to a LAOS sibling collection, we hereby discuss the second main usage, serving DAME, allowing LAOS to point to any asset in any chain.

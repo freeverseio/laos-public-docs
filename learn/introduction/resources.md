@@ -1,7 +1,3 @@
----
-sidebar_position: 3
-title: Resources
----
 # Resources
 
 LAOS's main documentation can be found here:
