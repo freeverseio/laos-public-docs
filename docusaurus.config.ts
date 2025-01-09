@@ -7,7 +7,7 @@ const config: Config = {
   tagline: 'The Layer-1 to create millions of assets on any EVM chain',
   favicon: 'img/favicon.ico',
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://laosnetwork.uio',
   baseUrl: '/',
 
   organizationName: 'laos',
@@ -25,7 +25,6 @@ const config: Config = {
     [
       'classic',
       {
-        // Renamed main docs from "docs" to "learn"
         docs: false,
         blog: false,
         theme: {
@@ -37,6 +36,13 @@ const config: Config = {
 
   // Additional docs plugin instances for each section
   plugins: [
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'landing',
+        path: './landing',
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -78,13 +84,11 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.png',
     navbar: {
-      title: 'LAOS',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'LAOS',
         src: 'img/logo.png',
       },
       items: [
-        // Updated the main docs link to use learnSidebar (rename
         {
           type: 'docSidebar',
           docsPluginId: 'learn',
@@ -126,7 +130,8 @@ const config: Config = {
       links: [
         {
           title: 'Docs',
-          items: [{ label: 'Learn', to: '/learn/introduction/goals' },
+          items: [
+          { label: 'Learn', to: '/learn/introduction/goals' },
           { label: 'Indexers', to: '/indexers/introduction' },
           { label: 'API', to: '/api/introduction' },
           { label: 'EVM', to: '/evm/introduction' }],

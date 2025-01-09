@@ -1,5 +1,5 @@
 // sidebarsApi.ts
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebarsLearn: SidebarsConfig = {
   learnSidebar: [
