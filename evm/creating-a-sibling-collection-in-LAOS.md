@@ -1,6 +1,6 @@
 # Creating a Sibling Collection in LAOS
 
-The creation of a sibling collection on LAOS just requires one transaction, which can be sent permissionlessly from any web3 address. The transaction must specify the owner of collection, i.e. the address that will be capable of minting and evolving assets within it. The interface can be found in both Solidity and ABI json format [here.](/learn/introduction/laos-and-its-testnet)
+The creation of a sibling collection on LAOS just requires one transaction, which can be sent permissionlessly from any web3 address. The transaction must specify the owner of collection, i.e. the address that will be capable of minting and evolving assets within it. The interface can be found in both Solidity and ABI json format [here.](https://github.com/freeverseio/laos/tree/main/pallets/laos-evolution/src/precompiles/evolution_collection_factory/contracts)
 
 ## Creating a Collection
 
