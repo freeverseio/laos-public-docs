@@ -1,5 +1,22 @@
 # LAOS
 
+<a href="https://github.com/freeverseio/laos">
+<img
+  src="/img/introduction_header.avif"
+  alt="LAOS Technical Whitepaper"
+  style={{
+    width: '100%',
+    height: '250px',
+    objectFit: 'cover',
+    objectPosition: 'center',
+    borderRadius: '8px',
+    display: 'block',
+
+}}
+/>
+
+</a>
+
 ## Introduction
 
 Start using LAOS to extend the possibilities of your DApp, while remaining in the blockchain of your choice.
@@ -62,7 +79,7 @@ Start using LAOS to extend the possibilities of your DApp, while remaining in th
   </div>
 
   <div style={{ textAlign: 'center' }}>
-    <a href="https://github.com/freeverseio/laos">
+    <a href="https://github.com/freeverseio/laos-whitepaper/blob/main/laos.pdf">
       <img
         src="/img/laos_tokenomics.avif"
         alt="LAOS Technical Whitepaper"
@@ -73,7 +90,7 @@ Start using LAOS to extend the possibilities of your DApp, while remaining in th
       />
     </a>
     <h3>
-      <a href="https://github.com/freeverseio/laos">LAOS Technical Whitepaper</a>
+      <a href="https://github.com/freeverseio/laos-whitepaper/blob/main/laos.pdf">LAOS Technical Whitepaper</a>
     </h3>
   </div>
 </div>
