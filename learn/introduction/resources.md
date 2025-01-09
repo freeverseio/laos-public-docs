@@ -1,6 +1,3 @@
----
-title: Resources
----
 # Resources
 
 LAOS's main documentation can be found here:
