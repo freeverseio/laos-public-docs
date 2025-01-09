@@ -11,8 +11,8 @@ Leveraging innovations within the Polkadot ecosystem, especially by [Moonbeam](h
 
 For example, the creation of collections on LAOS, ready to be used as siblings for ERC721 contracts deployed in other chains, such as Ethereum, is done via a precompile at the following hardcoded address:
 
-Address of precompile for creation of collections on LAOS:
 ```solidity
+// Address of precompile for creation of collections on LAOS
 0x0000000000000000000000000000000000000403
 ```
 At this address, the following interface is exposed:

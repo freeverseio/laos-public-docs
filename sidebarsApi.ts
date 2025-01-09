@@ -5,7 +5,7 @@ const sidebarsApi: SidebarsConfig = {
     apiSidebar: [
       {
         type: 'category',
-        label: 'API Overview',
+        label: 'LAOS API',
         items: [
           'introduction',
           'api-read-queries',
