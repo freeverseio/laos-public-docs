@@ -28,3 +28,8 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Specific fix for Solidity language */
+[data-theme='dark'] .language-solidity span.token {
+  font-style: normal !important;
+}

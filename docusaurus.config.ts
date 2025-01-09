@@ -178,6 +178,13 @@ const config: Config = {
       additionalLanguages: ['solidity'],
 
     },
+
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+
   } satisfies Preset.ThemeConfig,
 };
 
