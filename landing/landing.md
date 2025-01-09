@@ -1,5 +1,3 @@
-# LAOS
-
 <a href="https://github.com/freeverseio/laos">
 <img
   src="/img/introduction_header.avif"

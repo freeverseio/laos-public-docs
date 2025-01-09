@@ -25,7 +25,6 @@ const config: Config = {
     [
       'classic',
       {
-        // Renamed main docs from "docs" to "learn"
         docs: false,
         blog: false,
         theme: {
@@ -37,6 +36,13 @@ const config: Config = {
 
   // Additional docs plugin instances for each section
   plugins: [
+    [
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'landing',
+        path: './landing',
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -84,7 +90,6 @@ const config: Config = {
         src: 'img/logo.png',
       },
       items: [
-        // Updated the main docs link to use learnSidebar (rename
         {
           type: 'docSidebar',
           docsPluginId: 'learn',
@@ -126,7 +131,8 @@ const config: Config = {
       links: [
         {
           title: 'Docs',
-          items: [{ label: 'Learn', to: '/learn/introduction/goals' },
+          items: [
+          { label: 'Learn', to: '/learn/introduction/goals' },
           { label: 'Indexers', to: '/indexers/introduction' },
           { label: 'API', to: '/api/introduction' },
           { label: 'EVM', to: '/evm/introduction' }],

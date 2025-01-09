@@ -4,11 +4,6 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebarsLearn: SidebarsConfig = {
   learnSidebar: [
     {
-      type: 'doc',
-      id: 'main_introduction',
-      label: 'Introduction'
-    },
-    {
       type: 'category',
       label: 'Introduction',
       items: [
