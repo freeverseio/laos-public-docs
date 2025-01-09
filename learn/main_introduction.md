@@ -1,12 +1,8 @@
 # LAOS
 
----
-
 ## Introduction
 
 Start using LAOS to extend the possibilities of your DApp, while remaining in the blockchain of your choice.
-
----
 
 ## Sections
 
@@ -18,94 +14,66 @@ Start using LAOS to extend the possibilities of your DApp, while remaining in th
   }}
 >
   <div style={{ textAlign: 'center' }}>
-    <a href="#get-started">
+    <a href="/learn/bridgeless-minting/introduction">
       <img
-        src="/img/universal.avif"
+        src="/img/laos_ball.avif"
         alt="Get Started"
         style={{
-          maxWidth: '150px',
+          maxWidth: '100%',
           borderRadius: '8px',
         }}
       />
     </a>
     <h3>
-      <a href="#get-started">Get Started</a>
+      <a href="/learn/bridgeless-minting/introduction">Get Started</a>
     </h3>
-    <p>Learn how to begin your journey with LAOS.</p>
   </div>
 
   <div style={{ textAlign: 'center' }}>
-    <a href="#laos-network">
+    <a href="https://laosnetwork.io/">
       <img
-        src="/img/universal.avif"
+        src="/img/laos_token.avif"
         alt="LAOS Network"
         style={{
-          maxWidth: '150px',
+          maxWidth: '100%',
           borderRadius: '8px',
         }}
       />
     </a>
     <h3>
-      <a href="#laos-network">LAOS Network</a>
+    <a href="https://laosnetwork.io/">LAOS Network</a>
     </h3>
-    <p>Explore the features and architecture of the LAOS Network.</p>
   </div>
 
   <div style={{ textAlign: 'center' }}>
-    <a href="#github-entry-point">
+    <a href="https://github.com/freeverseio/laos">
       <img
-        src="/img/universal.avif"
+        src="/img/laos_github.avif"
         alt="GitHub Entry Point"
         style={{
-          maxWidth: '150px',
+          maxWidth: '100%',
           borderRadius: '8px',
         }}
       />
     </a>
     <h3>
-      <a href="#github-entry-point">GitHub Entry Point</a>
+      <a href="https://github.com/freeverseio/laos">GitHub Entry Point</a>
     </h3>
-    <p>Access the repository for technical implementation and integration.</p>
   </div>
 
   <div style={{ textAlign: 'center' }}>
-    <a href="#laos-technical-whitepaper">
+    <a href="https://github.com/freeverseio/laos">
       <img
-        src="/img/universal.avif"
+        src="/img/laos_tokenomics.avif"
         alt="LAOS Technical Whitepaper"
         style={{
-          maxWidth: '150px',
+          maxWidth: '100%',
           borderRadius: '8px',
         }}
       />
     </a>
     <h3>
-      <a href="#laos-technical-whitepaper">LAOS Technical Whitepaper</a>
+      <a href="https://github.com/freeverseio/laos">LAOS Technical Whitepaper</a>
     </h3>
-    <p>Dive into the technical documentation and deeper insights into LAOS.</p>
   </div>
 </div>
-
----
-
-### Last Updated
-
-_5 months ago_
-
----
-
-## Get Started
-
-_(Your “Get Started” content goes here.)_
-
-## LAOS Network
-
-_(Your “LAOS Network” content goes here.)_
-
-## GitHub Entry Point
-
-_(Your “GitHub Entry Point” content goes here.)_
-
-## LAOS Technical Whitepaper
-
-_(Your “LAOS Technical Whitepaper” content goes here.)_
