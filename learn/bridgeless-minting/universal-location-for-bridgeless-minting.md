@@ -1,6 +1,3 @@
----
-sidebar_position: 4
----
 # Universal Location for Bridgeless Minting
 
 The spec for constructing Universal Locations was drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).&#x20;

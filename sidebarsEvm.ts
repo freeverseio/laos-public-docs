@@ -3,11 +3,17 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebarsEvm: SidebarsConfig = {
     evmSidebar: [
-        'introduction-evm',
-        'creating-a-sibling-collection-in-LAOS',
-        'minting-assets',
-        'evolving-assets',
-        'read-only-queries',
+        {
+            type: 'category',
+            label: 'LAOS EVM',
+            items: [
+                'introduction',
+                'creating-a-sibling-collection-in-LAOS',
+                'minting-assets',
+                'evolving-assets',
+                'read-only-queries',
+            ],
+        }
     ],
 };
 

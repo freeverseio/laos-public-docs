@@ -1,6 +1,3 @@
----
-sidebar_position: 3
----
 # Introduction
 
 The metadata of an asset is normally assigned during the minting process, and is fully determined by the asset creator. If the NFT has evolving features, the metadata can be modified, usually by changing the IPFS address in an on-chain TX, or in less secure flows, by altering the content returned by private servers.

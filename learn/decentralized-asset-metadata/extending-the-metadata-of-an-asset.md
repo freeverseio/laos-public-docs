@@ -1,6 +1,3 @@
----
-sidebar_position: 3
----
 # Extending the Metadata of an Asset
 
 Any web3 account use the `AssetMetadataExtender` interface to extend the metadata of any asset, in any chain, and evolve their extensions over time.&#x20;

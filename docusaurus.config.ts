@@ -27,18 +27,7 @@ const config: Config = {
       {
         // Renamed main docs from "docs" to "learn"
         docs: false,
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -69,19 +58,10 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'guides',
-        path: 'guides',
-        routeBasePath: 'guides',
-        sidebarPath: require.resolve('./sidebars.ts'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'indexers',
         path: 'indexers',
         routeBasePath: 'indexers',
-        sidebarPath: require.resolve('./sidebars.ts'),
+        sidebarPath: require.resolve('./sidebarsIndexers.ts'),
       },
     ],
     [
@@ -147,10 +127,9 @@ const config: Config = {
         {
           title: 'Docs',
           items: [{ label: 'Learn', to: '/learn/introduction/goals' },
-          { label: 'Guides', to: '/guides/introduction-guides' },
           { label: 'Indexers', to: '/indexers/introduction' },
           { label: 'API', to: '/api/introduction' },
-          { label: 'EVM', to: '/evm/introduction-evm' }],
+          { label: 'EVM', to: '/evm/introduction' }],
         },
         {
           title: 'Community',
