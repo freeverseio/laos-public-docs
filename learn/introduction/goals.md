@@ -1,7 +1,3 @@
----
-sidebar_position: 1
-title: Goals & Vision
----
 # Goals & Vision
 
 LAOS is the Universal Layer 1 for digital assets across all blockchains. From day 1, it will be connected, without bridges, to mature blockchains such as Ethereum or Polygon, enabling them to offload all digital asset minting and evolution, thus freeing them to focus on trading, lending, and accessing DeFi & liquidity services.&#x20;

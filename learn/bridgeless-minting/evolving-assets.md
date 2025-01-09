@@ -1,6 +1,3 @@
----
-sidebar_position: 6
----
 # Evolving Assets
 
 After an asset is minted, the owner of the collection can modify it according to the rules that agreed upon off-chain, such as by using the asset in a videogame, or by providing proof of attendance to an event.

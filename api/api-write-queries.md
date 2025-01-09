@@ -1,6 +1,3 @@
----
-title: API Write Queries
----
 # API - Write Queries
 
 ### Getting Started
