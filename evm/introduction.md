@@ -1,6 +1,3 @@
----
-id: introduction-evm
----
 # Introduction
 
 LAOS is a fully EVM-compliant blockchain. Its node is written in Rust using the Substrate framework, which enhances both performance and security. On top of this Rust foundation, the node exposes a standard Ethereum-compatible interface, allowing DApps familiar with EVM blockchains to seamlessly integrate with LAOS by simply connecting to the appropriate RPC endpoints.

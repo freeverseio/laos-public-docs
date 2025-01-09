@@ -140,7 +140,7 @@ const config: Config = {
           items: [{ label: 'Learn', to: '/learn/introduction/goals' },
           { label: 'Indexers', to: '/indexers/introduction' },
           { label: 'API', to: '/api/introduction' },
-          { label: 'EVM', to: '/evm/introduction-evm' }],
+          { label: 'EVM', to: '/evm/introduction' }],
         },
         {
           title: 'Community',

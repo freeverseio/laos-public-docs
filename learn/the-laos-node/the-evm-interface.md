@@ -18,4 +18,4 @@ Refer to the [Resources](../introduction/laos-and-its-testnet) section for detai
 
 The EVM and precompiled contract design in LAOS leverages innovations by platforms such as [Moonbeam](https://docs.moonbeam.network/builders/pallets-precompiles/precompiles/) and [Astar](https://docs.astar.network/docs/build/EVM/precompiles/).
 
-For comprehensive details on the EVM specification and usage, see [the EVM section](../../evm/introduction-evm).
+For comprehensive details on the EVM specification and usage, see [the EVM section](../../evm/introduction).

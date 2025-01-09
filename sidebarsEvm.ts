@@ -7,7 +7,7 @@ const sidebarsEvm: SidebarsConfig = {
             type: 'category',
             label: 'LAOS EVM',
             items: [
-                'introduction-evm',
+                'introduction',
                 'creating-a-sibling-collection-in-LAOS',
                 'minting-assets',
                 'evolving-assets',
