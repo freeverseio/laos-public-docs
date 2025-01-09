@@ -6,7 +6,6 @@ The creation of a sibling collection on LAOS just requires one transaction, whic
 
 Use your preferred web3 library to execute the `createCollection` transaction, available at the hardcoded contract address `0x...403`, as detailed in the [EVM Interface section](/learn/the-laos-node/the-evm-interface):
 ```solidity
-
 // this interface is available at the hardcoded address:
 // 0x0000000000000000000000000000000000000403
 
@@ -29,7 +28,6 @@ When sibling collections are created, they are assigned a `collectionAddress`, w
 
 The owner of a collection in LAOS can transfer its ownership to a different account by simply using the following method:
 ```solidity
-
 /// @notice Transfers ownership of the collection to a new account (`newOwner`).
 /// @dev Call this function to transfer ownership of the collection, the caller must be the owner of the collection
 /// @param _newOwner The address to transfer ownership to.
@@ -37,7 +35,6 @@ function transferOwnership(address _newOwner) external;
 ```
 which emits the corresponding event:
 ```solidity
-
 /// @notice Emitted when ownership of the collection changes
 /// @param _previousOwner the previous owner of the collection
 /// @param _newOwner the new owner of the collection
