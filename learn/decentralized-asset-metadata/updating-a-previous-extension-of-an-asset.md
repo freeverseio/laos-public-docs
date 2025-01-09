@@ -1,6 +1,3 @@
----
-sidebar_position: 4
----
 # Updating a Previous Extension of an Asset
 
 Existing metadata extensions can be updated by the same web3 accounts that created them.

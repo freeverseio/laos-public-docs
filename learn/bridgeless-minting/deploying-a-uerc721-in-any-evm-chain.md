@@ -1,6 +1,3 @@
----
-sidebar_position: 3
----
 # Deploying a uERC721 in any EVM chain
 
 Once a sibling collection has been created, its assigned contractAddress in LAOS can be used to deploy an ERC721 collection, in any EVM blockchain of choice (such as Ethereum or Polygon), which will be paired with the sibling collection.

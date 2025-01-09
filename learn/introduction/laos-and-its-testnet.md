@@ -1,5 +1,4 @@
 ---
-sidebar_position: 2
 title: LAOS and its Testnet
 ---
 # LAOS and its Testnet

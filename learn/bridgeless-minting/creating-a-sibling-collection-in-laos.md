@@ -1,6 +1,5 @@
 ---
 id: creating-a-sibling-collection-in-laos
-sidebar_position: 2
 ---
 # Creating a Sibling Collection in LAOS
 
