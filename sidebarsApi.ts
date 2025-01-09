@@ -9,8 +9,7 @@ const sidebarsApi: SidebarsConfig = {
         items: [
           'introduction',
           'api-read-queries',
-          'api-write-queries', // maps to api/introduction.md
-          // maps to api/endpoints.md
+          'api-write-queries',
         ],
       },
       
