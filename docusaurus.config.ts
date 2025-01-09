@@ -7,7 +7,7 @@ const config: Config = {
   tagline: 'The Layer-1 to create millions of assets on any EVM chain',
   favicon: 'img/favicon.ico',
 
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://laosnetwork.uio',
   baseUrl: '/',
 
   organizationName: 'laos',
@@ -84,9 +84,8 @@ const config: Config = {
   themeConfig: {
     image: 'img/logo.png',
     navbar: {
-      title: 'LAOS',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'LAOS',
         src: 'img/logo.png',
       },
       items: [
