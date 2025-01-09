@@ -81,7 +81,7 @@ const config: Config = {
         id: 'indexers',
         path: 'indexers',
         routeBasePath: 'indexers',
-        sidebarPath: require.resolve('./sidebars.ts'),
+        sidebarPath: require.resolve('./sidebarsIndexers.ts'),
       },
     ],
     [
