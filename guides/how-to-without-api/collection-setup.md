@@ -1,4 +1,4 @@
-# 1. Set Up a Collection
+# Set Up a Collection
 
 This guide explains how to create a collection in any EVM chain (Ethereum, Polygon, Arbitrum, etc.) with [Bridgeless Minting](/learn/bridgeless-minting/introduction) enabled.
 
