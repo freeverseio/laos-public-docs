@@ -1,58 +1,63 @@
----
-title: Broadcasting
----
+# Broadcasting
 
-<!--
-File 5: broadcasting.md
--->
+Broadcasting in the context of LAOS refers to exposing a LAOS minted NFT to other apps (e.g., marketplaces) that do not support natively bridgeless minting.
 
-# 5. Broadcasting
+Broadcasting triggers a standard ERC721 `Transfer` event, which these marketplaces use to index NFTs. You can broadcast in “MINT” mode (emitting a transfer event from `address(0)`), or in “SELF” mode (emitting a self-transfer event from the current owner to themselves).
 
-Broadcasting in the context of LAOS refers to sharing or exposing your LAOS-based NFT data (collection, tokens, updated states) to other networks, applications, or marketplaces.
+## Prerequisites
 
----
+- You have [minted](/guides/how-to-without-api/minting) one or more NFTs
+- You know the `tokenId`(s) of the NFT(s) that you wish to broadcast.
+- You have access to your uERC-721 collection contract, which includes the interface:
+  ```solidity
+  function broadcastMintBatch(uint256[] calldata tokenIds) external;
+  function broadcastSelfTransferBatch(uint256[] calldata tokenIds) external;
+  ```
 
-## Overview
+## Steps
 
-- **Bridgeless Minting**: By leveraging LAOS’s universal location (uloc://) scheme, your LAOS NFT metadata can be recognized across different EVMs and marketplaces without a traditional bridge.
-- **Universal Location**: A `uloc://` string can point to your LAOS collection and a specific token. Public gateways such as `https://uloc.io` can resolve these references.
+1. **Choose the broadcast type**
 
----
+   - **MINT**
 
-## Steps to Broadcast / Expose Your NFT
+     - Emits a standard `Transfer` event from the zero address (`from = address(0)`) to the current owner, matching a “freshly minted” event signature.
 
-1. **Use the Universal Location**
+   - **SELF**
+     - Emits a “transfer” event from the owner to themselves, effectively “self-transferring” the NFT to broadcast its existence.
 
-   - When you deployed your LAOS sibling collection, you can pair it with an ERC721 on another EVM by setting the `baseURI` to the LAOS universal location (or the public gateway).
-   - Example for LAOS Sigma Testnet:
+2. **Prepare the broadcast transaction**
+
+   - **MINT**
+
+     ```js
+     const tokenIds = [
+       92762087543321243492858811692430517458298127117648518661922453704541876652031,
+       46231769497101023895754357762572931969783788518045090509665456129453327552117,
+     ]; // example batch of tokenIds
+
+     const tx = await collectionContract.broadcastMintBatch(tokenIds);
+     const receipt = await tx.wait();
+     // Each tokenId will emit a "Transfer" event from address(0) to its owner
      ```
-     https://uloc.io/GlobalConsensus(0:0x77afd6...)/Parachain(4006)/PalletInstance(51)/AccountKey20(0xYOUR_COLLECTION_ADDRESS)/
+
+   - **SELF**
+
+     ```js
+     const tokenIds = [
+       92762087543321243492858811692430517458298127117648518661922453704541876652031,
+       46231769497101023895754357762572931969783788518045090509665456129453327552117,
+     ];
+
+     const tx = await collectionContract.broadcastSelfTransferBatch(tokenIds);
+     const receipt = await tx.wait();
+     // Each tokenId will emit a "Transfer" event from the owner to themselves
      ```
-   - This ensures that NFT marketplaces or explorers on EVM chains can retrieve the LAOS data from the universal location.
 
-2. **Deploy a `uERC721` in another EVM chain (optional)**
+3. **Check for success**
 
-   - If you want a 1:1 sibling collection on Ethereum, Polygon, or another chain, you can use the `uERC721` template contract.
-   - Provide the LAOS-based `baseURI` to let external marketplaces fetch the actual metadata from LAOS.
+   - After the transaction is mined, each token in your list has now emitted a standard ERC721 `Transfer` event.
+   - You can verify these events in the `receipt.events` array, or by looking them up in a block explorer.
 
-3. **Update or Lock the baseURI**
-
-   - You may update the `baseURI` to switch from the `https://uloc.io` gateway to `uloc://` directly (for deeper interoperability).
-   - If supported by your contract, once you finalize your metadata references, consider locking them to prevent further changes.
-
-4. **Share with Marketplaces and DApps**
-
-   - Provide the contract address (e.g., your `uERC721` in Ethereum) or the universal location link to marketplaces like OpenSea.
-   - They will fetch the NFT metadata from LAOS via the public gateway or the `uloc://` protocol.
-
-5. **Monitor Cross-Chain Tools**
-   - Many third-party tools (explorers, indexers, or bridging services) are implementing universal location resolution.
-   - Check the LAOS Foundation’s documentation or community resources for the latest integrations.
-
----
-
-## Conclusion
-
-By following these five steps—creating a collection, uploading assets to IPFS, minting, evolving, and broadcasting—you can fully leverage LAOS’s capabilities. The universal location system enables seamless cross-chain or cross-platform recognition of your NFTs, without relying on traditional bridging mechanisms.
-
-**Happy building on LAOS!**
+:::info
+NFTs that have been transferred at least once are automatically indexed by apps that do not support bridgeless minting. In this case, broadcasting is not necessary.
+:::

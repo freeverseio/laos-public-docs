@@ -1,4 +1,4 @@
-# Set Up a Collection
+# Create NFT Collection
 
 This guide explains how to create a collection in any EVM chain (Ethereum, Polygon, Arbitrum, etc.) with [Bridgeless Minting](/learn/bridgeless-minting/introduction) enabled.
 
@@ -55,8 +55,6 @@ By the end of this tutorial, you will have your own collection ready for minting
 _**siblingCollectionInLAOS**_ must match the LAOS address you obtained in **Step 2**
 :::
 
----
-
 ## Next Steps
 
-Now that you have your collection address in LAOS, proceed to [Upload Assets to IPFS](../upload-ipfs.md) so that you can reference them in your tokens’ metadata.
+Now that you have your collection address in LAOS, proceed to [Upload Assets to IPFS](/guides/how-to-without-api/ipfs-upload) so that you can reference them in your tokens’ metadata.

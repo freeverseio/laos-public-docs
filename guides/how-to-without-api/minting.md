@@ -1,24 +1,12 @@
----
-title: Minting
----
-
-<!--
-File 3: minting.md
--->
-
-# 3. Minting
+# Minting an NFT
 
 Now that you have your collection in LAOS and your assets uploaded to IPFS, you can mint your first NFT on LAOS. Minting in LAOS is done through the `EvolutionCollection` interface, using the `mintWithExternalURI` method.
 
----
-
 ## Prerequisites
 
-- A collection address in LAOS (from [Step 1](../set-up-collection.md)).
-- An IPFS link to your NFT metadata (from [Step 2](../upload-ipfs.md)).
+- A [collection address](/guides/how-to-without-api/collection-setup.md) in LAOS.
+- An [IPFS link to your NFT metadata](/guides/how-to-without-api/ipfs-upload).
 - The `EvolutionCollection` interface, which is exposed at your collection’s address.
-
----
 
 ## Steps
 
@@ -32,15 +20,6 @@ Now that you have your collection in LAOS and your assets uploaded to IPFS, you 
          string calldata _tokenURI
      ) external returns (uint256);
      ```
-   - Also note the emitted event:
-     ```solidity
-     event MintedWithExternalURI(
-         address indexed _to,
-         uint96 _slot,
-         uint256 _tokenId,
-         string _tokenURI
-     );
-     ```
 
 2. **Prepare the mint transaction**
 
@@ -51,7 +30,7 @@ Now that you have your collection in LAOS and your assets uploaded to IPFS, you 
 3. **Send the transaction**
 
    - Use your Web3 library (e.g., ethers.js) to call `mintWithExternalURI` on the `collectionAddress`.
-   - Example (pseudo-code):
+   - Example:
      ```js
      const tx = await collectionContract.mintWithExternalURI(
        "0xRecipientAddress",
@@ -64,15 +43,9 @@ Now that you have your collection in LAOS and your assets uploaded to IPFS, you 
 
 4. **Retrieve the `tokenId`**
 
-   - The function returns `tokenId`, and also emits it in the `MintedWithExternalURI` event.
+   - The function returns `tokenId`, it is also emitted in the `MintedWithExternalURI` event.
    - Store this `tokenId` in your application, as you’ll need it to evolve the NFT or reference it later.
-
-5. **Verify on LAOS**
-   - Use a block explorer or a LAOS-compatible explorer to check that the mint transaction succeeded.
-   - Confirm that you see the newly minted token with your IPFS-based `tokenURI`.
-
----
 
 ## Next Steps
 
-With your NFT minted, you can now proceed to [Evolving](../evolving.md) it, updating its metadata as needed over time.
+With your NFT minted, you can now proceed to [Evolving](/guides/how-to-without-api/evolving) it, updating its metadata as needed over time.

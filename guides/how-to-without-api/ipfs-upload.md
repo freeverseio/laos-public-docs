@@ -1,23 +1,11 @@
----
-title: Uploading to IPFS
----
+# Uploading asset metadata to IPFS
 
-<!--
-File 2: upload-ipfs.md
--->
-
-# 2. Upload to IPFS
-
-This guide walks you through uploading your NFT media and metadata to a decentralized storage platform (IPFS) so that your NFTs in LAOS can reference them via a permanent link.
-
----
+This guide walks you through uploading your NFT media and metadata to a decentralized storage platform (IPFS).
 
 ## Prerequisites
 
-- An IPFS node or a public IPFS pinning service (e.g., Pinata, Infura, Web3.Storage).
+- IPFS pinning service (e.g., Pinata, Infura).
 - Your NFT media files (images, videos, audio, etc.) and metadata JSONs ready.
-
----
 
 ## Steps
 
@@ -56,8 +44,6 @@ This guide walks you through uploading your NFT media and metadata to a decentra
    - Your final IPFS link for the metadata might be `ipfs://Qmdef456uvw...`
    - This link can now be referenced in `tokenURI` when minting NFTs on the LAOS network.
 
----
-
 ## Next Steps
 
-With your files and metadata on IPFS, you can move on to [Minting](../minting.md), pointing your NFTs’ `tokenURI` to these IPFS links.
+With your files and metadata on IPFS, you can move on to [Minting](/guides/how-to-without-api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.
