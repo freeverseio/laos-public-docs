@@ -1,7 +1,4 @@
----
-sidebar_position: 7
----
-# Read Only Queries
+# Read Only Methods
 
 The rest of the interface exposed at the `collectionAddress` obtained when [creating the collection](creating-a-sibling-collection-in-laos.md) contains the following read-only methods.
 

@@ -7,8 +7,8 @@ const config: Config = {
   tagline: "The Layer-1 to create millions of assets on any EVM chain",
   favicon: "img/favicon.ico",
 
-  url: "https://your-docusaurus-site.example.com",
-  baseUrl: "/",
+  url: 'https://laosnetwork.uio',
+  baseUrl: '/',
 
   organizationName: "laos",
   projectName: "laos",
@@ -25,20 +25,8 @@ const config: Config = {
     [
       "classic",
       {
-        // Renamed main docs from "docs" to "learn"
         docs: false,
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ["rss", "atom"],
-            xslt: true,
-          },
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
-        },
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -49,7 +37,15 @@ const config: Config = {
   // Additional docs plugin instances for each section
   plugins: [
     [
-      "@docusaurus/plugin-content-docs",
+
+      '@docusaurus/plugin-content-pages',
+      {
+        id: 'landing',
+        path: './landing',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
       {
         id: "learn",
         path: "learn",
@@ -78,10 +74,10 @@ const config: Config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "indexers",
-        path: "indexers",
-        routeBasePath: "indexers",
-        sidebarPath: require.resolve("./sidebars.ts"),
+        id: 'indexers',
+        path: 'indexers',
+        routeBasePath: 'indexers',
+        sidebarPath: require.resolve('./sidebarsIndexers.ts'),
       },
     ],
     [
@@ -98,19 +94,17 @@ const config: Config = {
   themeConfig: {
     image: "img/logo.png",
     navbar: {
-      title: "LAOS",
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.png",
+        alt: 'LAOS',
+        src: 'img/logo.png',
       },
       items: [
-        // Updated the main docs link to use learnSidebar (rename
         {
-          type: "docSidebar",
-          docsPluginId: "learn",
-          sidebarId: "learnSidebar",
-          position: "left",
-          label: "Learn",
+          type: 'docSidebar',
+          docsPluginId: 'learn',
+          sidebarId: 'learnSidebar',
+          position: 'left',
+          label: 'Learn',
         },
         {
           type: "docSidebar",
@@ -152,7 +146,16 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
+          title: 'Docs',
+          items: [
+            { label: 'Learn', to: '/learn/introduction/goals' },
+            { label: 'Indexers', to: '/indexers/introduction' },
+            { label: 'API', to: '/api/introduction' },
+            { label: 'Guides', to: '/guides/introduction' },
+            { label: 'EVM', to: '/evm/introduction' }],
+        },
+        {
+          title: 'Community',
           items: [
             { label: "Learn", to: "/learn/introduction/goals" },
             { label: "Guides", to: "/guides/introduction-guides" },
@@ -177,7 +180,8 @@ const config: Config = {
         },
       ],
       copyright: `
-        Copyright © ${new Date().getFullYear()} LAOS Network
+        Copyright © ${new Date().getFullYear()
+        } LAOS Network
       `,
     },
 
@@ -186,6 +190,13 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       additionalLanguages: ["solidity"],
     },
+
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+
   } satisfies Preset.ThemeConfig,
 };
 

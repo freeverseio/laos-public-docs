@@ -1,6 +1,3 @@
----
-sidebar_position: 5
----
 # Minting Assets
 
 The owner of a collection in LAOS, can use the `EvolutionCollection` interface to mint an evolve assets. The interface is fully detailed in the [EVM Interface section](../the-laos-node/the-evm-interface.md), and it is exposed at the `collectionAddress` obtained when [creating the collection](creating-a-sibling-collection-in-laos.md). The interface can be found in both Solidity and ABI json format [here](https://github.com/freeverseio/laos/tree/main/pallets/laos-evolution/src/precompiles/evolution_collection/contracts).&#x20;
