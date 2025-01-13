@@ -1,3 +1,0 @@
----
-title: Uploading to IPFS
----
