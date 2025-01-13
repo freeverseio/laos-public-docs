@@ -15,17 +15,6 @@ const sidebarsGuides: SidebarsConfig = {
         "how-to-without-api/broadcasting",
       ],
     },
-    {
-      type: "category",
-      label: "How To (with API)",
-      items: [
-        "how-to-with-api/collection-setup",
-        "how-to-with-api/ipfs-upload",
-        "how-to-with-api/minting",
-        "how-to-with-api/evolving",
-        "how-to-with-api/broadcasting",
-      ],
-    },
   ],
 };
 
