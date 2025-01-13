@@ -1,45 +1,108 @@
-# Evolving an NFT
+# Evolving NFTs
 
-LAOS supports evolving NFTs, allowing you to update their metadata on-chain. This step explains how to change your NFT’s metadata via the `evolveWithExternalURI` method in your LAOS collection.
+This guide explains how to evolve (modify) existing NFTs using LAOS' bridgeless minting API.
 
 ## Prerequisites
 
-- A previously [minted NFT](/guides/how-to-without-api/minting) on your LAOS collection.
-- The updated metadata or IPFS link you wish to attach.
+- LAOS API key
+- Collection contract address
+- Token ID of the NFT to evolve
+- Updated metadata prepared
+- Chain ID where the NFT exists
 
 ## Steps
 
-1. **Update or create your new metadata**
+### 1. Prepare Your Environment
 
-   - If your NFT’s visual or attributes need to change, [upload a new metadata JSON to IPFS](/guides/how-to-without-api/ipfs-upload)
-   - Obtain the IPFS CID for your updated JSON.
+Set up your GraphQL client with the appropriate endpoint and your API key:
 
-2. **Prepare the evolve transaction**
+```javascript
+const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql'; // or testnet endpoint
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer YOUR_API_KEY'
+};
+```
 
-   - Your collection at `collectionAddress` provides:
-     ```solidity
-     function evolveWithExternalURI(
-         uint256 _tokenId,
-         string calldata _tokenURI
-     ) external returns (uint256);
-     ```
-   - `_tokenId`: The token you want to evolve.
-   - `_tokenURI`: The new IPFS link, e.g. `ipfs://QmnewCid...`
+### 2. Prepare Updated Metadata
 
-3. **Send the transaction**
+Gather your updated NFT metadata:
 
-   - Example:
-     ```js
-     const tx = await collectionContract.evolveWithExternalURI(
-       tokenId,
-       "ipfs://QmnewCid..."
-     );
-     const receipt = await tx.wait();
-     ```
-   - Upon success, the `EvolvedWithExternalURI` event will be emitted:
-     ```solidity
-     event EvolvedWithExternalURI(
-       uint256 indexed _tokenId,
-       string _tokenURI
-     );
-     ```
+```javascript
+const updatedMetadata = {
+  name: "Evolved NFT Name",
+  description: "Updated NFT Description",
+  attributes: [
+    {
+      trait_type: "Level",
+      value: "Evolved"
+    }
+  ],
+  image: "ipfs://NEW_IPFS_HASH"
+};
+```
+
+### 3. Execute the Evolution
+
+Use the following mutation to evolve your NFT:
+
+```javascript
+const evolveMutation = `
+  mutation EvolveNFT {
+    evolve(
+      input: {
+        chainId: "137"
+        contractAddress: "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3"
+        tokenId: "46231769497101023895754357762572931969783788518045090509665456129453327552117"
+        name: "Evolved NFT Name"
+        description: "Updated NFT Description"
+        attributes: [{ trait_type: "Level", value: "Evolved" }]
+        image: "ipfs://NEW_IPFS_HASH"
+      }
+    ) {
+      success
+      tx
+    }
+  }
+`;
+
+async function evolveNFT() {
+  const response = await fetch(LAOS_API_ENDPOINT, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({
+      query: evolveMutation
+    })
+  });
+
+  const data = await response.json();
+  return data;
+}
+```
+
+### 4. Handle the Response
+
+The API will return a success status and transaction hash:
+
+```javascript
+{
+  "data": {
+    "evolve": {
+      "success": true,
+      "tx": "0x745e45f9649bade95ccefa69bb593d40d0171646f356e4f4e9787d180e670068"
+    }
+  }
+}
+```
+
+## Important Notes
+
+- Evolution is permanent and cannot be reversed
+- All metadata fields (name, description, attributes, image) must be provided, even if only some are changing
+- Contract addresses must be in lowercase format
+- Ensure new IPFS content is uploaded and accessible before evolving
+- Consider broadcasting the evolved NFT to ensure marketplace visibility
+
+:::info
+Evolution allows you to update any aspect of the NFT's metadata, including its image, name, description, and attributes. This is a unique feature of LAOS NFTs.
+:::

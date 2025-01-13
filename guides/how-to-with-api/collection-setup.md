@@ -1,54 +1,96 @@
-# Create NFT Collection
 
-This guide explains how to create a collection in any EVM chain (Ethereum, Polygon, Arbitrum, etc.) with [Bridgeless Minting](/learn/bridgeless-minting/introduction) enabled.
 
-By the end of this tutorial, you will have your own collection ready for minting and evolving NFTs without having to pay fees in the target EVM chosen.
+# Creating a Collection
+
+This guide walks you through creating a new NFT collection using LAOS API.
+
 
 ## Prerequisites
 - You have an API key. Information on how to obatain an API key [here](/api/introduction).
-- Address associated with the API key has enough balance in LAOS and Polygon.
+- Address associated with the API key has enough LAOS and Polygon token balance.
 
 ## Steps
 
-1. **Connect to API**
+### 1. Prepare Your Environment
 
-  - Execute the following mutation https://testnet.api.laosnetwork.io/graphql
+First, set up your GraphQL client with the appropriate endpoint and your API key:
 
-3. **Send the `createCollection` transaction**
+```javascript
+const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql';
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer YOUR_API_KEY'
+};
+```
 
-   - Once you call `createCollection(_owner)`, you’ll receive an event `NewCollection(owner, collectionAddress)` indicating the address of your new collection.
-   - Record or store the `collectionAddress` value; you will need it to mint and evolve NFTs.
-   - You can check a [block explorer](https://sigma.explorer.laosnetwork.io/) to confirm that the transaction succeeded.
+### 2. Create the Collection
 
-4. **Deploy uERC-721 in your desired EVM chain**
+Use the following mutation to create your collection:
 
-   - Clone [laos-erc721](https://github.com/freeverseio/laos-erc721) repository.
-   - Go to file **_scripts > deploy.ts_**
-   - Modify constructor params to set your _collectionName_, _tokenSymbol_ and your LAOS _collection address_
+```javascript
+const createCollectionMutation = `
+  mutation CreateCollection {
+    createCollection(
+      input: {
+        name: "My Collection Name"
+        symbol: "MCN"
+        chainId: "137"  // Polygon PoS Mainnet
+      }
+    ) {
+      batchMinterAddress
+      chainId
+      contractAddress
+      laosAddress
+      name
+      success
+      symbol
+    }
+  }
+`;
 
-   ```
-   const collectionName = "<YOUR_COLLECTION_NAME>";
-   const tokenSymbol = "<YOUR_TOKEN_SYMBOL>";
-   const siblingCollectionInLAOS = "<YOUR_LAOS_COLLECTION>";
-   ```
+// Example implementation using fetch
+async function createCollection() {
+  const response = await fetch(LAOS_API_ENDPOINT, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({
+      query: createCollectionMutation
+    })
+  });
 
-   - If you deployed the LAOS collection in Sigma LAOS testnet, you might need to adjust the useMainnet boolean. In our case since we will deploy the collection in LAOS mainnet by setting:
+  const data = await response.json();
+  return data;
+}
+```
 
-   ```
-   const useLAOSMainnet = true;
-   ```
+### 3. Handle the Response
 
-   - Run the following command to a deploy the uERC-721 collection in your desired chain.
-     For example, to deploy a contract in Polygon mainnet you need to run the command
+The API will return important addresses that you'll need for future operations:
 
-   ```
-   npx hardhat run --network polygonMainnet scripts/deploy.ts
-   ```
+```javascript
+{
+  "data": {
+    "createCollection": {
+      "batchMinterAddress": "0x0f3381eb41c24dd28c3f1a71e6dcfae6434da731",
+      "chainId": "137",
+      "contractAddress": "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3",
+      "laosAddress": "0xfffffffffffffffffffffffe00000000000000da",
+      "name": "My Collection Name",
+      "success": true,
+      "symbol": "MCN"
+    }
+  }
+}
+```
+
+Make sure to store these addresses:
+- `contractAddress`: Your uERC721 contract address on the target chain
+- `laosAddress`: The underlying sibling collection in LAOS
 
 :::warning
-_**siblingCollectionInLAOS**_ must match the LAOS address you obtained in **Step 2**
+ Contract addresses must be provided in lowercase format in all mutations
 :::
 
-## Next Steps
-
-Now that you have your collection address in LAOS, proceed to [Upload Assets to IPFS](/guides/how-to-without-api/ipfs-upload) so that you can reference them in your tokens’ metadata.
+:::info
+The creation process deploys smart contracts on both your target chain and LAOS. This is a one-time operation per collection.
+:::

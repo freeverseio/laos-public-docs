@@ -1,51 +1,136 @@
-# Minting an NFT
+# Minting NFTs
 
-Now that you have your collection in LAOS and your assets uploaded to IPFS, you can mint your first NFT on LAOS. Minting in LAOS is done through the `EvolutionCollection` interface, using the `mintWithExternalURI` method.
+This guide explains how to mint NFTs using LAOS' bridgeless minting API.
 
 ## Prerequisites
 
-- A [collection address](/guides/how-to-without-api/collection-setup.md) in LAOS.
-- An [IPFS link to your NFT metadata](/guides/how-to-without-api/ipfs-upload).
-- The `EvolutionCollection` interface, which is exposed at your collection’s address.
+- LAOS API key
+- Collection contract address from your previously created collection
+- Target chain ID
+- IPFS or other permanent storage for NFT media and metadata
+- Recipient wallet address(es)
 
 ## Steps
 
-1. **Obtain the contract interface**
+### 1. Prepare Your Environment
 
-   - Your newly created collection at `collectionAddress` exposes:
-     ```solidity
-     function mintWithExternalURI(
-         address _to,
-         uint96 _slot,
-         string calldata _tokenURI
-     ) external returns (uint256);
-     ```
+Set up your GraphQL client with the appropriate endpoint and your API key:
 
-2. **Prepare the mint transaction**
+```javascript
+const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql'; // or testnet endpoint
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer YOUR_API_KEY'
+};
+```
 
-   - `_to`: The recipient’s EVM address.
-   - `_slot`: A number to distinguish the NFTs minted for this recipient (e.g., an incremental index).
-   - `_tokenURI`: Your IPFS link, e.g. `ipfs://Qmdef456uvw...` pointing to the metadata JSON.
+### 2. Prepare NFT Metadata
 
-3. **Send the transaction**
+Ensure your NFT metadata follows the standard format:
 
-   - Use your Web3 library (e.g., ethers.js) to call `mintWithExternalURI` on the `collectionAddress`.
-   - Example:
-     ```js
-     const tx = await collectionContract.mintWithExternalURI(
-       "0xRecipientAddress",
-       1,
-       "ipfs://Qmdef456uvw..."
-     );
-     const receipt = await tx.wait();
-     ```
-   - Check the logs or `receipt.events` for the `MintedWithExternalURI` event to confirm.
+```javascript
+const nftMetadata = {
+  name: "My NFT Name",
+  description: "NFT Description",
+  attributes: [
+    {
+      trait_type: "Category",
+      value: "Example"
+    }
+  ],
+  image: "ipfs://YOUR_IPFS_HASH"
+};
+```
 
-4. **Retrieve the `tokenId`**
+### 3. Execute the Mint
 
-   - The function returns `tokenId`, it is also emitted in the `MintedWithExternalURI` event.
-   - Store this `tokenId` in your application, as you’ll need it to evolve the NFT or reference it later.
+Use the following mutation to mint your NFT:
 
-## Next Steps
+```javascript
+const mintMutation = `
+  mutation MintNFT {
+    mint(
+      input: {
+        chainId: "137"
+        contractAddress: "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3"
+        tokens: [
+          {
+            mintTo: ["0x4E6Da57f62b9954fBb6bAb531F556BE08E128e75"]
+            name: "My NFT Name"
+            description: "NFT Description"
+            attributes: [{ trait_type: "Category", value: "Example" }]
+            image: "ipfs://YOUR_IPFS_HASH"
+          }
+        ]
+      }
+    ) {
+      tokenIds
+      success
+    }
+  }
+`;
 
-With your NFT minted, you can now proceed to [Evolving](/guides/how-to-without-api/evolving) it, updating its metadata as needed over time.
+async function mintNFT() {
+  const response = await fetch(LAOS_API_ENDPOINT, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({
+      query: mintMutation
+    })
+  });
+
+  const data = await response.json();
+  return data;
+}
+```
+
+### 4. Handle the Response
+
+The API will return the minted token IDs:
+
+```javascript
+{
+  "data": {
+    "mint": {
+      "tokenIds": [
+        "46231769497101023895754357762572931969783788518045090509665456129453327552117"
+      ],
+      "success": true
+    }
+  }
+}
+```
+
+## Batch Minting
+
+To mint multiple NFTs in a single transaction, add multiple tokens to the `tokens` array:
+
+```javascript
+tokens: [
+  {
+    mintTo: ["0x4E6Da57f62b9954fBb6bAb531F556BE08E128e75"],
+    name: "First NFT",
+    description: "First NFT Description",
+    attributes: [{ trait_type: "Category", value: "Example" }],
+    image: "ipfs://HASH_1"
+  },
+  {
+    mintTo: ["0x4E6Da57f62b9954fBb6bAb531F556BE08E128e75"],
+    name: "Second NFT",
+    description: "Second NFT Description",
+    attributes: [{ trait_type: "Category", value: "Example" }],
+    image: "ipfs://HASH_2"
+  }
+]
+```
+
+## Important Notes
+
+- Contract addresses must be in lowercase format
+- Store the returned token IDs as you'll need them for future operations
+- Ensure all IPFS hashes are valid and accessible
+- The `mintTo` array can contain multiple addresses for shared ownership
+
+:::info
+After minting, you may need to broadcast your NFTs to ensure visibility on traditional marketplaces. See the Broadcasting guide for details.
+:::

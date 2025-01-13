@@ -1,63 +1,109 @@
-# Broadcasting
+# Broadcasting NFTs
 
-Broadcasting in the context of LAOS refers to exposing a LAOS minted NFT to other apps (e.g., marketplaces) that do not support natively bridgeless minting.
-
-Broadcasting triggers a standard ERC721 `Transfer` event, which these marketplaces use to index NFTs. You can broadcast in “MINT” mode (emitting a transfer event from `address(0)`), or in “SELF” mode (emitting a self-transfer event from the current owner to themselves).
+This guide explains how to broadcast LAOS-minted NFTs to ensure visibility on traditional marketplaces and applications.
 
 ## Prerequisites
 
-- You have [minted](/guides/how-to-without-api/minting) one or more NFTs
-- You know the `tokenId`(s) of the NFT(s) that you wish to broadcast.
-- You have access to your uERC-721 collection contract, which includes the interface:
-  ```solidity
-  function broadcastMintBatch(uint256[] calldata tokenIds) external;
-  function broadcastSelfTransferBatch(uint256[] calldata tokenIds) external;
-  ```
+- LAOS API key
+- Collection contract address
+- Token ID(s) of the NFT(s) to broadcast
+- Chain ID where the NFTs exist
+
+## Understanding Broadcast Types
+
+LAOS supports two types of broadcasting:
+
+1. **MINT** - Emits a transfer event from the zero address (`address(0)`), simulating a fresh mint
+2. **SELF** - Emits a transfer event from the current owner to themselves
 
 ## Steps
 
-1. **Choose the broadcast type**
+### 1. Prepare Your Environment
 
-   - **MINT**
+Set up your GraphQL client with the appropriate endpoint and your API key:
 
-     - Emits a standard `Transfer` event from the zero address (`from = address(0)`) to the current owner, matching a “freshly minted” event signature.
+```javascript
+const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql'; // or testnet endpoint
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer YOUR_API_KEY'
+};
+```
 
-   - **SELF**
-     - Emits a “transfer” event from the owner to themselves, effectively “self-transferring” the NFT to broadcast its existence.
+### 2. Execute the Broadcast
 
-2. **Prepare the broadcast transaction**
+Use the following mutation to broadcast your NFTs:
 
-   - **MINT**
+```javascript
+const broadcastMutation = `
+  mutation BroadcastBatch {
+    broadcastBatch(
+      input: {
+        tokenIds: [
+          "46231769497101023895754357762572931969783788518045090509665456129453327552117",
+          "93666072995048189955115392031356951741507126618122077759684867447733822539334"
+        ]
+        chainId: "137"
+        ownershipContractAddress: "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3"
+        type: "MINT"  // or "SELF"
+      }
+    ) {
+      tokenIds
+      success
+    }
+  }
+`;
 
-     ```js
-     const tokenIds = [
-       92762087543321243492858811692430517458298127117648518661922453704541876652031,
-       46231769497101023895754357762572931969783788518045090509665456129453327552117,
-     ]; // example batch of tokenIds
+async function broadcastNFTs() {
+  const response = await fetch(LAOS_API_ENDPOINT, {
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify({
+      query: broadcastMutation
+    })
+  });
 
-     const tx = await collectionContract.broadcastMintBatch(tokenIds);
-     const receipt = await tx.wait();
-     // Each tokenId will emit a "Transfer" event from address(0) to its owner
-     ```
+  const data = await response.json();
+  return data;
+}
+```
 
-   - **SELF**
+### 3. Handle the Response
 
-     ```js
-     const tokenIds = [
-       92762087543321243492858811692430517458298127117648518661922453704541876652031,
-       46231769497101023895754357762572931969783788518045090509665456129453327552117,
-     ];
+The API will confirm the broadcast:
 
-     const tx = await collectionContract.broadcastSelfTransferBatch(tokenIds);
-     const receipt = await tx.wait();
-     // Each tokenId will emit a "Transfer" event from the owner to themselves
-     ```
+```javascript
+{
+  "data": {
+    "broadcastBatch": {
+      "tokenIds": [
+        "46231769497101023895754357762572931969783788518045090509665456129453327552117",
+        "93666072995048189955115392031356951741507126618122077759684867447733822539334"
+      ],
+      "success": true
+    }
+  }
+}
+```
 
-3. **Check for success**
+## Choosing Between MINT and SELF
 
-   - After the transaction is mined, each token in your list has now emitted a standard ERC721 `Transfer` event.
-   - You can verify these events in the `receipt.events` array, or by looking them up in a block explorer.
+- Use **MINT** when:
+  - You want the NFT to appear as freshly minted in marketplaces
+  - The marketplace specifically requires transfer events from the zero address
+
+- Use **SELF** when:
+  - You want to maintain the existing ownership history
+  - The marketplace accepts any transfer event for indexing
+
+## Important Notes
+
+- Broadcasting is only needed for marketplaces that don't natively support bridgeless minting
+- A single broadcast transaction can handle multiple token IDs
+- Contract addresses must be in lowercase format
+- Broadcasting doesn't affect ownership or metadata
+- NFTs that have been transferred naturally don't need broadcasting
 
 :::info
-NFTs that have been transferred at least once are automatically indexed by apps that do not support bridgeless minting. In this case, broadcasting is not necessary.
+Once an NFT has been broadcast or naturally transferred, it doesn't need to be broadcast again unless specifically required by a new marketplace integration.
 :::
