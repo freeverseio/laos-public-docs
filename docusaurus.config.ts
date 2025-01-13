@@ -157,16 +157,6 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            { label: 'Learn', to: '/learn/introduction/goals' },
-            { label: 'Guides', to: '/guides/introduction-guides' },
-            { label: 'Indexers', to: '/indexers/introduction' },
-            { label: 'API', to: '/api/introduction' },
-            { label: 'EVM', to: '/evm/introduction-evm' },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             { label: 'Discord', href: 'https://discord.com/invite/gZcxsJcdPy' },
             { label: 'X', href: 'https://x.com/laosnetwork' },
           ],

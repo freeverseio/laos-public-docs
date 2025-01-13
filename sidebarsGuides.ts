@@ -3,7 +3,7 @@ import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
 const sidebarsGuides: SidebarsConfig = {
   guidesSidebar: [
-    "introduction-guides",
+    "introduction",
     {
       type: "category",
       label: "How To (without API)",

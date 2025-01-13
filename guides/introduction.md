@@ -1,6 +1,2 @@
----
-id: introduction-guides
-title: Introduction
----
-
+# Introduction
 Welcome to the LAOS Guides
