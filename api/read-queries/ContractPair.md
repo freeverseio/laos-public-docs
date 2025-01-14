@@ -1,4 +1,4 @@
-# LAOS Collection Pair
+# LAOS Sibling Collection
 
 This query helps identify the LAOS sibling collection associated with a specific collection address, useful for developers who want to interact directly with LAOS contracts.
 
