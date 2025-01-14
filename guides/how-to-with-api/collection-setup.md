@@ -87,6 +87,76 @@ Make sure to store these addresses:
 - `contractAddress`: Your uERC721 contract address on the target chain
 - `laosAddress`: The underlying sibling collection in LAOS
 
+
+### Full code example
+```js
+import fetch from "node-fetch";
+
+const LAOS_API_ENDPOINT = "https://testnet.api.laosnetwork.io/graphql";
+const API_KEY = "<YOUR_API_KEY>"; // Replace with your actual API key
+
+const headers = {
+  "Content-Type": "application/json",
+  "x-api-key": `${API_KEY}`,
+};
+
+const createCollectionMutation = `
+  mutation CreateCollection {
+    createCollection(
+      input: {
+        name: "My Collection Name"
+        symbol: "MCN"
+        chainId: "137"
+      }
+    ) {
+      batchMinterAddress
+      chainId
+      contractAddress
+      laosAddress
+      name
+      success
+      symbol
+    }
+  }
+`;
+
+async function createCollection() {
+  try {
+    const response = await fetch(LAOS_API_ENDPOINT, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify({
+        query: createCollectionMutation,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.errors) {
+      console.error("Error creating collection:", data.errors);
+      return;
+    }
+
+    console.log("Collection created successfully:", data.data.createCollection);
+  } catch (error) {
+    console.error("Error making API request:", error);
+  }
+}
+
+createCollection();
+
+```
+To run example: 
+1. Copy and paste code into a file and name it **createCollection.mjs**
+2. Install "node-fetch"
+```
+npm i node-fetch
+```
+3. Run command
+```
+node createCollection.mjs
+```
+
 :::warning
  Contract addresses must be provided in lowercase format in all mutations
 :::
