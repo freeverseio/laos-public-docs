@@ -1,17 +1,16 @@
 # Broadcasting NFTs
 
-This guide explains how to broadcast LAOS-minted NFTs to ensure visibility on traditional marketplaces and applications.
+This guide explains how to broadcast LAOS-minted NFTs to ensure they are detected by marketplaces and applications that do not support natively bridgeless minting.
 
 ## Prerequisites
 
-- LAOS API key
-- Collection contract address
-- Token ID(s) of the NFT(s) to broadcast
-- Chain ID where the NFTs exist
+- You have an API key. Information on how to obatain an API key [here](/api/introduction).
+- Collection contract address from your previously [created collection using API](/guides/how-to-with-api/collection-setup.md)
+- Token IDs of the NFT to be broadcasted
 
 ## Understanding Broadcast Types
 
-LAOS supports two types of broadcasting:
+LAOS supports two types of broadcasting. Depending on the marketplace you’re targeting, you may need to use a specific type.
 
 1. **MINT** - Emits a transfer event from the zero address (`address(0)`), simulating a fresh mint
 2. **SELF** - Emits a transfer event from the current owner to themselves
@@ -23,7 +22,7 @@ LAOS supports two types of broadcasting:
 Set up your GraphQL client with the appropriate endpoint and your API key:
 
 ```javascript
-const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql'; // or testnet endpoint
+const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql';
 const headers = {
   'Content-Type': 'application/json',
   'Authorization': 'Bearer YOUR_API_KEY'
@@ -45,7 +44,7 @@ const broadcastMutation = `
         ]
         chainId: "137"
         ownershipContractAddress: "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3"
-        type: "MINT"  // or "SELF"
+        type: "MINT"
       }
     ) {
       tokenIds
@@ -86,24 +85,10 @@ The API will confirm the broadcast:
 }
 ```
 
-## Choosing Between MINT and SELF
-
-- Use **MINT** when:
-  - You want the NFT to appear as freshly minted in marketplaces
-  - The marketplace specifically requires transfer events from the zero address
-
-- Use **SELF** when:
-  - You want to maintain the existing ownership history
-  - The marketplace accepts any transfer event for indexing
-
-## Important Notes
-
-- Broadcasting is only needed for marketplaces that don't natively support bridgeless minting
-- A single broadcast transaction can handle multiple token IDs
-- Contract addresses must be in lowercase format
-- Broadcasting doesn't affect ownership or metadata
-- NFTs that have been transferred naturally don't need broadcasting
+:::warning
+ Contract addresses must be provided in lowercase format in all mutations
+:::
 
 :::info
-Once an NFT has been broadcast or naturally transferred, it doesn't need to be broadcast again unless specifically required by a new marketplace integration.
+NFTs that have been transferred at least once are automatically indexed by apps that do not support bridgeless minting. In this case, broadcasting is not necessary.
 :::

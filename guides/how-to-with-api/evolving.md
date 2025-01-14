@@ -1,14 +1,13 @@
 # Evolving NFTs
 
-This guide explains how to evolve (modify) existing NFTs using LAOS' bridgeless minting API.
+This guide explains how to evolve (modify) existing NFTs using LAOS API.
 
 ## Prerequisites
 
-- LAOS API key
-- Collection contract address
+- You have an API key. Information on how to obatain an API key [here](/api/introduction).
+- Collection contract address from your previously [created collection using API](/guides/how-to-with-api/collection-setup.md)
+- IPFS for NFT media
 - Token ID of the NFT to evolve
-- Updated metadata prepared
-- Chain ID where the NFT exists
 
 ## Steps
 
@@ -17,7 +16,7 @@ This guide explains how to evolve (modify) existing NFTs using LAOS' bridgeless 
 Set up your GraphQL client with the appropriate endpoint and your API key:
 
 ```javascript
-const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql'; // or testnet endpoint
+const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql';
 const headers = {
   'Content-Type': 'application/json',
   'Authorization': 'Bearer YOUR_API_KEY'
@@ -97,11 +96,12 @@ The API will return a success status and transaction hash:
 
 ## Important Notes
 
-- Evolution is permanent and cannot be reversed
+
 - All metadata fields (name, description, attributes, image) must be provided, even if only some are changing
-- Contract addresses must be in lowercase format
-- Ensure new IPFS content is uploaded and accessible before evolving
-- Consider broadcasting the evolved NFT to ensure marketplace visibility
+
+:::warning
+ Contract addresses must be provided in lowercase format in all mutations
+:::
 
 :::info
 Evolution allows you to update any aspect of the NFT's metadata, including its image, name, description, and attributes. This is a unique feature of LAOS NFTs.
