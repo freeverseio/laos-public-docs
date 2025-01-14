@@ -6,11 +6,11 @@ By the end of this tutorial, you will have your own collection ready for minting
 
 ## Steps
 
-1. **Connect to the LAOS RPC**
+### 1. Connect to the LAOS RPC
 
    - A list of public LAOS RPCs can be found [here](/learn/introduction/laos-and-its-testnet)
 
-2. **Prepare the transaction**
+###  2. Prepare the transaction
 
    - Interact with the `EvolutionCollectionFactory` interface at
      `0x0000000000000000000000000000000000000403`.
@@ -20,13 +20,13 @@ By the end of this tutorial, you will have your own collection ready for minting
      ```
    - Set `_owner` to the address that will own the new collection (this address will be capable of minting and evolving assets).
 
-3. **Send the `createCollection` transaction**
+### 3. Send the `createCollection` transaction
 
    - Once you call `createCollection(_owner)`, you’ll receive an event `NewCollection(owner, collectionAddress)` indicating the address of your new collection.
    - Record or store the `collectionAddress` value; you will need it to mint and evolve NFTs.
    - You can check a [block explorer](https://sigma.explorer.laosnetwork.io/) to confirm that the transaction succeeded.
 
-4. **Deploy uERC-721 in your desired EVM chain**
+### 4. Deploy uERC-721 in your desired EVM chain
 
    - Clone [laos-erc721](https://github.com/freeverseio/laos-erc721) repository.
    - Go to file **_scripts > deploy.ts_**

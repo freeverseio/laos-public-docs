@@ -16,7 +16,7 @@ Broadcasting triggers a standard ERC721 `Transfer` event, which these marketplac
 
 ## Steps
 
-1. **Choose the broadcast type**
+### 1. Choose the broadcast type
 
    - **MINT**
 
@@ -25,7 +25,7 @@ Broadcasting triggers a standard ERC721 `Transfer` event, which these marketplac
    - **SELF**
      - Emits a “transfer” event from the owner to themselves, effectively “self-transferring” the NFT to broadcast its existence.
 
-2. **Prepare the broadcast transaction**
+### 2. Prepare the broadcast transaction
 
    - **MINT**
 
@@ -53,7 +53,7 @@ Broadcasting triggers a standard ERC721 `Transfer` event, which these marketplac
      // Each tokenId will emit a "Transfer" event from the owner to themselves
      ```
 
-3. **Check for success**
+### 3. Check for success
 
    - After the transaction is mined, each token in your list has now emitted a standard ERC721 `Transfer` event.
    - You can verify these events in the `receipt.events` array, or by looking them up in a block explorer.

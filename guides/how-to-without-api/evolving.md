@@ -9,12 +9,12 @@ LAOS supports evolving NFTs, allowing you to update their metadata on-chain. Thi
 
 ## Steps
 
-1. **Update or create your new metadata**
+### 1. Update or create your new metadata
 
    - If your NFT’s visual or attributes need to change, [upload a new metadata JSON to IPFS](/guides/how-to-without-api/ipfs-upload)
    - Obtain the IPFS CID for your updated JSON.
 
-2. **Prepare the evolve transaction**
+### 2. Prepare the evolve transaction
 
    - Your collection at `collectionAddress` provides:
      ```solidity
@@ -26,7 +26,7 @@ LAOS supports evolving NFTs, allowing you to update their metadata on-chain. Thi
    - `_tokenId`: The token you want to evolve.
    - `_tokenURI`: The new IPFS link, e.g. `ipfs://QmnewCid...`
 
-3. **Send the transaction**
+### 3. Send the transaction
 
    - Example:
      ```js

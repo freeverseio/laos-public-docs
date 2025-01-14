@@ -10,7 +10,7 @@ Now that you have your collection in LAOS and your assets uploaded to IPFS, you 
 
 ## Steps
 
-1. **Obtain the contract interface**
+### 1. Obtain the contract interface
 
    - Your newly created collection at `collectionAddress` exposes:
      ```solidity
@@ -21,13 +21,13 @@ Now that you have your collection in LAOS and your assets uploaded to IPFS, you 
      ) external returns (uint256);
      ```
 
-2. **Prepare the mint transaction**
+### 2. Prepare the mint transaction
 
    - `_to`: The recipient’s EVM address.
    - `_slot`: A number to distinguish the NFTs minted for this recipient (e.g., an incremental index).
    - `_tokenURI`: Your IPFS link, e.g. `ipfs://Qmdef456uvw...` pointing to the metadata JSON.
 
-3. **Send the transaction**
+### 3. Send the transaction
 
    - Use your Web3 library (e.g., ethers.js) to call `mintWithExternalURI` on the `collectionAddress`.
    - Example:
@@ -41,7 +41,7 @@ Now that you have your collection in LAOS and your assets uploaded to IPFS, you 
      ```
    - Check the logs or `receipt.events` for the `MintedWithExternalURI` event to confirm.
 
-4. **Retrieve the `tokenId`**
+### 4. Retrieve the `tokenId`
 
    - The function returns `tokenId`, it is also emitted in the `MintedWithExternalURI` event.
    - Store this `tokenId` in your application, as you’ll need it to evolve the NFT or reference it later.
