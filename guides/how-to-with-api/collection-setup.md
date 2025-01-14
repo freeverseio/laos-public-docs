@@ -4,6 +4,8 @@
 
 This guide walks you through creating a new NFT collection using LAOS API.
 
+It explains how to create a collection in Polygon but it can be extended to any other supported EVM chain (Ethereum, etc.).
+
 
 ## Prerequisites
 - You have an API key. Information on how to obatain an API key [here](/api/introduction).
@@ -13,7 +15,7 @@ This guide walks you through creating a new NFT collection using LAOS API.
 
 ### 1. Prepare Your Environment
 
-First, set up your GraphQL client with the appropriate endpoint and your API key:
+First, set up your env variables with the appropriate endpoint and your API key:
 
 ```javascript
 const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql';
@@ -25,7 +27,7 @@ const headers = {
 
 ### 2. Create the Collection
 
-Use the following mutation to create your collection:
+Provide your collection name and symbol in the following mutation:
 
 ```javascript
 const createCollectionMutation = `
@@ -34,10 +36,9 @@ const createCollectionMutation = `
       input: {
         name: "My Collection Name"
         symbol: "MCN"
-        chainId: "137"  // Polygon PoS Mainnet
+        chainId: "137"
       }
     ) {
-      batchMinterAddress
       chainId
       contractAddress
       laosAddress
@@ -48,7 +49,7 @@ const createCollectionMutation = `
   }
 `;
 
-// Example implementation using fetch
+
 async function createCollection() {
   const response = await fetch(LAOS_API_ENDPOINT, {
     method: 'POST',
@@ -71,7 +72,6 @@ The API will return important addresses that you'll need for future operations:
 {
   "data": {
     "createCollection": {
-      "batchMinterAddress": "0x0f3381eb41c24dd28c3f1a71e6dcfae6434da731",
       "chainId": "137",
       "contractAddress": "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3",
       "laosAddress": "0xfffffffffffffffffffffffe00000000000000da",
@@ -84,8 +84,8 @@ The API will return important addresses that you'll need for future operations:
 ```
 
 Make sure to store these addresses:
-- `contractAddress`: Your uERC721 contract address on the target chain
-- `laosAddress`: The underlying sibling collection in LAOS
+- `contractAddress`: Your uERC721 contract address on the target chain. This is the only address that external users will interact with.
+- `laosAddress`: The underlying sibling collection in LAOS.
 
 
 ### Full code example
@@ -109,7 +109,6 @@ const createCollectionMutation = `
         chainId: "137"
       }
     ) {
-      batchMinterAddress
       chainId
       contractAddress
       laosAddress

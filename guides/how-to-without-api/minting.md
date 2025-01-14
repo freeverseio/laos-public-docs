@@ -1,12 +1,11 @@
 # Minting an NFT
 
-Now that you have your collection in LAOS and your assets uploaded to IPFS, you can mint your first NFT on LAOS. Minting in LAOS is done through the `EvolutionCollection` interface, using the `mintWithExternalURI` method.
+Now that you have your collection and your assets uploaded to IPFS, you can mint your first NFT on LAOS. Minting on LAOS is done through the `EvolutionCollection` interface, using the `mintWithExternalURI` method.
 
 ## Prerequisites
 
 - A [collection address](/guides/how-to-without-api/collection-setup.md) in LAOS.
 - An [IPFS link to your NFT metadata](/guides/how-to-without-api/ipfs-upload).
-- The `EvolutionCollection` interface, which is exposed at your collection’s address.
 
 ## Steps
 

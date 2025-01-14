@@ -2,6 +2,8 @@
 
 This guide explains how to create a collection in any EVM chain (Ethereum, Polygon, Arbitrum, etc.) with [Bridgeless Minting](/learn/bridgeless-minting/introduction) enabled.
 
+These examples are done in JavaScript, but the process can be implemented in any programming language.
+
 By the end of this tutorial, you will have your own collection ready for minting and evolving NFTs without having to pay fees in the target EVM chosen.
 
 ## Steps
