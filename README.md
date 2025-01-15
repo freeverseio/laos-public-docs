@@ -1,6 +1,6 @@
 # LAOS Developer Documentation
 
-This website contains the code used by the [LAOS Developer Documentation site](https://docs.laosnetwork.io/). 
+This repository contains the code used by the [LAOS Developer Documentation site](https://docs.laosnetwork.io/). 
 
 For further details, please refer to the [LAOS Network](https://laosnetwork.io/) main site.
 
