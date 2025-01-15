@@ -131,24 +131,24 @@ async function batchMint(assets) {
 
 For complete implementations:
 
-- [Single Mint code](https://github.com/freeverseio/laos-examples/blob/main/mint.js)
-- [Batch Mint code](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js)
+- [Single Mint code example](https://github.com/freeverseio/laos-examples/blob/main/mint.js)
+- [Batch Mint code example](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js)
 
-To run the examples:
+### To run the examples:
 
-Create a .env file:
+1. Create a .env file:
 
 ```
 PRIVATE_KEY=your_private_key_here
 ```
 
-Install dependencies:
+2. Install dependencies:
 
 ```
 npm install ethers axios dotenv
 ```
 
-Run the scripts:
+3. Run the scripts:
 
 ```
 node mint.js

@@ -13,45 +13,107 @@ This transaction, called "Broadcast," simply emits a standard transfer event, in
 
 ### 1. Choose the broadcast type
 
-   - **MINT**
+- **MINT**
 
-     - Emits a standard `Transfer` event from the zero address (`from = address(0)`) to the current owner, matching a “freshly minted” event signature. The mint broadcast is detected by marketplaces like Rarible.
+Emits a standard `Transfer` event from the zero address (`from = address(0)`) to the current owner, matching a “freshly minted” event signature. The mint broadcast is detected by marketplaces like Rarible.
 
-   - **SELF**
-     - Emits a “transfer” event from the owner to themselves, effectively “self-transferring” the NFT to broadcast its existence. The mint broadcast is detected by marketplaces like Opensea.
+- **SELF**
 
-### 2. Prepare the broadcast transaction
+Emits a “transfer” event from the owner to themselves, effectively “self-transferring” the NFT to broadcast its existence. The mint broadcast is detected by marketplaces like Opensea.
 
-   - **MINT**
+### 2. Prepare Your Environment
 
-     ```js
-     const tokenIds = [
-       92762087543321243492858811692430517458298127117648518661922453704541876652031,
-       46231769497101023895754357762572931969783788518045090509665456129453327552117,
-     ]; // example batch of tokenIds
+Set up your environment variables and imports:
 
-     const tx = await collectionContract.broadcastMintBatch(tokenIds);
-     const receipt = await tx.wait();
-     // Each tokenId will emit a "Transfer" event from address(0) to its owner
-     ```
+```javascript
+require("dotenv").config();
+const { ethers } = require("ethers");
+const axios = require("axios");
 
-   - **SELF**
+// Target chain RPC (e.g. Polygon)
+const PROVIDER_URL = "https://polygon.drpc.org";
+const { PRIVATE_KEY } = process.env;
 
-     ```js
-     const tokenIds = [
-       92762087543321243492858811692430517458298127117648518661922453704541876652031,
-       46231769497101023895754357762572931969783788518045090509665456129453327552117,
-     ];
+// Your ERC721 contract on target chain
+const uERC721Address = "<YOUR_ERC721_ADDRESS>";
+// Token ID to broadcast
+const tokenId = "<YOUR_TOKEN_ID>";
+```
 
-     const tx = await collectionContract.broadcastSelfTransferBatch(tokenIds);
-     const receipt = await tx.wait();
-     // Each tokenId will emit a "Transfer" event from the owner to themselves
-     ```
+### 3. Set Up Contract Interface
 
-### 3. Check for success
+Initialize the contract connection:
 
-   - After the transaction is mined, each token in your list has now emitted a standard ERC721 `Transfer` event.
-   - You can verify these events in the `receipt.events` array, or by looking them up in a block explorer.
+```javascript
+const CONTRACT_ABI_URL =
+  "https://github.com/freeverseio/laos-erc721/blob/main/abi/contracts/ERC721Universal.sol/ERC721Universal.json?raw=true";
+const response = await axios.get(CONTRACT_ABI_URL);
+const contractABI = response.data;
+
+const provider = new ethers.JsonRpcProvider(PROVIDER_URL);
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
+const contract = new ethers.Contract(uERC721Address, contractABI, wallet);
+```
+
+### 4. Broadcast Function
+
+Function to broadcast an NFT:
+
+```javascript
+async function broadcastNFT() {
+  console.log(`Broadcasting asset with TokenId: ${tokenId}`);
+  const tx = await contract.broadcastSelfTransfer(tokenId);
+
+  console.log("Transaction sent. Waiting for confirmation...");
+  const receipt = await tx.wait();
+
+  const event = receipt.logs.find(
+    (log) => log.address.toLowerCase() === uERC721Address.toLowerCase()
+  );
+
+  if (event) {
+    const iface = new ethers.Interface(contractABI);
+    const decodedEvent = iface.decodeEventLog(
+      "Transfer",
+      event.data,
+      event.topics
+    );
+    console.log(`Broadcasted asset with Token ID: ${decodedEvent.tokenId}`);
+  }
+}
+```
+
+## Full Code Example
+
+For complete implementation:
+
+[Broadcast code example](https://github.com/freeverseio/laos-examples/blob/main/broadcast.js)
+
+### To run the example:
+
+1. Create a `.env` file:
+
+   ```env
+   PRIVATE_KEY=your_private_key_here
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install ethers axios dotenv
+   ```
+
+3. Run the script:
+
+   ```bash
+   node broadcast.js
+   ```
+
+After successful broadcast, your NFT should be visible on marketplaces. For example, if using Polygon, you can view it on OpenSea at:
+
+```
+https://opensea.io/assets/matic/<YOUR_ERC721_ADDRESS>/<TOKEN_ID>
+```
 
 :::info
 NFTs that have been transferred at least once are automatically indexed by apps that do not support bridgeless minting. In this case, broadcasting is not necessary.
