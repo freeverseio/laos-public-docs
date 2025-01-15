@@ -21,7 +21,7 @@ mutation MintNFT {
           name: "Advanced concepts about LAOS"
           description: "This is my second LAOS Mint!"
           attributes: [{ trait_type: "Level", value: "Advanced" }]
-          image: "ipfs://QmauhsbWxutafkXgGyDnUu27d7LYGwYiULSyJFFpa1WPKe"
+          image: "ipfs://QmPC9LrMuN6YkcJBRhBcWiDcS4ndkx3cwXdVNQ59PY8EBq"
         }
 
       ]
