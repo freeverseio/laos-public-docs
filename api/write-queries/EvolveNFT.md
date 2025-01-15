@@ -1,6 +1,6 @@
 # Evolving NFTs
 
-Use the following mutation to evolve up to 700 items in a single atomic operation. If successful, all items are evolved. If the operation fails, no items are evolved. Batching multiple evolutions into one atomic operation can simplify and streamline application logic significantly.
+Use the following mutation to evolve up to 700 previously minted assets in one single atomic operation. If successful, all items are evolved. If the operation fails, no items are evolved. Batching multiple evolutions into one atomic operation can simplify and streamline application logic significantly.
 
 ```graphql
 mutation EvolveNFT {
