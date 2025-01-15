@@ -1,7 +1,6 @@
 # Minting NFTs
 
-Use the following mutation to mint up to 500 NFTs in one single atomic operation. If the operation succeeds, all NFTs are minted, and their corresponding `tokenIds` are returned.
-If the operation reverts for some reason, none is minted.
+Use the following mutation to mint up to 700 NFTs in one single atomic operation. If successful, all NFTs are minted, and their corresponding `tokenIds` are returned. If the operation fails, no NFTs are minted. Batching multiple mints into one atomic operation can simplify and streamline application logic significantly.
 
 ```graphql
 mutation MintNFT {
