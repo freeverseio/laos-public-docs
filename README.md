@@ -1,8 +1,13 @@
-# Website
+# LAOS Developer Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website contains the code used by the [LAOS Developer Documentation site](https://docs.laosnetwork.io/). 
+
+For further details, please refer to the [LAOS Network](https://laosnetwork.io/) main site.
+
 
 ### Installation
+
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ```
 $ yarn
