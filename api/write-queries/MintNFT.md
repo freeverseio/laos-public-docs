@@ -1,6 +1,6 @@
-# Minting an NFT
+# Minting NFTs
 
-Use this mutation to mint an NFT:
+Use the following mutation to mint up to 700 NFTs in one single atomic operation. If successful, all NFTs are minted, and their corresponding `tokenIds` are returned. If the operation fails, no NFTs are minted. Batching multiple mints into one atomic operation can simplify and streamline application logic significantly.
 
 ```graphql
 mutation MintNFT {
@@ -15,7 +15,15 @@ mutation MintNFT {
           description: "This is my first LAOS Mint!"
           attributes: [{ trait_type: "Level", value: "Introduction" }]
           image: "ipfs://QmPC9LrMuN6YkcJBRhBcWiDcS4ndkx3cwXdVNQ59PY8EBq"
+        },
+        {
+          mintTo: ["0xe688b84b23f322a994A53dbF8E15FA82CDB71127"]
+          name: "Advanced concepts about LAOS"
+          description: "This is my second LAOS Mint!"
+          attributes: [{ trait_type: "Level", value: "Advanced" }]
+          image: "ipfs://QmauhsbWxutafkXgGyDnUu27d7LYGwYiULSyJFFpa1WPKe"
         }
+
       ]
     }
   ) {
@@ -32,14 +40,14 @@ Expected response:
   "data": {
     "mint": {
       "tokenIds": [
-        "46231769497101023895754357762572931969783788518045090509665456129453327552117"
+        "46231769497101023895754357762572931969783788518045090509665456129453327552117",
+        "14847791404436078325473592906636402279408597633171402217703076291487718845731"
       ],
       "success": true
     }
   }
 }
 ```
-
 :::warning
 _**contractAddress**_ must be provided in lowercase format in all mutations. In the next release, both lowercase and checksum addresses will be accepted
 :::
