@@ -1,50 +1,158 @@
 # Minting an NFT
 
-Now that you have your collection and your assets uploaded to IPFS, you can mint your first NFT on LAOS. Minting on LAOS is done through the `EvolutionCollection` interface, using the `mintWithExternalURI` method.
+This guide shows you how to mint NFTs on LAOS. It covers both single minting and batch minting approaches.
 
 ## Prerequisites
 
-- A [collection address](/guides/how-to-without-api/collection-setup.md) in LAOS.
-- An [IPFS link to your NFT metadata](/guides/how-to-without-api/ipfs-upload).
+- Collection contract address from your previously [created collection](/guides/how-to-without-api/collection-setup.md).
+- [IPFS for NFT metadata](/guides/how-to-without-api/ipfs-upload.md).
+- Private key with enough funds for transaction fees
 
 ## Steps
 
-### 1. Obtain the contract interface
+### 1. Prepare Your Environment
 
-   - Your newly created collection at `collectionAddress` exposes:
-     ```solidity
-     function mintWithExternalURI(
-         address _to,
-         uint96 _slot,
-         string calldata _tokenURI
-     ) external returns (uint256);
-     ```
+Set up your environment variables and imports:
 
-### 2. Prepare the mint transaction
+```javascript
+require("dotenv").config();
+const { ethers } = require("ethers");
+const axios = require("axios");
 
-   - `_to`: The recipient’s EVM address.
-   - `_slot`: A number to distinguish the NFTs minted for this recipient (e.g., an incremental index).
-   - `_tokenURI`: Your IPFS link, e.g. `ipfs://Qmdef456uvw...` pointing to the metadata JSON.
+const PROVIDER_URL = "https://rpc.laossigma.laosfoundation.io";
+const { PRIVATE_KEY } = process.env;
 
-### 3. Send the transaction
+// The contract address of your collection in LAOS
+const laosCollectionAddr = "<YOUR_COLLECTION_ADDRESS>";
+// The recipient address
+const recipient = "<RECIPIENT_ADDRESS>";
+// Your IPFS metadata URI
+const tokenURI = "ipfs://QmPuwGA4tHHdog5R4w1TUGjVGf2zd1v6fXJZhiXgJ8a1Tj";
+```
 
-   - Use your Web3 library (e.g., ethers.js) to call `mintWithExternalURI` on the `collectionAddress`.
-   - Example:
-     ```js
-     const tx = await collectionContract.mintWithExternalURI(
-       "0xRecipientAddress",
-       1,
-       "ipfs://Qmdef456uvw..."
-     );
-     const receipt = await tx.wait();
-     ```
-   - Check the logs or `receipt.events` for the `MintedWithExternalURI` event to confirm.
+### 2. Set Up Contract Interface
 
-### 4. Retrieve the `tokenId`
+Initialize the contract connection:
 
-   - The function returns `tokenId`, it is also emitted in the `MintedWithExternalURI` event.
-   - Store this `tokenId` in your application, as you’ll need it to evolve the NFT or reference it later.
+```javascript
+const CONTRACT_ABI_URL =
+  "https://github.com/freeverseio/laos/blob/main/pallets/laos-evolution/src/precompiles/evolution_collection/contracts/EvolutionCollection.json?raw=true";
+const response = await axios.get(CONTRACT_ABI_URL);
+const contractABI = response.data;
 
-## Next Steps
+const provider = new ethers.JsonRpcProvider(PROVIDER_URL);
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
+const contract = new ethers.Contract(laosCollectionAddr, contractABI, wallet);
+```
 
-With your NFT minted, you can now proceed to [Evolving](/guides/how-to-without-api/evolving) it, updating its metadata as needed over time.
+### 3. Single Mint Function
+
+Function to mint a single NFT:
+
+```javascript
+async function mintSingle() {
+  // Generate a random slot number
+  const slot =
+    BigInt(Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)) ** 2n %
+    BigInt(2n ** 96n - 1n);
+
+  console.log(`Minting asset to recipient: ${recipient}`);
+  const tx = await contract.mintWithExternalURI(recipient, slot, tokenURI);
+
+  console.log("Transaction sent. Waiting for confirmation...");
+  const receipt = await tx.wait();
+
+  const event = receipt.logs.find(
+    (log) => log.address.toLowerCase() === laosCollectionAddr.toLowerCase()
+  );
+
+  if (event) {
+    const iface = new ethers.Interface(contractABI);
+    const decodedEvent = iface.decodeEventLog(
+      "MintedWithExternalURI",
+      event.data,
+      event.topics
+    );
+    console.log(`New Token ID: ${decodedEvent._tokenId}`);
+  }
+}
+```
+
+### 4. Batch Minting
+
+For minting multiple NFTs in batches:
+
+```javascript
+const BATCH_SIZE = 700;
+const MAX_NUM_TXS_WAITING = 15;
+
+async function deployBatchMinter(wallet) {
+  const CONTRACT_ABI_URL =
+    "https://github.com/freeverseio/laos-smart-contracts/blob/main/batch-minter/artifacts/contracts/LaosBatchMinter.sol/LaosBatchMinter.json?raw=true";
+  const response = await axios.get(CONTRACT_ABI_URL);
+  const contractData = response.data;
+
+  const contractFactory = new ethers.ContractFactory(
+    contractData.abi,
+    contractData.bytecode,
+    wallet
+  );
+
+  const instance = await contractFactory.deploy(wallet.address);
+  await instance.waitForDeployment();
+  return instance;
+}
+
+async function batchMint(assets) {
+  const batchMinter = await deployBatchMinter(wallet);
+  console.log("BatchMinter deployed at:", await batchMinter.getAddress());
+
+  let currentIndex = 0;
+  let nonce = await provider.getTransactionCount(wallet.address);
+  const gasLimit = 13000000;
+
+  while (currentIndex < assets.length) {
+    const batch = assets.slice(currentIndex, currentIndex + BATCH_SIZE);
+    const recipients = batch.map((asset) => asset.recipient);
+    const uris = batch.map((asset) => asset.tokenURI);
+    const slots = randomSlotArray(batch.length);
+
+    await batchMinter.mintWithExternalURIBatch(recipients, slots, uris, {
+      nonce: nonce++,
+      gasLimit,
+    });
+
+    currentIndex += BATCH_SIZE;
+  }
+}
+```
+
+## Full Code Examples
+
+For complete implementations:
+
+- [Single Mint code](https://github.com/freeverseio/laos-examples/blob/main/mint.js)
+- [Batch Mint code](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js)
+
+To run the examples:
+
+Create a .env file:
+
+```
+PRIVATE_KEY=your_private_key_here
+```
+
+Install dependencies:
+
+```
+npm install ethers axios dotenv
+```
+
+Run the scripts:
+
+```
+node mint.js
+node mint-in-batches.js
+```
+
+Make sure to keep your private key secure and never share it or commit it to version control.
