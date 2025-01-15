@@ -1,20 +1,35 @@
 // sidebarsApi.ts
-import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
+import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebarsApi: SidebarsConfig = {
-    apiSidebar: [
-      {
-        type: 'category',
-        label: 'LAOS API',
-        items: [
-          'introduction',
-          'api-read-queries',
-          'api-write-queries',
-        ],
-      },
-      
-    ],
-  };
-  
-  export default sidebarsApi;
-  
+  apiSidebar: [
+
+    'introduction',
+    {
+      type: 'category',
+      label: 'API Read Queries',
+      items: [
+        'read-queries/AllCollectionAssets',
+        'read-queries/AllUserAssetsInCollection',
+        'read-queries/AssetHistory',
+        'read-queries/ContractPair',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'API Write Queries',
+      items: [
+        'write-queries/GettingStarted',
+        'write-queries/CreateCollection',
+        'write-queries/MintNFT',
+        'write-queries/EvolveNFT',
+        'write-queries/Broadcast',
+
+
+      ],
+    },
+
+  ],
+};
+
+export default sidebarsApi;
