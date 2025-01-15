@@ -1,4 +1,4 @@
-# Minting an NFT
+# Minting NFTs
 
 Use the following mutation to mint up to 500 NFTs in one single atomic operation. If the operation succeeds, all NFTs are minted, and their corresponding `tokenIds` are returned.
 If the operation reverts for some reason, none is minted.
