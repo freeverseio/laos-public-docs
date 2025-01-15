@@ -146,14 +146,14 @@ createCollection();
 
 ```
 To run example: 
-1. Copy and paste code into a file and name it **createCollection.mjs**
+1. Copy and paste code into a file and name it **createCollection.js**
 2. Install "node-fetch"
 ```
 npm i node-fetch
 ```
 3. Run command
 ```
-node createCollection.mjs
+node createCollection.js
 ```
 
 :::warning

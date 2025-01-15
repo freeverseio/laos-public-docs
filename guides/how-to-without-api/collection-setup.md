@@ -8,55 +8,101 @@ By the end of this tutorial, you will have your own collection ready for minting
 
 ## Steps
 
-### 1. Connect to the LAOS RPC
+### 1. Prepare Your Environment
 
-   - A list of public LAOS RPCs can be found [here](/learn/introduction/laos-and-its-testnet)
+First, set up your environment variables and required imports:
 
-###  2. Prepare the transaction
+```javascript
+require('dotenv').config();
+const { ethers } = require('ethers');
+const axios = require('axios');
 
-   - Interact with the `EvolutionCollectionFactory` interface at
-     `0x0000000000000000000000000000000000000403`.
-   - The relevant function is:
-     ```solidity
-     function createCollection(address _owner) external returns (address);
-     ```
-   - Set `_owner` to the address that will own the new collection (this address will be capable of minting and evolving assets).
+const PROVIDER_URL = 'https://rpc.laossigma.laosfoundation.io';
+const { PRIVATE_KEY } = process.env;
+```
 
-### 3. Send the `createCollection` transaction
+### 2. Connect to LAOS Network
+Create a wallet instance connected to the LAOS network:
+```javascript
+const provider = new ethers.JsonRpcProvider(PROVIDER_URL);
+const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
 
-   - Once you call `createCollection(_owner)`, you’ll receive an event `NewCollection(owner, collectionAddress)` indicating the address of your new collection.
-   - Record or store the `collectionAddress` value; you will need it to mint and evolve NFTs.
-   - You can check a [block explorer](https://sigma.explorer.laosnetwork.io/) to confirm that the transaction succeeded.
+const CONTRACT_ABI_URL = 'https://github.com/freeverseio/laos/blob/main/pallets/laos-evolution/src/precompiles/evolution_collection_factory/contracts/EvolutionCollectionFactory.json?raw=true';
+const COLLECTION_FACTORY_ADDR = '0x0000000000000000000000000000000000000403';
+```
+### 3. Create the Collection
+Use the EvolutionCollectionFactory contract to create your collection:
+```javascript
+async function createLAOSCollection(wallet) {
+  const response = await axios.get(CONTRACT_ABI_URL);
+  const contractABI = response.data;
+  const contract = new ethers.Contract(COLLECTION_FACTORY_ADDR, contractABI, wallet);
+  
+  const tx = await contract.createCollection(wallet.address);
+  const receipt = await tx.wait();
+  
+  const event = receipt.logs.find(
+    (log) => log.address.toLowerCase() === COLLECTION_FACTORY_ADDR.toLowerCase()
+  );
+  const iface = new ethers.Interface(contractABI);
+  const decodedEvent = iface.decodeEventLog('NewCollection', event.data, event.topics);
+  return decodedEvent._collectionAddress;
+}
+```
+### 4. Deploy uERC721 Contract
+Deploy the uERC721 contract on your target EVM chain:
+```javascript
+const PROVIDER_URL = 'https://polygon-bor-rpc.publicnode.com'; // Example for Polygon
 
-### 4. Deploy uERC-721 in your desired EVM chain
+async function deploy721(laosSiblingCollection, wallet) {
+  const CONTRACT_ABI_URL = 'https://github.com/freeverseio/laos-erc721/blob/main/artifacts/contracts/ERC721Universal.sol/ERC721Universal.json?raw=true';
+  const response = await axios.get(CONTRACT_ABI_URL);
+  const contractData = response.data;
+  
+  const contractFactory = new ethers.ContractFactory(
+    contractData.abi,
+    contractData.bytecode,
+    wallet
+  );
 
-   - Clone [laos-erc721](https://github.com/freeverseio/laos-erc721) repository.
-   - Go to file **_scripts > deploy.ts_**
-   - Modify constructor params to set your _collectionName_, _tokenSymbol_ and your LAOS _collection address_
+  const baseURI = buildBaseURI(laosSiblingCollection);
+  const instance = await contractFactory.deploy(
+    wallet.address, 
+    "Your Collection Name", 
+    "SYMBOL", 
+    baseURI
+  );
+  
+  await instance.waitForDeployment();
+  return instance.getAddress();
+}
+```
+### Full Code Example
+For the complete implementation:
 
-   ```
-   const collectionName = "<YOUR_COLLECTION_NAME>";
-   const tokenSymbol = "<YOUR_TOKEN_SYMBOL>";
-   const siblingCollectionInLAOS = "<YOUR_LAOS_COLLECTION>";
-   ```
+1. [LAOS Collection Creation](https://github.com/freeverseio/laos-examples/blob/main/create-laos-collection.js)
+2. [uERC721 Deployment](https://github.com/freeverseio/laos-examples/blob/main/deploy721.js)
 
-   - If you deployed the LAOS collection in Sigma LAOS testnet, you might need to adjust the useMainnet boolean. In our case since we will deploy the collection in LAOS mainnet by setting:
+To run the example:
 
-   ```
-   const useLAOSMainnet = true;
-   ```
+Create a .env file with your private key:
+```
+PRIVATE_KEY=your_private_key_here
+```
+Install dependencies:
 
-   - Run the following command to a deploy the uERC-721 collection in your desired chain.
-     For example, to deploy a contract in Polygon mainnet you need to run the command
+```
+npm install ethers axios dotenv
+```
+Run the scripts:
 
-   ```
-   npx hardhat run --network polygonMainnet scripts/deploy.ts
-   ```
+```
+node create-laos-collection.js
+node deploy721.js
+```
 
-:::warning
-_**siblingCollectionInLAOS**_ must match the LAOS address you obtained in **Step 2**
-:::
+Keep your private key secure and never share it or commit it to version control.
 
-## Next Steps
+The creation process deploys smart contracts on both your target chain and LAOS. Store the returned addresses safely as you'll need them for future operations.
 
 Now that you have your collection address in LAOS, proceed to [Upload Assets to IPFS](/guides/how-to-without-api/ipfs-upload) so that you can reference them in your tokens’ metadata.

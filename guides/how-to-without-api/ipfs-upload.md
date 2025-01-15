@@ -4,7 +4,7 @@ This guide walks you through uploading your NFT media and metadata to a decentra
 
 ## Prerequisites
 
-- IPFS pinning service (e.g., Pinata, Infura).
+- IPFS pinning service (e.g., [Pinata](https://pinata.cloud/)).
 - Your NFT media files (images, videos, etc.) and metadata JSONs ready.
 
 ## Steps
@@ -12,12 +12,14 @@ This guide walks you through uploading your NFT media and metadata to a decentra
 ### 1. Select an IPFS service
 
    - If running your own IPFS node, ensure it is up and reachable.
-   - Otherwise, register with a public pinning service like Pinata or Infura.
+   - Otherwise, register with a public pinning service like Pinata.
+   - You can use the following example script to [upload NFT media and metadata to Pinata using API](https://github.com/freeverseio/laos-examples/blob/main/ipfs-uploader.js). Alternatively, you can follow the next steps to manually upload the media and metadata to IPFS.
 
 ### 2. Upload your media files
 
-   - Use your service’s UI or API to pin/upload each file (e.g., `my-cool-art.png`).
+   - Use your service’s UI or API to pin/upload each file.
    - Save the resulting IPFS hash (CID), such as `Qmabc123xyz...`.
+  
 
 ### 3. Create your metadata JSON
 
@@ -43,7 +45,10 @@ This guide walks you through uploading your NFT media and metadata to a decentra
 ### 5. Obtain IPFS links
    - Your final IPFS link for the metadata might be `ipfs://Qmdef456uvw...`
    - This link can now be referenced in `tokenURI` when minting NFTs on the LAOS network.
-
+   - You can confirm that your data is correctly uploaded to IPFS by visiting:
+   ```https://ipfs.io/ipfs/<YOUR_IPFS_LINK>```
+   
+   Example: https://ipfs.io/ipfs/QmR8HgbKrHys8QFtH99soGx9KreixpCXJqkFejJdhpyNGo
 ## Next Steps
 
 With your files and metadata on IPFS, you can move on to [Minting](/guides/how-to-without-api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.
