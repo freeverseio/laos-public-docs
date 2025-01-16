@@ -1,11 +1,16 @@
-# Uploading asset metadata to IPFS
+# Uploading asset media files to IPFS
 
 This guide walks you through uploading your NFT media to a decentralized storage platform (IPFS).
 
+:::info
+When using the API you only need to upload the NFT media (image, videos, etc.) to IPFS. The API will automatically upload the final json metadata to IPFS.
+:::
+
 ## Prerequisites
 
-- IPFS pinning service (e.g., Pinata, Infura).
-- Your NFT media files (images, videos, etc.)
+- IPFS pinning service (e.g., [Pinata](https://pinata.cloud/)).
+- Your NFT media files (images, videos, etc.).
+
 
 ## Steps
 
@@ -13,6 +18,7 @@ This guide walks you through uploading your NFT media to a decentralized storage
 
    - If running your own IPFS node, ensure it is up and reachable.
    - Otherwise, register with a public pinning service like Pinata or Infura.
+   - You can use the following example script to [upload NFT media and metadata to Pinata using API](https://github.com/freeverseio/laos-examples/blob/main/ipfs-uploader.js). Alternatively, you can follow the next steps to manually upload the media to IPFS.
 
 ### 2. Upload your media files
 
@@ -20,9 +26,12 @@ This guide walks you through uploading your NFT media to a decentralized storage
    - Save the resulting IPFS hash (CID), such as `Qmabc123xyz...`.
 
 ### 3. Obtain IPFS links
-   - Your final IPFS link for the metadata might be `ipfs://Qmdef456uvw...`
-   - This link can now be referenced in `tokenURI` when minting NFTs on the LAOS network.
+   - Your final IPFS link for the media will be `ipfs://Qmdef456uvw...`
+   - You can confirm that your data is correctly uploaded to IPFS by visiting:
+   ```https://ipfs.io/ipfs/<YOUR_IPFS_LINK>```
+   
+   Example: https://ipfs.io/ipfs/QmR8HgbKrHys8QFtH99soGx9KreixpCXJqkFejJdhpyNGo
 
 ## Next Steps
 
-With your files and metadata on IPFS, you can move on to [Minting](/guides/how-to-with-api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.
+With your files on IPFS, you can move on to [Minting](/guides/how-to-with-api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.

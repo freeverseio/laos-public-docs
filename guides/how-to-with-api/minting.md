@@ -106,11 +106,90 @@ The API will return the minted token IDs:
   }
 }
 ```
+## Full code example
+Below is a complete example demonstrating how to mint NFTs using the LAOS API in a Node.js environment.
 
+```javascript
+import fetch from "node-fetch";
+
+const LAOS_API_ENDPOINT = "https://testnet.api.laosnetwork.io/graphql"; // or mainnet
+const API_KEY = "<YOUR_API_KEY>"; // Replace with your actual API key
+
+const headers = {
+  "Content-Type": "application/json",
+  "x-api-key": `${API_KEY}`,
+};
+
+// Prepare the Mint Mutation
+const mintMutation = `
+  mutation MintNFT {
+    mint(
+      input: {
+        chainId: "137"
+        contractAddress: "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3"  // Must be lowercase
+        tokens: [
+          {
+            mintTo: ["0x4E6Da57f62b9954fBb6bAb531F556BE08E128e75"],
+            name: "First NFT",
+            description: "First NFT Description",
+            attributes: [{ trait_type: "Category", value: "Example" }],
+            image: "ipfs://HASH_1"
+          },
+          {
+            mintTo: ["0x4E6Da57f62b9954fBb6bAb531F556BE08E128e75"],
+            name: "Second NFT",
+            description: "Second NFT Description",
+            attributes: [{ trait_type: "Category", value: "Example" }],
+            image: "ipfs://HASH_2"
+          }
+        ]
+      }
+    ) {
+      tokenIds
+      success
+    }
+  }
+`;
+
+async function mintNFT() {
+  try {
+    const response = await fetch(LAOS_API_ENDPOINT, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify({
+        query: mintMutation,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.errors) {
+      console.error("Error minting NFT:", data.errors);
+      return;
+    }
+
+    console.log("NFT minted successfully:", data.data.mint);
+  } catch (error) {
+    console.error("Error making API request:", error);
+  }
+}
+
+// Execute the mint function
+mintNFT();
+```
+
+### To run the Example:
+1. Copy the code into a file named mintNFT.js 
+
+2. Install node-fetch:
+
+```
+npm i node-fetch
+```
+3. Run the Script:
+```
+node mintNFT.js
+```
 :::warning
  Contract addresses must be provided in lowercase format in all mutations
-:::
-
-:::info
-After minting, you may need to broadcast your NFTs to ensure visibility on traditional marketplaces. See the Broadcasting guide for details.
 :::

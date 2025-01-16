@@ -88,7 +88,7 @@ Make sure to store these addresses:
 - `laosAddress`: The underlying sibling collection in LAOS.
 
 
-### Full code example
+## Full code example
 ```js
 import fetch from "node-fetch";
 

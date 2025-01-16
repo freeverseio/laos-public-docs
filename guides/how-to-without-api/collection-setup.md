@@ -96,14 +96,14 @@ async function deploy721(laosSiblingCollection, wallet) {
 }
 ```
 
-### Full Code Example
+## Full Code Example
 
 For the complete implementation:
 
 1. [LAOS Collection Creation](https://github.com/freeverseio/laos-examples/blob/main/create-laos-collection.js)
 2. [uERC721 Deployment](https://github.com/freeverseio/laos-examples/blob/main/deploy721.js)
 
-### To run the example:
+### To run the Example:
 
 1. Create a .env file with your private key:
 

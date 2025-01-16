@@ -89,13 +89,13 @@ For complete implementation:
 PRIVATE_KEY=your_private_key_here
 ```
 
-Install dependencies:
+2. Install dependencies:
 
 ```
 npm install ethers axios dotenv
 ```
 
-Run the script:
+3. Run the script:
 
 ```
 node evolve.js
