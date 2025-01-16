@@ -45,4 +45,4 @@ Keep your private key secure and never share it or commit it to version control.
 
 ## Next Steps
 
-Now that you know how to mint NFTs, you can proceed to [Evolve NFTs](/guides/how-to-without-api/evolve-nfts) to update their metadata and properties.
+Now that you know how to mint NFTs, you can proceed to [Evolve NFTs](/guides/how-to-without-api/evolving) to update their metadata and properties.
