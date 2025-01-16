@@ -1,54 +1,92 @@
-# Uploading asset metadata to IPFS
+# Uploading Asset Metadata to IPFS
 
-This guide walks you through uploading your NFT media and metadata to a decentralized storage platform (IPFS).
+Learn how to upload your NFT media and metadata to a decentralized storage platform (IPFS) for secure and reliable storage.
+
+This guide uses JavaScript examples, but the process works with any programming language.
+
+By the end, you'll have your NFT media and metadata securely hosted on IPFS, ready to integrate into your NFT collection.
+
 
 ## Prerequisites
 
 - IPFS pinning service (e.g., [Pinata](https://pinata.cloud/)).
 - Your NFT media files (images, videos, etc.) and metadata JSONs ready.
 
-## Steps
+## Full Code Example
 
-### 1. Select an IPFS service
+For the complete implementation using [Pinata](https://pinata.cloud/), refer to this script:
+- [IPFS Uploader](https://github.com/freeverseio/laos-examples/blob/main/ipfs-uploader.js)
 
-   - If running your own IPFS node, ensure it is up and reachable.
-   - Otherwise, register with a public pinning service like Pinata.
-   - You can use the following example script to [upload NFT media and metadata to Pinata using API](https://github.com/freeverseio/laos-examples/blob/main/ipfs-uploader.js). Alternatively, you can follow the next steps to manually upload the media and metadata to IPFS.
+### To run the example:
 
-### 2. Upload your media files
+1. Create a `.env` file with your Pinata API key and secret:
+```
+PINATA_API_KEY=your_api_key_here
+PINATA_API_SECRET=your_api_secret_here
+```
 
-   - Use your service’s UI or API to pin/upload each file.
-   - Save the resulting IPFS hash (CID), such as `Qmabc123xyz...`.
-  
+2. Install dependencies (if not done before):
+```
+npm install axios dotenv
+```
 
-### 3. Create your metadata JSON
+3. Define the image and metadata for your NFT.
 
-   - Standard NFT metadata follows a structure like:
+4. Run the script to upload files:
+```
+node ipfs-uploader.js
+```
+
+5. Verify your uploads:
+
+- Check the IPFS hashes (CIDs) returned by the script.  
+- Confirm the data is accessible using a public IPFS gateway, e.g., `https://ipfs.io/ipfs/<YOUR_CID>`.
+
+Keep your API keys secure and never share or commit them to version control.
+
+## Step-by-Step Explanation
+
+### 1. Choose an IPFS Service
+
+   - Use your own IPFS node (ensure it is running and accessible).  
+   - Alternatively, register with a public pinning service like [Pinata](https://pinata.cloud/).  
+
+### 2. Upload Media Files
+
+   - Upload each media file (e.g., images, videos) via the service’s UI or API.  
+   - Save the resulting IPFS hash (CID), such as `Qmabc123xyz...`.  
+
+### 3. Create Metadata JSON
+
+   - Use the standard NFT metadata structure:
      ```json
      {
        "name": "My Cool NFT",
        "description": "A description of my cool NFT",
-       "image": "ipfs://<CID-for-my-cool-art.png>",
+       "image": "ipfs://<CID-for-my-cool-image.png>",
        "attributes": [
          { "trait_type": "Background", "value": "Blue" },
          { "trait_type": "Rarity", "value": "Rare" }
        ]
      }
      ```
-   - Make sure to replace `<CID-for-my-cool-art.png>` with the actual CID from the previous step.
+   - Replace `<CID-for-my-cool-image.png>` with the CID of your uploaded media file.
 
-### 4. Upload your metadata JSON
+### 4. Upload Metadata JSON
 
-   - Pin/upload the JSON file (e.g., `metadata.json`) to IPFS.
-   - Note the CID, for example `Qmdef456uvw...`.
+   - Pin/upload your metadata file (e.g., `metadata.json`) to IPFS.  
+   - Note the resulting CID, such as `Qmdef456uvw...`.  
 
-### 5. Obtain IPFS links
-   - Your final IPFS link for the metadata might be `ipfs://Qmdef456uvw...`
-   - This link can now be referenced in `tokenURI` when minting NFTs on the LAOS network.
-   - You can confirm that your data is correctly uploaded to IPFS by visiting:
-   ```https://ipfs.io/ipfs/<YOUR_IPFS_LINK>```
-   
-   Example: https://ipfs.io/ipfs/QmR8HgbKrHys8QFtH99soGx9KreixpCXJqkFejJdhpyNGo
+### 5. Get IPFS Links
+
+   - Your metadata IPFS link will be `ipfs://<CID>` (e.g., `ipfs://Qmdef456uvw...`).  
+   - Use this link as the `tokenURI` when minting NFTs on the LAOS network.  
+   - Verify the upload using a public gateway, e.g.:  
+     `https://ipfs.io/ipfs/<CID>`  
+
+     Example: [https://ipfs.io/ipfs/QmR8HgbKrHys8QFtH99soGx9KreixpCXJqkFejJdhpyNGo](https://ipfs.io/ipfs/QmR8HgbKrHys8QFtH99soGx9KreixpCXJqkFejJdhpyNGo)
+
 ## Next Steps
 
-With your files and metadata on IPFS, you can move on to [Minting](/guides/how-to-without-api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.
+With your files and metadata hosted on IPFS, proceed to [Minting](/guides/how-to-without-api/minting) to link your NFTs’ `tokenURI` to these IPFS links.
+
