@@ -49,5 +49,5 @@ Expected response:
 }
 ```
 :::warning
-_**contractAddress**_ must be provided in lowercase format in all mutations. In the next release, both lowercase and checksum addresses will be accepted
+_**contractAddress**_ must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
 :::

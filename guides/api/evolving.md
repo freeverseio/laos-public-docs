@@ -5,7 +5,7 @@ This guide explains how to evolve (modify) existing NFTs using LAOS API.
 ## Prerequisites
 
 - You have an API key. Information on how to obatain an API key [here](/api/introduction).
-- Collection contract address from your previously [created collection using API](/guides/how-to-with-api/collection-setup.md)
+- Collection contract address from your previously [created collection using API](/guides/api/collection-setup.md)
 - IPFS for NFT media
 - Token ID of the NFT to evolve
 
@@ -100,7 +100,7 @@ The API will return a success status and transaction hash:
 - All metadata fields (name, description, attributes, image) must be provided, even if only some are changing
 
 :::warning
- Contract addresses must be provided in lowercase format in all mutations
+Contract addresses must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
 :::
 
 :::info
