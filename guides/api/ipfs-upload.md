@@ -25,4 +25,4 @@ This guide walks you through uploading your NFT media to a decentralized storage
 
 ## Next Steps
 
-With your files and metadata on IPFS, you can move on to [Minting](/guides/how-to-with-api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.
+With your files and metadata on IPFS, you can move on to [Minting](/guides/api/minting), pointing your NFTs’ `tokenURI` to these IPFS links.

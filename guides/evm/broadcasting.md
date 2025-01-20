@@ -6,7 +6,7 @@ don't yet support bridgeless minting natively.
 
 ## Prerequisites
 
-- [Minted NFTs](/guides/how-to-without-api/minting) on your collection, along with their corresponding `tokenIDs`.
+- [Minted NFTs](/guides/evm/minting) on your collection, along with their corresponding `tokenIDs`.
 
 ## Full Code Example
 

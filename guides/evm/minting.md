@@ -4,8 +4,8 @@ Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.), eit
 
 ## Prerequisites
 
-- A LAOS Sibling collection address. Check the [setup phase](/how-to-without-api/collection-setup.md) to obtain one.
-- The IPFS CID corresponding to the NFT metadata. Check [IPFS upload](/how-to-without-api/collection-setup.md) to obtain one.
+- A LAOS Sibling collection address. Check the [setup phase](/evm/collection-setup.md) to obtain one.
+- The IPFS CID corresponding to the NFT metadata. Check [IPFS upload](/evm/collection-setup.md) to obtain one.
 
 ## Full Code Example
 
@@ -31,7 +31,7 @@ $ node mint-in-batches.js
 ```
 
 4. Have a look at the `tokenID` generated for each of the minted NFTs. As in any ERC721, the generated NFTs are fully identified by the contract address in the chosen EVM
-chain (where the ERC721 was deployed in the [setup phase](/how-to-without-api/collection-setup.md)), and their `tokenID`.
+chain (where the ERC721 was deployed in the [setup phase](/evm/collection-setup.md)), and their `tokenID`.
 
 
 ## Try a transfer with Metamask

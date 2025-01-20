@@ -5,7 +5,7 @@ This guide explains how to mint NFTs using LAOS API.
 ## Prerequisites
 
 - You have an API key. Information on how to obatain an API key [here](/api/introduction).
-- Collection contract address from your previously [created collection using API](/guides/how-to-with-api/collection-setup.md)
+- Collection contract address from your previously [created collection using API](/guides/api/collection-setup.md)
 - IPFS for NFT media
 
 ## Steps

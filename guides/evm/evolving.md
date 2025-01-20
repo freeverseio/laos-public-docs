@@ -4,8 +4,8 @@ Learn how to evolve NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) by
 
 ## Prerequisites
 
-- A previously [minted NFT on your LAOS collection](/guides/how-to-without-api/minting.md).
-- The [IPFS link of the updated metadata](/guides/how-to-without-api/ipfs-upload.md).
+- A previously [minted NFT on your LAOS collection](/guides/evm/minting.md).
+- The [IPFS link of the updated metadata](/guides/evm/ipfs-upload.md).
 
 ## Full Code Example
 
