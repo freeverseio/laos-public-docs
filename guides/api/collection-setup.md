@@ -1,21 +1,26 @@
 
 
-# Creating a Collection
+# Setting Up an NFT Collection
 
-This guide walks you through creating a new NFT collection using LAOS API.
+This guide walks you through creating a new NFT collection using [the API](../../api/introduction) maintained by the LAOS Foundation.
+Using an API can simplify integration and support development similar to traditional Web2 systems.
 
-It explains how to create a collection in Polygon but it can be extended to any other supported EVM chain (Ethereum, etc.).
+The full API documentation can easily be inspected using the GraphQL Playground endpoints described in [the API section](../../api/introduction).
+
+Throughout this guide, Polygon is used as the chosen EVM to scale via Bridgeless minting. 
+Any other EVM chain supported by the API can be used instead. If you would like to mint on an EVM chain not currently supported
+by the API, you can use the direct, fully decentralized, permissionless path as described [here](../evm/collection-setup.md).
 
 
 ## Prerequisites
-- You have an API key. Information on how to obatain an API key [here](/api/introduction).
-- Address associated with the API key has enough LAOS and Polygon token balance.
+- Make sure you have an [API key](/api/introduction).
+- Make sure that the EVM address associated with the API key has enough LAOS and Polygon token balance.
 
 ## Steps
 
 ### 1. Prepare Your Environment
 
-First, set up your env variables with the appropriate endpoint and your API key:
+First, set up your environment variables with the appropriate endpoint and API key:
 
 ```javascript
 const LAOS_API_ENDPOINT = 'https://api.laosnetwork.io/graphql';
@@ -84,8 +89,8 @@ The API will return important addresses that you'll need for future operations:
 ```
 
 Make sure to store these addresses:
-- `contractAddress`: Your uERC721 contract address on the target chain. This is the only address that external users will interact with.
-- `laosAddress`: The underlying sibling collection in LAOS.
+- `contractAddress`: The uERC721 contract address on the target EVM chain. This is the only address that external users will need to interact with.
+- `laosAddress`: The underlying sibling collection in LAOS. This is the address where mint and evolve transactions must be sent to.
 
 
 ### Full code example
@@ -148,18 +153,19 @@ createCollection();
 To run example: 
 1. Copy and paste code into a file and name it **createCollection.js**
 2. Install "node-fetch"
+```bash
+$ npm i node-fetch
 ```
-npm i node-fetch
-```
-3. Run command
-```
-node createCollection.js
+3. Run the command:
+```bash
+$ node createCollection.js
 ```
 
 :::warning
- Contract addresses must be provided in lowercase format in all mutations
+Contract addresses must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
 :::
 
 :::info
-The creation process deploys smart contracts on both your target chain and LAOS. This is a one-time operation per collection.
+The creation process deploys smart contracts on both your target chain and LAOS. This is a one-time operation per collection, and the only time where
+Bridgeless Minting incurs gas fees on the chosen EVM chain.
 :::

@@ -108,7 +108,7 @@ The API will return the minted token IDs:
 ```
 
 :::warning
- Contract addresses must be provided in lowercase format in all mutations
+Contract addresses must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
 :::
 
 :::info
