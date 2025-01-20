@@ -10,7 +10,7 @@ Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.), eit
 ## Full Code Example
 
 The code corresponding to minting examples can be found at:
-- For a one at at time: [here](https://github.com/freeverseio/laos-examples/blob/main/mint.js).
+- For one at at time: [here](https://github.com/freeverseio/laos-examples/blob/main/mint.js).
 - For minting in batches: [here](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js).
 
 ## Running the example
@@ -18,6 +18,7 @@ The code corresponding to minting examples can be found at:
 1. Setup the private key and install dependencies as in the previous steps.
 
 2. Configure the LAOS sibling collection, recipient, and the tokenURI, in the corresponding lines of the chosen example.
+The recipient address can be any EVM address, not necessarily the one corresponding to the wallet doing the mint.
 
 3. Run the scripts:
 
@@ -29,11 +30,20 @@ or for batch minting
 $ node mint-in-batches.js
 ```
 
-4. TODO Check the `tokenID` generated for each of the minted NFTs. These ID can be used.... for example... to send it
+4. Have a look at the `tokenID` generated for each of the minted NFTs. As in any ERC721, the generated NFTs are fully identified by the contract address in the chosen EVM
+chain (where the ERC721 was deployed in the [setup phase](/how-to-without-api/collection-setup.md)), and their `tokenID`.
 
-5. TODO you can send them (must have contract address, tokenId) --- explain import to MMask and send. TODO explain that to show on opensea you stil need broadcasting (link here)
+
+## Try a transfer with Metamask
+
+If you're testing, one thing you can already do right after minting is to transfer the ownership of a newly minted NFT
+Simply set the recipient of the NFT to a wallet you control in Metamask. Then, import it into Metamask and click 'Send.'
+
+In more detail, if your chosen EVM chain is Polygon, ensure that Metamask is connected to a Polygon node. Then, click 'Import' and enter the generated `tokenID`.
+Note the beauty of Bridgeless Minting in action: even if the mints are scaled using LAOS and gas fees are paid in LAOS, all ownership-related
+operations, such as transferring the NFT, are fully done on-chain on Polygon.
 
 
 ## Next Steps
 
-Minted NFTs can be evolved by the owner of the LAOS sibling collection and traded... TODO: reference both options here (evolve and broadcast)
+Minted NFTs can be evolved by the LAOS sibling collection owner, transferred via Metamask, or traded on marketplaces like OpenSea or Rarible.
