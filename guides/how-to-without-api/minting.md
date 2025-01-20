@@ -15,7 +15,7 @@ The code corresponding to minting examples can be found at:
 
 ## Running the example
 
-1. Setup the private key and install dependencies as in the previous steps.
+1. Set up the private key and install dependencies as in the previous steps.
 
 2. Configure the LAOS sibling collection, recipient, and the tokenURI, in the corresponding lines of the chosen example.
 The recipient address can be any EVM address, not necessarily the one corresponding to the wallet doing the mint.
