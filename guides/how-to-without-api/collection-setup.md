@@ -46,7 +46,7 @@ $ node setup-bridgeless-minting.js
 The creation process deploys smart contracts on both your target chain and LAOS: an ERC721 compatible contract on the former, pointing to the
 LAOS sibling collection on the latter.
 
-Store the returned addresses, as you'll need them for future operations. You can always check blockchain explorers on both chains (e.g. the [LAOS Explorer](https://blockscout.laos.laosfoundation.io/))
+Store the returned addresses, as you'll need them for future operations. You can always check blockchain explorers on both chains (e.g. the [LAOS Explorer](https://explorer.laosnetwork.io/))
 to find the creation transactions sent from your wallet's address.
 
 

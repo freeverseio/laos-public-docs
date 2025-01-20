@@ -11,7 +11,7 @@ For real-time availability of RPC endpoints, please check the ChainList entries 
 * EVM Public RPC endpoint: [https://rpc.laos.laosfoundation.io](https://rpc.laos.laosfoundation.io)
 * EVM Chain ID: 6283
 * EVM Currency Symbol: LAOS
-* EVM explorer: [https://blockscout.laos.laosfoundation.io/](https://blockscout.laos.laosfoundation.io/)
+* EVM explorer: [https://explorer.laosnetwork.io/](https://explorer.laosnetwork.io/)
 * Substrate explorer: [https://laos.statescan.io/](https://laos.statescan.io/)
 * Substrate RPC endpoint: [wss://rpc.laos.laosfoundation.io](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.laos.laosfoundation.io#/explorer)
 * ParaId: 3370
