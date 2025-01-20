@@ -14,7 +14,7 @@ For the complete implementation, refer to this script:
 
 - [Broadcast Implementation](https://github.com/freeverseio/laos-examples/blob/main/broadcast.js)
 
-### To run the example:
+## Running the example
 
 1. Create a .env file with your private key:
 ```
@@ -22,8 +22,8 @@ PRIVATE_KEY=your_private_key_here
 ```
 
 2. Install dependencies:
-```
-npm install ethers axios dotenv
+```bash
+$ npm ci
 ```
 3. Configure the target chain RPC URL, the ERC721 contract address, and the tokenId to broadcast
 
