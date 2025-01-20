@@ -15,17 +15,6 @@ const sidebarsGuides: SidebarsConfig = {
         "evm/broadcasting",
       ],
     },
-    {
-      type: "category",
-      label: "How To - API",
-      items: [
-        "api/collection-setup",
-        "api/ipfs-upload",
-        "api/minting",
-        "api/evolving",
-        "api/broadcasting",
-      ],
-    },
   ],
 };
 
