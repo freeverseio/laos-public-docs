@@ -1,4 +1,4 @@
-# Mint NFT Collection
+# Minting NFTs
 
 Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.), either one at a time, or in batches of many.
 

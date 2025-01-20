@@ -1,4 +1,4 @@
-# Uploading Asset Metadata to IPFS
+# Uploading Metadata to IPFS
 
 Learn how to upload your NFT media and metadata to a decentralized storage platform (IPFS) for secure and reliable storage.
 

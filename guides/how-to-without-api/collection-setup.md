@@ -1,4 +1,4 @@
-# Create NFT Collection
+# Setting Up an NFT Collection
 
 Learn how to create an NFT collection on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) that scales through [Bridgeless Minting](/learn/bridgeless-minting/introduction).
 

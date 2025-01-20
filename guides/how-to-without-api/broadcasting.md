@@ -1,4 +1,4 @@
-# Broadcast NFT Collection
+# Broadcasting NFTs
 
 Learn how to broadcast NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) to make them visible on marketplaces.
 Broadcasting requires a one-time minimal on-chain transaction and is only necessary for marketplaces that 
@@ -27,10 +27,16 @@ $ node broadcast.js
 NFTs that have been transferred at least once are automatically indexed by apps; broadcasting is not necessary in this case.
 :::
 
+## Broadcasting in Batches
+
+Hundreds of NFTs can be minted in a single transaction by utilizing the batch versions of the broadcast
+methods provided by the [uERC721 interface](https://github.com/freeverseio/laos-erc721/blob/main/contracts/IERC721Broadcast.sol#L57).
+Simply supply an array of tokenIDs as input to the batch methods.
+
 ## Next Steps
 
-After broadcasting, view your NFT on marketplaces. For example, if the chosen EVM chain is Polygon, the following link would
-display the asset on Opensea:
+After broadcasting, NFTs will appear in all marketplaces that operate on the selected EVM chain.
+For example, if the chosen EVM chain is Polygon, the following link would display the asset on Opensea:
 ```
 https://opensea.io/assets/matic/<ERC721_ADDRESS>/<TOKEN_ID>
 ```

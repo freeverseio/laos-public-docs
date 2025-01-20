@@ -1,4 +1,4 @@
-# Evolve NFT Collection
+# Evolving NFTs
 
 Learn how to evolve NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) by updating their metadata in the LAOS sibling collection.
 
