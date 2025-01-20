@@ -14,7 +14,7 @@ For the complete implementation, refer to this script:
 
 - [Evolution Implementation](https://github.com/freeverseio/laos-examples/blob/main/evolve.js)
 
-### To run the example:
+## Running the example
 
 1. Create a .env file with your private key:
 ```
@@ -22,8 +22,8 @@ PRIVATE_KEY=your_private_key_here
 ```
 
 2. Install dependencies:
-```
-npm install ethers axios dotenv
+```bash
+$ npm ci
 ```
 
 3. Configure the LAOS sibling collection, tokenId, and the new tokenURI
