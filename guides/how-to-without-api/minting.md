@@ -29,8 +29,11 @@ or for batch minting
 $ node mint-in-batches.js
 ```
 
-4. Check the `tokenID` generated for each of the minted NFTs. These ID can be used....
+4. TODO Check the `tokenID` generated for each of the minted NFTs. These ID can be used.... for example... to send it
+
+5. TODO you can send them (must have contract address, tokenId) --- explain import to MMask and send. TODO explain that to show on opensea you stil need broadcasting (link here)
+
 
 ## Next Steps
 
-Now that you know how to mint NFTs, you can proceed to [Evolve NFTs](/guides/how-to-without-api/evolving) to update their metadata and properties.
+Minted NFTs can be evolved by the owner of the LAOS sibling collection and traded... TODO: reference both options here (evolve and broadcast)
