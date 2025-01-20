@@ -1,47 +1,35 @@
 # Mint NFT Collection
 
-Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) with both single and batch minting approaches.
+Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.), either one at a time, or in batches of many.
 
 ## Prerequisites
 
-- Collection contract addresses from your [created collection](/guides/how-to-without-api/collection-setup.md)
-- IPFS metadata URI for your NFTs
-- Private key with sufficient funds for transaction fees and ownership of the collection
+- A LAOS Sibling collection address. Check the [setup phase](/how-to-without-api/collection-setup.md) to obtain one.
+- The IPFS CID corresponding to the NFT metadata. Check [IPFS upload](/how-to-without-api/collection-setup.md) to obtain one.
 
 ## Full Code Example
 
-For the complete implementation, refer to these scripts:
-
-- [Single Mint Implementation](https://github.com/freeverseio/laos-examples/blob/main/mint.js)
-- [Batch Mint Implementation](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js)
+The code corresponding to minting examples can be found at:
+- For a one at at time: [here](https://github.com/freeverseio/laos-examples/blob/main/mint.js).
+- For minting in batches: [here](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js).
 
 ## Running the example
 
-1. Create a .env file with your private key:
+1. Setup the private key and install dependencies as in the previous steps.
 
-```
-PRIVATE_KEY=your_private_key_here
-```
+2. Configure the LAOS sibling collection, recipient, and the tokenURI, in the corresponding lines of the chosen example.
 
-2. Install dependencies:
+3. Run the scripts:
 
 ```bash
-$ npm ci
-```
-
-3. Configure the LAOS sibling collection, recipient, and the tokenURI
-
-4. Run the scripts:
-
-```
-node mint.js
+$ node mint.js
 ```
 or for batch minting
-```
-node mint-in-batches.js
+```bash
+$ node mint-in-batches.js
 ```
 
-Keep your private key secure and never share it or commit it to version control.
+4. Check the `tokenID` generated for each of the minted NFTs. These ID can be used....
 
 ## Next Steps
 
