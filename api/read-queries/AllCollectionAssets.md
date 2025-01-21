@@ -24,5 +24,5 @@ query AllCollectionAssets {
 ```
 
 :::warning
-contractAddress must be provided in lowercase format in all queries. In the next release, both lowercase and checksum addresses will be accepted, and it will work irrespective of case.
+_**contractAddress**_ must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
 :::

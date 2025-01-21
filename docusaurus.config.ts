@@ -37,6 +37,7 @@ const config: Config = {
   // Additional docs plugin instances for each section
   plugins: [
     [
+
       '@docusaurus/plugin-content-pages',
       {
         id: 'landing',
@@ -59,6 +60,15 @@ const config: Config = {
         path: 'api',
         routeBasePath: 'api',
         sidebarPath: require.resolve('./sidebarsApi.ts'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guides',
+        path: 'guides',
+        routeBasePath: 'guides',
+        sidebarPath: require.resolve('./sidebarsGuides.ts'),
       },
     ],
     [
@@ -98,6 +108,13 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          docsPluginId: 'guides',
+          sidebarId: 'guidesSidebar',
+          position: 'left',
+          label: 'Guides',
+        },
+        {
+          type: 'docSidebar',
           docsPluginId: 'indexers',
           sidebarId: 'indexersSidebar',
           position: 'left',
@@ -131,10 +148,11 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-          { label: 'Learn', to: '/learn/introduction/goals' },
-          { label: 'Indexers', to: '/indexers/introduction' },
-          { label: 'API', to: '/api/introduction' },
-          { label: 'EVM', to: '/evm/introduction' }],
+            { label: 'Learn', to: '/learn/introduction/goals' },
+            { label: 'Indexers', to: '/indexers/introduction' },
+            { label: 'API', to: '/api/introduction' },
+            { label: 'Guides', to: '/guides/introduction' },
+            { label: 'EVM', to: '/evm/introduction' }],
         },
         {
           title: 'Community',
@@ -161,7 +179,6 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['solidity'],
-
     },
 
     colorMode: {
