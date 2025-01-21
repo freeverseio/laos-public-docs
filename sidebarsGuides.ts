@@ -6,7 +6,7 @@ const sidebarsGuides: SidebarsConfig = {
     "introduction",
     {
       type: "category",
-      label: "Bridgless Minting via EVM",
+      label: "Bridgeless Minting via EVM",
       items: [
         "evm/collection-setup",
         "evm/ipfs-upload",
