@@ -6,11 +6,11 @@ This guide features JavaScript examples but can be adapted to any programming la
 
 ## Full Code Example
 
-The code corresponding to this example can be found and executed [here](https://github.com/freeverseio/laos-examples/blob/main/setup-bridgeless-minting.js).
+The code corresponding to this example can be found and executed [here](https://github.com/freeverseio/laos-examples/blob/main/evm/setup-bridgeless-minting.js).
 The flow consists of:
 
-1. Creating a LAOS Sibling collection (for which the code is [here](https://github.com/freeverseio/laos-examples/blob/main/create-laos-collection.js)), which generates a new LAOS contract address;
-2. Deploying an ERC721 on the chosen EVM (for which the code is [here](https://github.com/freeverseio/laos-examples/blob/main/deploy721.js)), pointing to the created LAOS contract.
+1. Creating a LAOS Sibling collection (for which the code is [here](https://github.com/freeverseio/laos-examples/blob/main/evm/create-laos-collection.js)), which generates a new LAOS contract address;
+2. Deploying an ERC721 on the chosen EVM (for which the code is [here](https://github.com/freeverseio/laos-examples/blob/main/evm/deploy721.js)), pointing to the created LAOS contract.
 
 
 ## Running the example
@@ -34,8 +34,8 @@ $ npm ci
 
 3.  Configure the LAOS and target chain RPC URLs:
 
-* The LAOS RPC endpoint is defined [here](https://github.com/freeverseio/laos-examples/blob/main/setup-bridgeless-minting.js#L21).
-* The EVM RPC endpoint is defined [here](https://github.com/freeverseio/laos-examples/blob/main/setup-bridgeless-minting.js#L18).
+* The LAOS RPC endpoint is defined [here](https://github.com/freeverseio/laos-examples/blob/main/evm/setup-bridgeless-minting.js#L21).
+* The EVM RPC endpoint is defined [here](https://github.com/freeverseio/laos-examples/blob/main/evm/setup-bridgeless-minting.js#L18).
 
 4. Run the scripts:
 

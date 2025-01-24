@@ -10,7 +10,7 @@ don't yet support bridgeless minting natively.
 
 ## Full Code Example
 
-The code corresponding to this example can be found [here](https://github.com/freeverseio/laos-examples/blob/main/broadcast.js).
+The code corresponding to this example can be found [here](https://github.com/freeverseio/laos-examples/blob/main/evm/broadcast.js).
 
 ## Running the example
 

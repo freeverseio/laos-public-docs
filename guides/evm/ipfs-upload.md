@@ -14,7 +14,7 @@ By the end, you'll have your NFT media and metadata securely hosted on IPFS, rea
 ## Full Code Example
 
 The code corresponding to this example, which uses [Pinata](https://pinata.cloud/) as IPFS service,
-can be found and executed [here](https://github.com/freeverseio/laos-examples/blob/main/ipfs-uploader.js). 
+can be found and executed [here](https://github.com/freeverseio/laos-examples/blob/main/ipfs/ipfs-uploader.js). 
 
 
 ## Running the example
