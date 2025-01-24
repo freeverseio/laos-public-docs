@@ -10,8 +10,8 @@ Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.), eit
 ## Full Code Example
 
 The code corresponding to minting examples can be found at:
-- For one at at time: [here](https://github.com/freeverseio/laos-examples/blob/main/mint.js).
-- For minting in batches: [here](https://github.com/freeverseio/laos-examples/blob/main/mint-in-batches.js).
+- For one at at time: [here](https://github.com/freeverseio/laos-examples/blob/main/evm/mint.js).
+- For minting in batches: [here](https://github.com/freeverseio/laos-examples/blob/main/evm/mint-in-batches.js).
 
 ## Running the example
 

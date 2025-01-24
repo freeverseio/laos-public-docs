@@ -9,7 +9,7 @@ Learn how to evolve NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) by
 
 ## Full Code Example
 
-The code corresponding to this example can be found [here](https://github.com/freeverseio/laos-examples/blob/main/evolve.js).
+The code corresponding to this example can be found [here](https://github.com/freeverseio/laos-examples/blob/main/evm/evolve.js).
 
 ## Running the example
 
