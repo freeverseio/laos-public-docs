@@ -2,6 +2,9 @@
 
 Learn how to mint NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.), either one at a time, or in batches of many.
 
+<figure><img src="/img/setupCollection.png" alt=""></img><figcaption>In Bridgeless Minting patterns, slots in the ERC721 collection (left side of the image) correspond to locations on LAOS (right side). `Minting` an NFT involves filling its corresponding location on LAOS.</figcaption></figure>
+
+
 ## Prerequisites
 
 - A LAOS Sibling collection address. Check the [setup phase](/evm/collection-setup.md) to obtain one.

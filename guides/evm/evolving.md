@@ -2,6 +2,8 @@
 
 Learn how to evolve NFTs on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) by updating their metadata in the LAOS sibling collection.
 
+<figure><img src="/img/setupCollection.png" alt=""></img><figcaption>In Bridgeless Minting patterns, slots in the ERC721 collection (left side of the image) correspond to locations on LAOS (right side). `Evolving` an NFT involves modifying its corresponding location on LAOS. Importantly, the tokenId remains unchanged; after evolving, the same NFT retains an on-chain history of both its previous state and its evolved state.</figcaption></figure>
+
 ## Prerequisites
 
 - A previously [minted NFT on your LAOS collection](/guides/evm/minting.md).
