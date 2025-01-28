@@ -4,9 +4,11 @@ Learn how to create an NFT collection on any EVM chain (Ethereum, Polygon, Arbit
 
 This guide features JavaScript examples but can be adapted to any programming language. By the end, you'll have your own collection ready for minting and evolving NFTs without incurring fees on the selected EVM chain. The only prerequisite is to own accounts with sufficient funds to pay for transaction fees on both the chosen EVM and LAOS.
 
-<figure><img src="/img/setupCollection.png" alt=""></img><figcaption></figcaption></figure>
+<figure><img src="/img/setupCollection_mint.png" alt=""></img><figcaption></figcaption></figure>
 
 After running this example, you will have deployed a uERC721 contract on the EVM blockchain of your choice, pointing to a newly created an Sibling Collection on LAOS.
+Initially, all slots in the ERC721 will point to unfilled locations on LAOS, representing a setup where no mints have been performed yet.
+
 The system will be ready for Bridgeless Minting: as collection owner, you will be able to mint and evolve assets by sending transactions to LAOS. Your users and
 recipients of those assets will be able to trade them natively on the chose EVM chain as regular ERC721 tokens. 
 
