@@ -7,7 +7,7 @@ const config: Config = {
   tagline: 'The Layer-1 to create millions of assets on any EVM chain',
   favicon: 'img/favicon.ico',
 
-  url: 'https://laosnetwork.uio',
+  url: 'https://docs.laosnetwork.io',
   baseUrl: '/',
 
   organizationName: 'laos',
