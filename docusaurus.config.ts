@@ -187,6 +187,27 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
 
+    algolia: {
+      
+      appId: 'WFS116ZN3T', // The application ID provided by Algolia
+      apiKey: '67e572682f21e05f4d1c34d57164dfee', // Public API key: it is safe to commit it
+      indexName: 'laosnetwork',
+
+      // Optional: see doc section below
+      contextualSearch: false,
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      // Optional: path for search page that enabled by default (`false` to disable it)
+      searchPagePath: 'search',
+
+      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+      insights: true,
+
+    }
+
+
   } satisfies Preset.ThemeConfig,
 };
 
