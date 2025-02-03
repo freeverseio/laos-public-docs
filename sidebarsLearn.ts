@@ -8,8 +8,8 @@ const sidebarsLearn: SidebarsConfig = {
       label: 'Introduction',
       items: [
         'introduction/goals',
-        'introduction/laos-and-its-testnet',
         'introduction/resources',
+        'introduction/laos-and-its-testnet',
       ],
     },
     {
