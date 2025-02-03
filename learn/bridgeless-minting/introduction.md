@@ -1,26 +1,10 @@
 # Introduction
 
-Bridgeless Minting and Evolution represents a notable example of a process where a consensus system is used to expand the capabilities of another consensus system, via usage of Universal Location.
+Bridgeless Minting and Bridgeless Evolution represents a notable example of a process where a consensus system is used to expand the capabilities of another consensus system, via usage of Universal Location.
 
-We coined the term _**Universal**_ to refer to an NFT created via Bridgeless Minting.
+<figure><img src="/img/setupCollection_evolve.png" alt=""></img><figcaption>In Bridgeless Minting, a one-time transaction on the blockchain to be scaled (e.g. Ethereum, left side) deploys an ERC721
+contract connected to a sibling collection on LAOS (right side). From that moment on, all minting and evolution takes place on the LAOS consensus system, while recipients of those assets can trade them as native ERC721 on Ethereum, using their favourite Ethereum DApps and wallets. </figcaption></figure>
 
-<figure style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", margin: "auto" }}>
-  <img src="/img/universal.avif" alt="universal" width="247" />
-  <figcaption></figcaption>
-</figure>
-
-
-
-The videos below offer an in-depth explanation of this mechanism:
-
-* LAOS Bridgeless Minting & Evolution, [part 1](https://www.youtube.com/watch?v=UU63SU6s0sY).
-* LAOS Bridgeless Minting & Evolution, [part 2](https://www.youtube.com/watch?v=yDoEp7mFlTg).
-
-Additionally, the [following website](https://testnet.apps.laosnetwork.io/) provides a simple frontend to start experimenting with bridgeless minting on blockchains such as Ethereum or Polygon. Internally, this sample application employs the queries outlined in the rest of this section.
-
-
-
-### Steps
 
 #### Setup
 
@@ -33,4 +17,10 @@ Subsequent minting and evolution occur directly on LAOS, thereby bypassing conge
 #### Trade, Lend, DeFi
 
 Asset owners can carry on with all activities in a way that's fully compliant with ERC721 on their blockchain of choice. This includes trading on preferred marketplaces and utilizing NFTs in lending contracts, among other actions.
+
+
+## Further References
+
+The [References section](../introduction/resources.md) contains, among others, videos that illustrate a step by step guide throught the setup and the minting/evolving phases.
+Additionally, the [following website](https://testnet.apps.laosnetwork.io/) provides a simple frontend to start experimenting with bridgeless minting on blockchains such as Ethereum or Polygon. Internally, this sample application employs the queries outlined in the corresponding [EVM Section](/evm/introduction).
 

@@ -2,7 +2,7 @@
 
 Once a sibling collection has been created, its assigned contractAddress in LAOS can be used to deploy an ERC721 collection, in any EVM blockchain of choice (such as Ethereum or Polygon), which will be paired with the sibling collection.
 
-The pairing is established by using the Universal Location, a feature of Polkadot's Cross-Consensus Messaging version 3. Check the videos linked in the [References section](../introduction/resources.md) for a deeper understanding of the Universal Location.
+The pairing is established by using the Universal Location, a feature of Polkadot's Cross-Consensus Messaging version 3. Check the videos linked in the [Resources section](../introduction/resources.md) for a deeper understanding of the Universal Location.
 
 ### The uERC721 contract
 
