@@ -19,8 +19,8 @@ Subsequent minting and evolution occur directly on LAOS, thereby bypassing conge
 Asset owners can carry on with all activities in a way that's fully compliant with ERC721 on their blockchain of choice. This includes trading on preferred marketplaces and utilizing NFTs in lending contracts, among other actions.
 
 
-## Further References
+## Further Reference
 
-The [References section](../introduction/resources.md) contains, among others, videos that illustrate a step by step guide throught the setup and the minting/evolving phases.
+The [Resources section](../learn/resources.md) contains, among others, videos that illustrate a step by step guide throught the setup and the minting/evolving phases.
 Additionally, the [following website](https://testnet.apps.laosnetwork.io/) provides a simple frontend to start experimenting with bridgeless minting on blockchains such as Ethereum or Polygon. Internally, this sample application employs the queries outlined in the corresponding [EVM Section](/evm/introduction).
 
