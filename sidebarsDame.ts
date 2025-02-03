@@ -3,18 +3,12 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
 const sidebarsDame: SidebarsConfig = {
   dameSidebar: [
-    {
-      type: 'category',
-      label: 'Decentralized Asset Metadata',
-      items: [
-        'dame/introduction',
-        'dame/universal-location-for-dame',
-        'dame/extending-the-metadata-of-an-asset',
-        'dame/updating-a-previous-extension-of-an-asset',
-        'dame/querying-for-existing-extensions-of-an-asset',
-      ],
-    },
+    'introduction',
+    'universal-location-for-dame',
+    'extending-the-metadata-of-an-asset',
+    'updating-a-previous-extension-of-an-asset',
+    'querying-for-existing-extensions-of-an-asset',
   ],
 };
 
-export default sidebarsLearn;
+export default sidebarsDame;
