@@ -1,4 +1,4 @@
-# Introduction
+# Bridgeless Minting & Evolution
 
 Bridgeless Minting and Bridgeless Evolution represents a notable example of a process where a consensus system is used to expand the capabilities of another consensus system, via usage of Universal Location.
 
