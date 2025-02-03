@@ -29,7 +29,7 @@ The template contract described above takes care to append the `/GeneralKey(toke
 
 The `uloc://` prefix tag serves the same purposes as, for example, the `ipfs://` tag, indicating how the rest of the string is to be interpreted.
 
-Services ready to interpret and operate with these standards, such as browsers (e.g. Brave), marketplaces (e.g. Opensea), or nodes (e.g. the Universal Node), are free to **permissionlessly** implement their own means to resolve and deal with these locations.
+Services ready to interpret and operate with these standards are free to **permissionlessly** implement their own means to resolve and deal with these locations.
 
 For example, in the IPFS case, some services resolve `ipfs://`  to popular public gateways, such as `https://ipfs.io.`&#x20;
 

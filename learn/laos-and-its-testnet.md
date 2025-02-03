@@ -16,7 +16,7 @@ For real-time availability of RPC endpoints, please check the ChainList entries 
 * Substrate RPC endpoint: [wss://rpc.laos.laosfoundation.io](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.laos.laosfoundation.io#/explorer)
 * ParaId: 3370
 * EVM PalletInstance: 51
-* Universal Location: `uloc://GlobalConsensus(2)/Parachain(3370)/PalletInstance(51)`
+* Universal Location: `uloc://GlobalConsensus(2)/Parachain(3370)/PalletInstance(51)/`
 
 
 
@@ -29,7 +29,7 @@ For real-time availability of RPC endpoints, please check the ChainList entries 
 * Substrate RPC endpoint: [wss://rpc.laossigma.laosfoundation.io](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.laossigma.laosfoundation.io#/explorer)
 * ParaId: 4006
 * EVM PalletInstance: 51
-* Universal Location: `uloc://GlobalConsensus(0:0x77afd6190f1554ad45fd0d31aee62aacc33c6db0ea801129acb813f913e0764f)/Parachain(4006)/PalletInstance(51)`
+* Universal Location: `uloc://GlobalConsensus(0:0x77afd6190f1554ad45fd0d31aee62aacc33c6db0ea801129acb813f913e0764f)/Parachain(4006)/PalletInstance(51)/`
 
 
 
