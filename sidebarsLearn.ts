@@ -15,17 +15,6 @@ const sidebarsLearn: SidebarsConfig = {
         'bridgeless-minting-intro',
       ],
     },
-    {
-      type: 'category',
-      label: 'Decentralized Asset Metadata',
-      items: [
-        'decentralized-asset-metadata/introduction',
-        'decentralized-asset-metadata/universal-location-for-dame',
-        'decentralized-asset-metadata/extending-the-metadata-of-an-asset',
-        'decentralized-asset-metadata/updating-a-previous-extension-of-an-asset',
-        'decentralized-asset-metadata/querying-for-existing-extensions-of-an-asset',
-      ],
-    },
   ],
 };
 
