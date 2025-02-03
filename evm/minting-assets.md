@@ -1,6 +1,6 @@
 # Minting Assets
 
-The owner of a collection in LAOS, can use the `EvolutionCollection` interface to mint an evolve assets. The interface is fully detailed in the [EVM Interface section](/learn/the-laos-node/the-layer-1-node), and it is exposed at the `collectionAddress` obtained when [creating the collection](/evm/creating-a-sibling-collection-in-LAOS). The interface can be found in both Solidity and ABI json format [here].
+The owner of a collection in LAOS, can use the `EvolutionCollection` interface to mint an evolve assets. The interface is fully detailed in the [EVM Interface section](/evm/the-layer-1-node), and it is exposed at the `collectionAddress` obtained when [creating the collection](/evm/creating-a-sibling-collection-in-LAOS). The interface can be found in both Solidity and ABI json format [here].
 
 The main entry point is the `mintWithExternalURI` method:
 ```solidity

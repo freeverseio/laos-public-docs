@@ -7,32 +7,12 @@ const sidebarsLearn: SidebarsConfig = {
       type: 'category',
       label: 'Introduction',
       items: [
-        'introduction/goals',
-        'introduction/resources',
-        'introduction/laos-and-its-testnet',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'The LAOS Node',
-      items: [
-        'the-laos-node/the-layer-1-node',
-        'the-laos-node/the-evm-interface',
-
-        ,
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Bridgeless Minting',
-      items: [
-        'bridgeless-minting/introduction',
-        'bridgeless-minting/creating-a-sibling-collection-in-laos',
-        'bridgeless-minting/deploying-a-uerc721-in-any-evm-chain',
-        'bridgeless-minting/universal-location-for-bridgeless-minting',
-        'bridgeless-minting/minting-assets',
-        'bridgeless-minting/evolving-assets',
-        'bridgeless-minting/read-only-queries',
+        'goals',
+        'resources',
+        'laos-and-its-testnet',
+        'the-layer-1-node',
+        'the-evm-interface',
+        'bridgeless-minting-intro',
       ],
     },
     {
