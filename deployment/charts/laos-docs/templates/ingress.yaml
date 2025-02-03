@@ -10,6 +10,12 @@ metadata:
     nginx.ingress.kubernetes.io/auth-tls-pass-certificate-to-upstream: "true"
     cert-manager.io/cluster-issuer: letsencrypt-freeverse
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: "if ($scheme = \"http\") {\n
+      \ return 301 https://$host$request_uri;\n}\nrewrite ^(/.*[^/])$ $1/ permanent;
+      \   \n"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-set-header: 'X-Forwarded-Host: $host'
+    service.beta.kubernetes.io/do-loadbalancer-redirect-http-to-https: "true"
 spec:
   tls:
     - hosts:
