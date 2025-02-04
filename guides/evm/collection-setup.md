@@ -1,6 +1,6 @@
 # Setting Up an NFT Collection
 
-Learn how to create an NFT collection on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) that scales through [Bridgeless Minting](/learn/bridgeless-minting/introduction).
+Learn how to create an NFT collection on any EVM chain (Ethereum, Polygon, Arbitrum, etc.) that scales through [Bridgeless Minting](/evm/introduction).
 
 This guide features JavaScript examples but can be adapted to any programming language. By the end, you'll have your own collection ready for minting and evolving NFTs without incurring fees on the selected EVM chain. The only prerequisite is to own accounts with sufficient funds to pay for transaction fees on both the chosen EVM and LAOS.
 

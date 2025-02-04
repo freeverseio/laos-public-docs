@@ -89,6 +89,15 @@ const config: Config = {
         sidebarPath: require.resolve('./sidebarsEvm.ts'),
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'dame',
+        path: 'dame',
+        routeBasePath: 'dame',
+        sidebarPath: require.resolve('./sidebarsDame.ts'),
+      },
+    ],
   ],
 
   themeConfig: {
@@ -135,6 +144,13 @@ const config: Config = {
           label: 'EVM',
         },
         {
+          type: 'docSidebar',
+          docsPluginId: 'dame',
+          sidebarId: 'dameSidebar',
+          position: 'left',
+          label: 'DAME',
+        },
+        {
           href: 'https://github.com/freeverseio/laos',
           label: 'GitHub',
           position: 'right',
@@ -148,7 +164,7 @@ const config: Config = {
         {
           title: 'Docs',
           items: [
-            { label: 'Learn', to: '/learn/introduction/goals' },
+            { label: 'Learn', to: '/learn/goals' },
             { label: 'Indexers', to: '/indexers/introduction' },
             { label: 'API', to: '/api/introduction' },
             { label: 'Guides', to: '/guides/introduction' },

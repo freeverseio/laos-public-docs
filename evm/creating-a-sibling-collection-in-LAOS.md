@@ -4,7 +4,7 @@ The creation of a sibling collection on LAOS just requires one transaction, whic
 
 ## Creating a Collection
 
-Use your preferred web3 library to execute the `createCollection` transaction, available at the hardcoded contract address `0x...403`, as detailed in the [EVM Interface section](/learn/the-laos-node/the-evm-interface):
+Use your preferred web3 library to execute the `createCollection` transaction, available at the hardcoded contract address `0x...403`, as detailed in the [EVM Interface section](/learn/the-evm-interface):
 ```solidity
 // this interface is available at the hardcoded address:
 // 0x0000000000000000000000000000000000000403

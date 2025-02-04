@@ -2,11 +2,11 @@
 
 The spec for constructing Universal Locations was drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).&#x20;
 
-In this section we illustrate its usage for Bridgeless Minting, allowing any chain to point to a LAOS sibling collection. The [second main usage](../decentralized-asset-metadata/universal-location-for-dame.md) serves DAME, allowing LAOS to point to any asset in any chain.
+In this section we illustrate its usage for Bridgeless Minting, allowing any chain to point to a LAOS sibling collection. The [second main usage](../dame/universal-location-for-dame) serves DAME, allowing LAOS to point to any asset in any chain.
 
 ### Universal Location to be used as BaseURI
 
-The specification of the Universal Location, to be used as the returned string in `tokenURI` queries to ERC721 contracts, beyond the Polkadot ecosystem, is drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).  The specific strings to be used for LAOS Mainnet and Testnet are detailed [here](../introduction/laos-and-its-testnet.md).
+The specification of the Universal Location, to be used as the returned string in `tokenURI` queries to ERC721 contracts, beyond the Polkadot ecosystem, is drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).  The specific strings to be used for LAOS Mainnet and Testnet are detailed [here](./laos-and-its-testnet).
 
 As a summary, the following Universal Location string:
 
@@ -29,7 +29,7 @@ The template contract described above takes care to append the `/GeneralKey(toke
 
 The `uloc://` prefix tag serves the same purposes as, for example, the `ipfs://` tag, indicating how the rest of the string is to be interpreted.
 
-Services ready to interpret and operate with these standards, such as browsers (e.g. Brave), marketplaces (e.g. Opensea), or nodes (e.g. the Universal Node), are free to **permissionlessly** implement their own means to resolve and deal with these locations.
+Services ready to interpret and operate with these standards are free to **permissionlessly** implement their own means to resolve and deal with these locations.
 
 For example, in the IPFS case, some services resolve `ipfs://`  to popular public gateways, such as `https://ipfs.io.`&#x20;
 
