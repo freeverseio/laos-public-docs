@@ -17,8 +17,3 @@ Inflationary token emissions might fluctuate over time, influenced by shifts in 
 Transaction fees serve multiple purposes in the Polkadot Parachain ecosystem. From **preventing network spam to compensating validators and managing congestion**, they are indispensable.&#x20;
 
 Within the LAOS ecosystem,  transaction fees will be **allocated to the collators.** Eventually, on-chain governance will decide whether a fraction should be **directed to the on-chain treasury**, where they can be distributed through on-chain governance to projects and initiatives that promote adoption and engagement with the network.
-
-\
-
-
-\
