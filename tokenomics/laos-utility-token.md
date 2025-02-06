@@ -1,8 +1,8 @@
 # 🪙 LAOS Utility Token
 
-Note: In March 2024 the LAOS Token was classified as a Utility Token by Switzerland’s financial regulator FINMA. [_Find out more here_](https://x.com/laosnetwork/status/1772925616473432237)
+## Overview
 
-## LAOS Token Overview
+In March 2024 the LAOS Token was classified as a Utility Token by Switzerland’s financial regulator FINMA. [_Find out more here_.](https://medium.com/laosnetwork/laos-token-classified-as-a-utility-token-by-switzerlands-financial-regulator-finma-7a73cf756a95)
 
 The LAOS utility token **empowers the entirety of the LAOS ecosystem** to operate securely, efficiently and fairly. The LAOS token is instrumental and inextricable from facilitating of core functions of the LAOS ecosystem. Stakeholders at each substrate of the LAOS infrastructure stack interact with the token in their respective capacities, rendering the token an **invaluable tool in aligning incentives across the ecosystem.**
 
