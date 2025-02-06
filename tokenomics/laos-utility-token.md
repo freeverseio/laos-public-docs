@@ -8,7 +8,7 @@ The LAOS utility token **empowers the entirety of the LAOS ecosystem** to operat
 
 Ultimately, LAOS aims at becoming the consensus system that every other chain uses to scale their Digital Ownership transactions, **independent of centralized oversight and control.** This described democratization of ownership requires the implementation of a powerful tool which can both operate as a **medium of exchange for users of the platform, security, and a fairly distributed marker of future decision-making**. The LAOS token is specifically designed with these different, yet essential, objectives in mind.
 
-<figure><img src="/img/9_LAOS_Gitbook_assets_Token-Utility.jpg" alt=""></img><figcaption></figcaption></figure>
+<figure><img src="/img/token-utility.jpg" alt=""></img><figcaption></figcaption></figure>
 
 ## LAOS Token Utility
 

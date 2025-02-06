@@ -12,15 +12,15 @@ Following the winning of a parachain slot, the completion of the genesis runtime
 
 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "left", gap: "20px", width: "100%" }}>
   <figure style={{ textAlign: "center", width: "100%", margin: "0 auto" }}>
-    <a href="/img/LAOS_Pie_Chart_v6.png" target="_blank">
-      <img src="/img/LAOS_Pie_Chart_v6.png" alt="" style={{ width: "100%", height: "auto", maxWidth: "600px" }} />
+    <a href="/img/token-pie-chart.png" target="_blank">
+      <img src="/img/token-pie-chart.png" alt="" style={{ width: "100%", height: "auto", maxWidth: "600px" }} />
     </a>
     <figcaption><p>Main pools grouped by common vesting conditions</p></figcaption>
   </figure>
 
   <figure style={{ textAlign: "center", width: "100%", margin: "0 auto"}}>
-    <a href="/img/LAOS_Chart_Pie_size_v2.png" target="_blank">
-      <img src="/img/LAOS_Chart_Pie_size_v2.png" alt="" style={{ width: "100%", height: "auto", maxWidth: "600px" }} />
+    <a href="/img/token-pie-chart-by-size.png" target="_blank">
+      <img src="/img/token-pie-chart-by-size.png" alt="" style={{ width: "100%", height: "auto", maxWidth: "600px" }} />
     </a>
     <figcaption><p>Main pools sorted clockwise by size</p></figcaption>
   </figure>
@@ -127,8 +127,8 @@ The following table specifies the vesting conditions for each pool, sorted by in
 Given the vesting conditions of each pool, the following chart illustrates the evolution of the total amount of LAOS tokens vested per month over the first four years post-launch:
 
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-    <a href="/img/chart_fixed_1_v2.svg" target="_blank">
-        <img src="/img/chart_fixed_1_v2.svg" alt=""></img>
+    <a href="/img/pool_evolution.svg" target="_blank">
+        <img src="/img/pool_evolution.svg" alt=""></img>
     </a>
     <figcaption><p>Evolution of the total amount of LAOS Tokens (vertical axis) vested per month, grouped by pool.</p></figcaption>
 </figure>
@@ -136,8 +136,8 @@ Given the vesting conditions of each pool, the following chart illustrates the e
 The following plot highlights a relevant aspect of the vesting conditions. The **commitment to early decentralization becomes evident when analyzing the circulating supply**. Initially, the liquid token supply is fully in the hands of the community. As tokens allotted to investors and core team members progressively unlock, the community's share incrementally decreases. However, it always maintains at least 60%, **ensuring LAOS remains sufficiently decentralized at all times**.
 
 <figure style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-    <a href="/img/17_LAOS_Gitbook_assets_chart_3 (1).jpg" target="_blank">
-        <img src="/img/17_LAOS_Gitbook_assets_chart_3 (1).jpg" alt="" style={{ maxWidth: "100%", height: "auto" }} />
+    <a href="/img/token_split_by_community_vs_insider.jpg" target="_blank">
+        <img src="/img/token_split_by_community_vs_insider.jpg" alt="" style={{ maxWidth: "100%", height: "auto" }} />
     </a>
     <figcaption>
         <p>This plot shows the circulating supply on the vertical axis and time in months on the horizontal axis, categorized into two main groups. The 'Community' group includes Crowdloan Rewards, Community Incentives, Collator Incentives, Public Sale, and Treasury pools. The 'Insider' group comprises Early Backers, Investors, and both Core Team pools.</p>
