@@ -8,5 +8,7 @@ Collators retain a percentage of these rewards, which is initially set to 20%, a
 
 Additionally, _transaction fees_ will be allocated to the block producing collators, as a means to incentivize inclusion of transactions and disincentivize censorship.
 
+With the current setting, these rewards are allocated between collators and delegators in a 20%/80% split. The tokens come from a 150M pool intended to last for at least two years (see [Token Distribution](token-distribution). As the third year approaches, governance may need to consider introducing inflation mechanisms if necessary.
 
+**Important.** A [vote on August 14th, 2024](https://snapshot.org/#/laosnetwork.eth/proposal/0x21f60d2538a79e4c85f2f7700aa69ece05703fbffbf7b645c898fd72bcee3fda), reduced the 7.5% rate until collators could join permissionlessly, and the token was more broadly available, being listed on a CEX or DEX. This required the Network to implement several initial roadmap features, specifically: i) enabling permissionless transfers of the LAOS token, ii) enabling permissionless participation of collators, and iii) facilitating the acquisition of LAOS tokens on CEXs/DEXs. These milestones were reached towards the end of Q4 2024. The community, which voted to reduce the rate to 0.5% during this phase, has now the ability to call for a vote to potentially change the rate again.
 
