@@ -18,15 +18,15 @@ The **LAOS utility token powers the minting and evolution of assets,** regardles
 
 A breakdown of the three primary uses of the LAOS token:
 
-**Usage**
+### Usage
 
 LAOS is needed to execute transactions. During the initial phases of the project, these transactions will mostly account for bridgeless minting offloading from other chains, asset metadata extensions as well as the usual gas fees for transaction such as token transfers, affecting governance or staking. In later stages of the project, LAOS tokens will be used to operate on the future LAOS Relay Chain and the Evolution Chains.
 
-**Staking**
+### Staking
 
 Underpinning the security of the network, validators receive LAOS tokens as rewards upon the inclusion of new valid blocks in the LAOS Parachain. Additionally, delegators can stake their LAOS to unlock a range of benefits, including additional token rewards and governance rights, while helping preserve the security of the network.
 
-**Governance**
+### Governance
 
 Immediately after the initial stages related to deploying to mainnet and ensuring that the network is stable and secure, LAOS will start migrating to a decentralized governance model. Any stakeholder in possession of LAOS tokens will have the option to participate in LAOS network governance. This token model brings about incentive alignment across different stakeholders by allowing participation in the future direction of LAOS through proposals, discussions, and voting.
 
