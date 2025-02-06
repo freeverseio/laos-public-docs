@@ -11,19 +11,90 @@ The initial Tokenomics paper outlined four main pools: the **Investors pool**, t
 Following the winning of a parachain slot, the completion of the genesis runtime development, and preparations for the public sale, greater clarity has been achieved. Consequently, these pools have been further subdivided while adhering to the original vesting conditions. The following pie chart shows the subdivision of each of the four main pools.
 
 <div>
-
-
 <figure><img src="/img/LAOS_Pie_Chart_v6.png" alt=""></img><figcaption><p>Main pools grouped by common vesting conditions</p></figcaption></figure>
-
- 
-
 <figure><img src="/img/LAOS_Chart_Pie_size_v2.png" alt=""></img><figcaption><p>Main pools sorted clockwise by size</p></figcaption></figure>
-
 </div>
 
 The following table specifies the vesting conditions for each pool, sorted by increasing length of the total lockup period:
 
-<table><thead><tr><th width="143">Pool</th><th width="101" align="center">%</th><th width="148" align="center">Cliff (months)</th><th width="166" align="center">Vesting (months)</th><th align="center">Total Lockup</th><th data-hidden align="center">Tokens</th></tr></thead><tbody><tr><td>Initial Public Sale</td><td align="center">3.0%</td><td align="center">0</td><td align="center">12</td><td align="center">1 year</td><td align="center"></td></tr><tr><td>Crowdloan Rewards</td><td align="center">1.0%</td><td align="center">0</td><td align="center">24</td><td align="center">2 years</td><td align="center"></td></tr><tr><td>Community Incentives</td><td align="center">19.0%</td><td align="center">0</td><td align="center">24</td><td align="center">2 years</td><td align="center"></td></tr><tr><td>Collator &#x26; Delegator Rewards</td><td align="center">15.0%</td><td align="center">0</td><td align="center">24</td><td align="center">2 years</td><td align="center"></td></tr><tr><td>Treasury</td><td align="center">20.0%</td><td align="center">0</td><td align="center">36</td><td align="center">3 years</td><td align="center"></td></tr><tr><td>Early Backers</td><td align="center">12.0%</td><td align="center">12</td><td align="center">24</td><td align="center">3 years</td><td align="center"></td></tr><tr><td>New Investors</td><td align="center">8.0%</td><td align="center">12</td><td align="center">24</td><td align="center">3 years</td><td align="center"></td></tr><tr><td>Core Team Allocated</td><td align="center">16.05%</td><td align="center">12</td><td align="center">36</td><td align="center">4 Years</td><td align="center">162,5M</td></tr><tr><td>Core Team Unallocated</td><td align="center">5.95%</td><td align="center">12</td><td align="center">36</td><td align="center">4 Years</td><td align="center">57,5M</td></tr></tbody></table>
+<div style={{ display: "flex", justifyContent: "center" }}>
+    <table>
+    <thead>
+        <tr>
+        <th width="143">Pool</th>
+        <th width="101" align="center">%</th>
+        <th width="148" align="center">Cliff (months)</th>
+        <th width="166" align="center">Vesting (months)</th>
+        <th align="center">Total Lockup</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>Initial Public Sale</td>
+        <td align="center">3.0%</td>
+        <td align="center">0</td>
+        <td align="center">12</td>
+        <td align="center">1 year</td>
+        </tr>
+        <tr>
+        <td>Crowdloan Rewards</td>
+        <td align="center">1.0%</td>
+        <td align="center">0</td>
+        <td align="center">24</td>
+        <td align="center">2 years</td>
+        </tr>
+        <tr>
+        <td>Community Incentives</td>
+        <td align="center">19.0%</td>
+        <td align="center">0</td>
+        <td align="center">24</td>
+        <td align="center">2 years</td>
+        </tr>
+        <tr>
+        <td>Collator &amp; Delegator Rewards</td>
+        <td align="center">15.0%</td>
+        <td align="center">0</td>
+        <td align="center">24</td>
+        <td align="center">2 years</td>
+        </tr>
+        <tr>
+        <td>Treasury</td>
+        <td align="center">20.0%</td>
+        <td align="center">0</td>
+        <td align="center">36</td>
+        <td align="center">3 years</td>
+        </tr>
+        <tr>
+        <td>Early Backers</td>
+        <td align="center">12.0%</td>
+        <td align="center">12</td>
+        <td align="center">24</td>
+        <td align="center">3 years</td>
+        </tr>
+        <tr>
+        <td>New Investors</td>
+        <td align="center">8.0%</td>
+        <td align="center">12</td>
+        <td align="center">24</td>
+        <td align="center">3 years</td>
+        </tr>
+        <tr>
+        <td>Core Team Allocated</td>
+        <td align="center">16.05%</td>
+        <td align="center">12</td>
+        <td align="center">36</td>
+        <td align="center">4 Years</td>
+        </tr>
+        <tr>
+        <td>Core Team Unallocated</td>
+        <td align="center">5.95%</td>
+        <td align="center">12</td>
+        <td align="center">36</td>
+        <td align="center">4 Years</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 
 
