@@ -1,6 +1,6 @@
 # 🪙 LAOS Utility Token
 
-_Note: In March 2024 the LAOS Token was classified as a Utility Token by Switzerland’s financial regulator FINMA._ [_Find out more here_](https://x.com/laosnetwork/status/1772925616473432237) _._
+Note: In March 2024 the LAOS Token was classified as a Utility Token by Switzerland’s financial regulator FINMA. [_Find out more here_](https://x.com/laosnetwork/status/1772925616473432237)
 
 ## LAOS Token Overview
 

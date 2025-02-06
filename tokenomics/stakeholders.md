@@ -30,25 +30,25 @@ The category of LAOS users that have web3 expertise and acquire the LAOS token o
 
 This category of investors can be further parsed into the following:&#x20;
 
-_**Investors**_ - These users are likely to be passive investors with regards to governance and not likely to have development expertise.&#x20;
+  * **Investors** - These users are likely to be passive investors with regards to governance and not likely to have development expertise.&#x20;
 
-_**Active Traders -**_ Instead of passive holding, these users actively buy and sell tokens on the secondary market to capture any arbitrage values or price action.&#x20;
+  * **Active Traders -** Instead of passive holding, these users actively buy and sell tokens on the secondary market to capture any arbitrage values or price action.&#x20;
 
-_**Node Operators -**_ These users actively set up and run Parachain nodes that earn rewards for validating blocks.&#x20;
+  * **Node Operators -** These users actively set up and run Parachain nodes that earn rewards for validating blocks.&#x20;
 
 ### Developer Groups
 
 There are numerous developer groups who will participate in the LAOS ecosystem. From Freeverse and LAOS's teams, to independent developers from brands and users creating their own LAOS Assets. **LAOS and Freeverse remain distinctly separate legal entities.** These various developer groups can be categorized accordingly:&#x20;
 
-_**Core Contributor Developers -**_ developers with web3 experience equipped to build FOR the LAOS Parachain, including maintaining the Parachain Stack, Open-Sourcing developer tools, etc. Eg. Freeverse&#x20;
+  * **Core Contributor Developers -** developers with web3 experience equipped to build FOR the LAOS Parachain, including maintaining the Parachain Stack, Open-Sourcing developer tools, etc. Eg. Freeverse&#x20;
 
-_**Development Partners -**_ entities that build on top of the LAOS chain as a service for external clients. Eg. An agency hired to run a brand's NFT experience&#x20;
+  * **Development Partners -** entities that build on top of the LAOS chain as a service for external clients. Eg. An agency hired to run a brand's NFT experience&#x20;
 
-_**Web3 Developers -**_ developers with web3 experience equipped to build on top of the LAOS Parachain with their own products/services. Eg. DApp developers&#x20;
+  * **Web3 Developers -** developers with web3 experience equipped to build on top of the LAOS Parachain with their own products/services. Eg. DApp developers&#x20;
 
-_**Web2 Developers -**_ developers without requisite expertise to build directly on top of LAOS Parachain. Eg. traditional brands.&#x20;
+  * **Web2 Developers -** developers without requisite expertise to build directly on top of LAOS Parachain. Eg. traditional brands.&#x20;
 
-_**Indie Developers -**_ Have a more casual interest to build on the LAOS Parachain for their own product/services. Eg. Crypto Hackathon
+  * **Indie Developers -** Have a more casual interest to build on the LAOS Parachain for their own product/services. Eg. Crypto Hackathon
 
 ### DAO or Treasury
 
