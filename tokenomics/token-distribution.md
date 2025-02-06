@@ -10,24 +10,21 @@ The initial Tokenomics paper outlined four main pools: the **Investors pool**, t
 
 Following the winning of a parachain slot, the completion of the genesis runtime development, and preparations for the public sale, greater clarity has been achieved. Consequently, these pools have been further subdivided while adhering to the original vesting conditions. The following pie chart shows the subdivision of each of the four main pools (click on an image to view it in full size):
 
-<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "center", gap: "5px", width: "100%" }}>
-  <figure style={{ textAlign: "center", width: "100%" }}>
+<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", alignItems: "left", gap: "20px", width: "100%" }}>
+  <figure style={{ textAlign: "center", width: "100%", margin: "0 auto" }}>
     <a href="/img/LAOS_Pie_Chart_v6.png" target="_blank">
       <img src="/img/LAOS_Pie_Chart_v6.png" alt="" style={{ width: "100%", height: "auto", maxWidth: "600px" }} />
     </a>
     <figcaption><p>Main pools grouped by common vesting conditions</p></figcaption>
   </figure>
 
-  <figure style={{ textAlign: "center", width: "100%" }}>
+  <figure style={{ textAlign: "center", width: "100%", margin: "0 auto"}}>
     <a href="/img/LAOS_Chart_Pie_size_v2.png" target="_blank">
       <img src="/img/LAOS_Chart_Pie_size_v2.png" alt="" style={{ width: "100%", height: "auto", maxWidth: "600px" }} />
     </a>
     <figcaption><p>Main pools sorted clockwise by size</p></figcaption>
   </figure>
 </div>
-
-
-
 
 
 The following table specifies the vesting conditions for each pool, sorted by increasing length of the total lockup period:
