@@ -1,6 +1,6 @@
 # ⚖️ Token Distribution
 
-At genesis, the LAOS Foundation will create an **initial total token supply of 1,000,000,000 LAOS** tokens. The LAOS token allocation is designed to ensure a fair and balanced distribution that **supports both the development and longevity of LAOS**. We aim to **stimulate active participation, reward contributors, and incentivize stakeholders** in a manner that aligns with our community-centric ethos.
+At genesis, the LAOS Foundation created an **initial total token supply of 1,000,000,000 LAOS** tokens. The LAOS token allocation is designed to ensure a fair and balanced distribution that **supports both the development and longevity of LAOS**. We aim to **stimulate active participation, reward contributors, and incentivize stakeholders** in a manner that aligns with our community-centric ethos.
 
 The LAOS token vesting process utilizes a release schedule to **maintain the project's long-term stability**. This schedule outlines the timeline for tokens allocated to various stakeholders to gradually become accessible. This approach **safeguards against sudden market flooding, encourages ongoing commitment, and protects the LAOS token value**. It embodies our commitment to transparency, fairness, and sustainable growth within our ecosystem.
 
