@@ -1,20 +1,20 @@
 # 🧑‍🤝‍🧑 Stakeholders
 
-The LAOS Protocol's delivery of the LAOS blockchain is the <mark style="color:green;">**culmination of the collective efforts of numerous different stakeholders within the LAOS ecosystem**</mark>. We'll briefly highlight each of these key stakeholder groups below, in turn.&#x20;
+The LAOS Protocol's delivery of the LAOS blockchain is the **culmination of the collective efforts of numerous different stakeholders within the LAOS ecosystem**. We'll briefly highlight each of these key stakeholder groups below, in turn.&#x20;
 
 
 
 ## LAOS Token Network Participants&#x20;
 
-While a broad group of stakeholders will interact with the LAOS token given its nature as a liquid and publicly accessible asset, there are <mark style="color:green;">**3 main token network participants.**</mark>&#x20;
+While a broad group of stakeholders will interact with the LAOS token given its nature as a liquid and publicly accessible asset, there are **3 main token network participants.**&#x20;
 
-1. <mark style="color:green;">**Users**</mark> - Transact within the LAOS ecosystem using LAOS tokens. These include, among others, bridgeless minting offloading from other chains, asset attributes evolution or metadata extensions.
-2. <mark style="color:green;">**Collators**</mark> - Lock LAOS tokens to become key actors that produce new blocks while ensuring liveness and lack of censorship (all transactions are treated equally), data availability (everyone has access to the data to verify validity by themselves), and provide an initial validation of the included transactions and their effect - a final validation is provided by the validators of the Polkadot Relay Chain.
-3. <mark style="color:green;">**Delegators**</mark> - Assign LAOS tokens to Collators who perform honestly and efficiently to participate in network security.&#x20;
+1. **Users** - Transact within the LAOS ecosystem using LAOS tokens. These include, among others, bridgeless minting offloading from other chains, asset attributes evolution or metadata extensions.
+2. **Collators** - Lock LAOS tokens to become key actors that produce new blocks while ensuring liveness and lack of censorship (all transactions are treated equally), data availability (everyone has access to the data to verify validity by themselves), and provide an initial validation of the included transactions and their effect - a final validation is provided by the validators of the Polkadot Relay Chain.
+3. **Delegators** - Assign LAOS tokens to Collators who perform honestly and efficiently to participate in network security.&#x20;
 
 It bears noting that representation in these network participant groups is not mutually exclusive. Often stakeholders will belong to more than one group. For instance, a person evolving their LAOS Asset may also delegate a portion of their LAOS tokens to securing the network.&#x20;
 
-In addition to the three main network participants who represent the fundamental repeating roles as it pertains to the LAOS token, there are <mark style="color:green;">**other key groups of participants engaging with the LAOS ecosystem:**</mark>&#x20;
+In addition to the three main network participants who represent the fundamental repeating roles as it pertains to the LAOS token, there are **other key groups of participants engaging with the LAOS ecosystem:**&#x20;
 
 ### Core Team&#x20;
 
