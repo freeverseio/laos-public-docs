@@ -34,10 +34,3 @@
 [data-theme='dark'] .language-solidity span.token {
   font-style: normal !important;
 }
-
-/* Target the 'Tokenomics' navbar item */
-.navbar__link[href*="/tokenomics"] {
-  color: #a2ff00eb !important; /* Change this color as needed */
-  font-weight: bold;
-}
-
