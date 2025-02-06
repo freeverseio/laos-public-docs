@@ -126,8 +126,20 @@ The following table specifies the vesting conditions for each pool, sorted by in
 
 Given the vesting conditions of each pool, the following chart illustrates the evolution of the total amount of LAOS tokens vested per month over the first four years post-launch:
 
-<figure><img src="/img/chart_fixed_1_v2.svg" alt=""></img><figcaption><p>Evolution of the total amount of LAOS Tokens (vertical axis) vested per month, grouped by pool.</p></figcaption></figure>
+<figure>
+    <a href="/img/chart_fixed_1_v2.svg" target="_blank">
+        <img src="/img/chart_fixed_1_v2.svg" alt=""></img>
+    </a>
+    <figcaption><p>Evolution of the total amount of LAOS Tokens (vertical axis) vested per month, grouped by pool.</p></figcaption>
+</figure>
 
 The following plot highlights a relevant aspect of the vesting conditions. The **commitment to early decentralization becomes evident when analyzing the circulating supply**. Initially, the liquid token supply is fully in the hands of the community. As tokens allotted to investors and core team members progressively unlock, the community's share incrementally decreases. However, it always maintains at least 60%, **ensuring LAOS remains sufficiently decentralized at all times**.
 
-<figure><img src="/img/17_LAOS_Gitbook_assets_chart_3 (1).jpg" alt=""></img><figcaption><p>This plot shows the circulating supply on the vertical axis and time in months on the horizontal axis, categorized into two main groups. The 'Community' group includes Crowdloan Rewards, Community Incentives, Collator Incentives, Public Sale, and Treasury pools. The 'Insider' group comprises Early Backers, Investors, and both Core Team pools.</p></figcaption></figure>
+<figure>
+    <a href="/img/17_LAOS_Gitbook_assets_chart_3 (1).jpg" target="_blank">
+        <img src="/img/17_LAOS_Gitbook_assets_chart_3 (1).jpg" alt=""></img>
+    </a>
+    <figcaption>
+    <p>This plot shows the circulating supply on the vertical axis and time in months on the horizontal axis, categorized into two main groups. The 'Community' group includes Crowdloan Rewards, Community Incentives, Collator Incentives, Public Sale, and Treasury pools. The 'Insider' group comprises Early Backers, Investors, and both Core Team pools.</p>
+    </figcaption>
+</figure>
