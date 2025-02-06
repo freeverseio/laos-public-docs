@@ -4,7 +4,7 @@ LAOS's main documentation can be found here:
 
 * [**LAOS Whitepaper**](https://github.com/freeverseio/laos-whitepaper/blob/main/laos.pdf), for an in-depth, fully detailed description.
 * [**LAOS Litepaper**](https://spaces.gorengine.com/laos/LAOS_litepaper.pdf), for a high-level, use case oriented description.
-* [**LAOS Tokenpaper**](https://laos.gitbook.io/laos-whitepaper/), for a description of the LAOS utility token, and its associated tokenomics.
+* [**LAOS Tokenomics**](/tokenomics/laos-utility-token), for a description of the LAOS utility token, and its associated tokenomics.
 
 The following videos serve as an introduction to Bridgeless Minting and Evolution:
 
