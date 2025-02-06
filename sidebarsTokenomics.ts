@@ -9,6 +9,7 @@ const sidebarsTokenomics: SidebarsConfig = {
     'collator-incentives',
     'inflation-and-fee-model',
     'crowdloan',
+    'laos-foundation',
   ],
 };
 
