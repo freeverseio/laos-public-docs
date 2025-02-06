@@ -10,6 +10,15 @@ const sidebarsTokenomics: SidebarsConfig = {
     'inflation-and-fee-model',
     'crowdloan',
     'laos-foundation',
+    {
+      type: "category",
+      label: "Legal",
+      items: [
+        "change-log",
+        "terminology",
+        "disclaimer",
+      ],
+    },
   ],
 };
 
