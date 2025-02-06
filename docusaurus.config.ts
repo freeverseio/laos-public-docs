@@ -98,6 +98,15 @@ const config: Config = {
         sidebarPath: require.resolve('./sidebarsDame.ts'),
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tokenomics',
+        path: 'tokenomics',
+        routeBasePath: 'tokenomics',
+        sidebarPath: require.resolve('./sidebarsTokenomics.ts'),
+      },
+    ],
   ],
 
   themeConfig: {
@@ -149,6 +158,13 @@ const config: Config = {
           sidebarId: 'dameSidebar',
           position: 'left',
           label: 'DAME',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'tokenomics',
+          sidebarId: 'tokenomicsSidebar',
+          position: 'right',
+          label: 'Tokenomics',
         },
         {
           href: 'https://github.com/freeverseio/laos',

@@ -4,7 +4,7 @@ LAOS began producing blocks as a Parachain on Polkadot on July 7, 2024.
 
 Here are the details for LAOS Mainnet and LAOS Testnet (named LAOS Sigma).
 
-For real-time availability of RPC endpoints, please check the ChainList entries for [Mainnet](https://chainlist.org/chain/6283) and [Testnet](https://chainlist.org/chain/62850).&#x20;
+For real-time availability of RPC endpoints, please check the ChainList entries for [Mainnet](https://chainlist.org/chain/6283) and [Testnet](https://chainlist.org/chain/62850).
 
 **LAOS Mainnet:**
 

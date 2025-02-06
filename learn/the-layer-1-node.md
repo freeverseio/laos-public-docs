@@ -1,6 +1,6 @@
 # The Layer-1 Node
 
-The LAOS rust-based layer-1 node is developed in this [main open-source repository](https://github.com/freeverseio/laos).&#x20;
+The LAOS rust-based layer-1 node is developed in this [main open-source repository](https://github.com/freeverseio/laos).
 
 The quickest entry point to run your own LAOS Parachain node is by using Docker:
 

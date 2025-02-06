@@ -18,6 +18,6 @@ In DAME, the asset creator is viewed as one of the accounts that describes what 
 
 However, DAME allows every web3 account to permissionlessly add metadata to any asset, in any blockchain. In a DID context, it is the equivalent of an account making claims about another account. As with DID, each DApp and user decides how much relevance to give to the metadata extensions made by different web3 accounts.
 
-With DAME, every extension of an asset's metadata is recorded on-chain, along with the account that made the extension. Once created, the extension can be updated only by the corresponding account,  leaving an on-chain trace, as usual.&#x20;
+With DAME, every extension of an asset's metadata is recorded on-chain, along with the account that made the extension. Once created, the extension can be updated only by the corresponding account,  leaving an on-chain trace, as usual.
 
-With Universal Location, LAOS enables extensions for any asset located on any chain. DApps, marketplaces and games, can permissionlessly query about extensions available for any asset they display to their users.   &#x20;
+With Universal Location, LAOS enables extensions for any asset located on any chain. DApps, marketplaces and games, can permissionlessly query about extensions available for any asset they display to their users.   

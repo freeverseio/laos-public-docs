@@ -2,7 +2,7 @@
 
 Existing metadata extensions can be updated by the same web3 accounts that created them.
 
-The corresponding method is `updateExtendedTokenURI`:&#x20;
+The corresponding method is `updateExtendedTokenURI`:
 
 ```solidity
 // Interace available at contract address 0x0000000000000000000000000000000000000405
