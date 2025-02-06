@@ -1,6 +1,6 @@
 # Extending the Metadata of an Asset
 
-Any web3 account use the `AssetMetadataExtender` interface to extend the metadata of any asset, in any chain, and evolve their extensions over time.&#x20;
+Any web3 account use the `AssetMetadataExtender` interface to extend the metadata of any asset, in any chain, and evolve their extensions over time.
 
 The interface can be found in both Solidity and ABI json format [here](https://github.com/freeverseio/laos/tree/main/ownership-chain/precompile/asset-metadata-extender/contracts).  The interface is available at the contract address `0x0000000000000000000000000000000000000405.`
 

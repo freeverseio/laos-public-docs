@@ -2,7 +2,7 @@
 
 ## Token Supply Inflation
 
-Token inflation plays a pivotal role in **securing the sustainable economic health of LAOS**. The designed mechanism allows the parachain to maintain a predictable and sustainable inflation rate that **incentivizes network participation** while allowing for the **preservation of token value**.&#x20;
+Token inflation plays a pivotal role in **securing the sustainable economic health of LAOS**. The designed mechanism allows the parachain to maintain a predictable and sustainable inflation rate that **incentivizes network participation** while allowing for the **preservation of token value**.
 
 For the first two years after the Token Generation Event (TGE), the token supply will be fixed to 1Bn tokens, with rewards to collators being provided from the Community Incentives pool, at a rate of 75M  LAOS tokens (**7.5%** of the total supply) per year.
 
@@ -12,8 +12,8 @@ Inflationary token emissions might fluctuate over time, influenced by shifts in 
 
 
 
-## Fee Model&#x20;
+## Fee Model
 
-Transaction fees serve multiple purposes in the Polkadot Parachain ecosystem. From **preventing network spam to compensating validators and managing congestion**, they are indispensable.&#x20;
+Transaction fees serve multiple purposes in the Polkadot Parachain ecosystem. From **preventing network spam to compensating validators and managing congestion**, they are indispensable.
 
 Within the LAOS ecosystem,  transaction fees will be **allocated to the collators.** Eventually, on-chain governance will decide whether a fraction should be **directed to the on-chain treasury**, where they can be distributed through on-chain governance to projects and initiatives that promote adoption and engagement with the network.

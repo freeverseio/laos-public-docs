@@ -40,4 +40,4 @@ Expected response:
 }
 ```
 
-The response includes both the `contractAddress` of the ERC721 contract on the target chain (in this case, Polygon), as well as the address of the underlying sibling collection in LAOS (in this case, `0xfff...da`. This query additionally deploys a smart contract capable of executing multiple mints in one single transaction (`batchMinterAddress`).&#x20;
+The response includes both the `contractAddress` of the ERC721 contract on the target chain (in this case, Polygon), as well as the address of the underlying sibling collection in LAOS (in this case, `0xfff...da`. This query additionally deploys a smart contract capable of executing multiple mints in one single transaction (`batchMinterAddress`).

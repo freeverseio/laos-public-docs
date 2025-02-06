@@ -14,7 +14,7 @@ The following videos serve as an introduction to Bridgeless Minting and Evolutio
 Hands-on material:
 
 * The following [post](https://medium.com/laosnetwork/bridgeless-minting-on-ethereum-polygon-and-other-chains-ae69a4b6a91e) contains a [short video](https://www.youtube.com/watch?v=MIe3nsjQIYA) demoing bridgeless minting of a **Universal** in Ethereum.
-* A simple on-boarding site to help you [create your first Universals](https://apps.klaos.io/) with a few clicks.&#x20;
+* A simple on-boarding site to help you [create your first Universals](https://apps.klaos.io/) with a few clicks.
 
 LAOS is fully open source and decentralized. The main code repositories are:
 

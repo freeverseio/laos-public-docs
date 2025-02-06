@@ -1,6 +1,6 @@
 # Universal Location for Bridgeless Minting
 
-The spec for constructing Universal Locations was drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).&#x20;
+The spec for constructing Universal Locations was drafted in this [Github issue](https://github.com/freeverseio/laos/issues/177).
 
 In this section we illustrate its usage for Bridgeless Minting, allowing any chain to point to a LAOS sibling collection. The [second main usage](../dame/universal-location-for-dame) serves DAME, allowing LAOS to point to any asset in any chain.
 
@@ -14,14 +14,14 @@ As a summary, the following Universal Location string:
 uloc://GlobalConsensus(0:0x77afd6190f1554ad45fd0d31aee62aacc33c6db0ea801129acb813f913e0764f)/Parachain(4006)/PalletInstance(51)/AccountKey20(0xabc....def)/GeneralKey(666)
 ```
 
-&#x20;would refer to:
+would refer to:
 
 * an asset with `tokenId = 666`,
 * in the sibling collection at `contractAddress = 0xabc....def,`
 * in the LAOS Sigma Testnet chain, which is always specified by providing the same triplet:
   * `GlobalConsensus = 0:0x77a...64f` (Testnet Paseo Relay Chain),
   * `Parachain = 4006`,
-  * `PalletInstance = 51`.&#x20;
+  * `PalletInstance = 51`.
 
 The template contract described above takes care to append the `/GeneralKey(tokenId)` suffix to the  current value of `baseURI`.
 
@@ -31,7 +31,7 @@ The `uloc://` prefix tag serves the same purposes as, for example, the `ipfs://`
 
 Services ready to interpret and operate with these standards are free to **permissionlessly** implement their own means to resolve and deal with these locations.
 
-For example, in the IPFS case, some services resolve `ipfs://`  to popular public gateways, such as `https://ipfs.io.`&#x20;
+For example, in the IPFS case, some services resolve `ipfs://`  to popular public gateways, such as `https://ipfs.io.`
 
 Likewise, the public `https://uloc.io` gateway, maintained by the LAOS Foundation, can be used to resolve `uloc://` prefixed locations. Check [this example](https://uloc.io/GlobalConsensus\(2\)/Parachain\(3370\)/PalletInstance\(51\)/AccountKey20\(0xFffFFFFFFfFfFFFFfFFfFFFe0000000000000000\)/GeneralKey\(2117177865313235697172373569158509151370659628068\)).
 

@@ -4,9 +4,9 @@ At genesis, the LAOS Foundation will create an **initial total token supply of 1
 
 The LAOS token vesting process utilizes a release schedule to **maintain the project's long-term stability**. This schedule outlines the timeline for tokens allocated to various stakeholders to gradually become accessible. This approach **safeguards against sudden market flooding, encourages ongoing commitment, and protects the LAOS token value**. It embodies our commitment to transparency, fairness, and sustainable growth within our ecosystem.
 
-## LAOS Token Allocation&#x20;
+## LAOS Token Allocation
 
-The initial Tokenomics paper outlined four main pools: the **Investors pool**, the **Community Incentives & Distribution pool,**  the **Treasury Pool** and the **Core Team pool**. These pools each have specific vesting conditions, which are detailed in the section below.&#x20;
+The initial Tokenomics paper outlined four main pools: the **Investors pool**, the **Community Incentives & Distribution pool,**  the **Treasury Pool** and the **Core Team pool**. These pools each have specific vesting conditions, which are detailed in the section below.
 
 Following the winning of a parachain slot, the completion of the genesis runtime development, and preparations for the public sale, greater clarity has been achieved. Consequently, these pools have been further subdivided while adhering to the original vesting conditions. The following pie chart shows the subdivision of each of the four main pools.
 
@@ -100,9 +100,9 @@ The following table specifies the vesting conditions for each pool, sorted by in
 
 ## Objectives of Each Pool
 
-* The **Crowdloan Rewards pool** (\~1%) is set aside for rewards related to Crowdloan contributions, reflecting the 100 LAOS per DOT for nearly 100,000 DOT contributed.&#x20;
+* The **Crowdloan Rewards pool** (\~1%) is set aside for rewards related to Crowdloan contributions, reflecting the 100 LAOS per DOT for nearly 100,000 DOT contributed.
 * The **Community Incentives pool** (19%) is allocated for incentivizing projects and developers to build on LAOS, as well as to enhance LAOS' visibility. Examples of envisaged usage of this pool include incentivizing support for Bridgeless Minting in popular marketplaces in Ethereum or Polygon, development grants for DApps that use LAOS, as well as meaningful marketing initiatives, community growth, and presentation of LAOS possibilities in relevant conferences. Upon decentralization of governance, this pool will be managed by the LAOS community.
-* The **Collator Incentives pool** (15%) is earmarked for programatically distributing collator and delegator incentives over the first two years, at a rate of 7.5% annually (see [Collator Incentives section](collator-incentives.md) for more details).&#x20;
+* The **Collator Incentives pool** (15%) is earmarked for programatically distributing collator and delegator incentives over the first two years, at a rate of 7.5% annually (see [Collator Incentives section](collator-incentives.md) for more details).
 * The **Public Sale Pool** (3%) holds the designated tokens aimed for the Public Sale. Note that undistributed tokens from the New Investors pool may be added to potential Public Sales.
 * The **Treasury Pool** (20%) is allocated to support core ecosystem growth, core protocol development, and to cover legal and operational expenses. Upon decentralizing governance, control of the treasury will transfer to the LAOS community.
 * The **Early Backers pool**  (12%) contains the allocation for early investors that funded the development of LAOS, from inception to its genesis event.
@@ -116,6 +116,6 @@ Given the vesting conditions of each pool, the following chart illustrates the e
 
 <figure><img src="/img/chart_fixed_1_v2.svg" alt=""></img><figcaption><p>Evolution of the total amount of LAOS Tokens (vertical axis) vested per month, grouped by pool.</p></figcaption></figure>
 
-The following plot highlights a relevant aspect of the vesting conditions. The **commitment to early decentralization becomes evident when analyzing the circulating supply**. Initially, the liquid token supply is fully in the hands of the community. As tokens allotted to investors and core team members progressively unlock, the community's share incrementally decreases. However, it always maintains at least 60%, **ensuring LAOS remains sufficiently decentralized at all times**.&#x20;
+The following plot highlights a relevant aspect of the vesting conditions. The **commitment to early decentralization becomes evident when analyzing the circulating supply**. Initially, the liquid token supply is fully in the hands of the community. As tokens allotted to investors and core team members progressively unlock, the community's share incrementally decreases. However, it always maintains at least 60%, **ensuring LAOS remains sufficiently decentralized at all times**.
 
 <figure><img src="/img/17_LAOS_Gitbook_assets_chart_3 (1).jpg" alt=""></img><figcaption><p>This plot shows the circulating supply on the vertical axis and time in months on the horizontal axis, categorized into two main groups. The 'Community' group includes Crowdloan Rewards, Community Incentives, Collator Incentives, Public Sale, and Treasury pools. The 'Insider' group comprises Early Backers, Investors, and both Core Team pools.</p></figcaption></figure>
