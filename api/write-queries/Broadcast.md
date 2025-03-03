@@ -6,7 +6,7 @@ This transaction, called "Broadcast," simply emits a standard transfer event, in
 
 ```graphql
 mutation Broadcast {
-  broadcastBatch(
+  broadcast(
     input: {
     tokenIds: [
       "46231769497101023895754357762572931969783788518045090509665456129453327552117",
@@ -32,7 +32,7 @@ Expected response:
 ```graphql
 {
   "data": {
-    "broadcastBatch": {
+    "broadcast": {
       "tokenIds": [
         "46231769497101023895754357762572931969783788518045090509665456129453327552117",
         "93666072995048189955115392031356951741507126618122077759684867447733822539334"],
