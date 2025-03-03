@@ -30,5 +30,19 @@ query MyQuery {
   }
 }
 ``` 
-
+Use this query to fetch the chains supported by the publicly available indexer:
+```graphql
+query MyQuery {
+  supportedChains {
+    laosChains {
+      laosChainId
+      name
+    }
+    ownershipChains {
+      chainId
+      name
+    }
+  }
+}
+```
 

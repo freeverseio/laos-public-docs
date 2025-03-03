@@ -10,7 +10,7 @@ const sidebarsApi: SidebarsConfig = {
       label: 'API Read Queries',
       items: [
         'read-queries/AllCollectionAssets',
-        'read-queries/AllUserAssetsInCollection',
+        'read-queries/Inventory',
         'read-queries/AssetHistory',
         'read-queries/ContractPair',
       ],

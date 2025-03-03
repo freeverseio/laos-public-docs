@@ -4,16 +4,17 @@ This query retrieves the complete history of an asset, including all its past st
 
 ```graphql
 query AssetHistory {
-  polygon {
-    tokenHistory(contractAddress: "0xc7471bab04d2f53f6e79c754e19fdbd1e5a4a3c3", tokenId: "46231769497101023895754357762572931969783788518045090509665456129453327552117") {
-      contractAddress
-      tokenUri
-      tokenUriFetchState
-      name
-      description
-      image
-      attributes
-    }
+  tokenHistory(
+    chainId: "137"
+    contractAddress: "0x9f16fc5a49afa724407225e97edb8775fe4eb9fb"
+    tokenId: "66411355714187073314704920013201981051255304368864801044887078638344704552966"
+  ) {
+    updatedAt
+    name
+    tokenUri
+    description
+    image
+    attributes
   }
 }
 ```
