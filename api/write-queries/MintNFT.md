@@ -56,7 +56,7 @@ Expected response:
 ```
 
 
-### Check Mint Status
+### Checking Mint Status
 
 Use the `mintResponse` query with the `trackingId` to check the status of a mint operation.
 

@@ -4,8 +4,9 @@ Use the following mutation to evolve up to 700 previously minted assets in one s
 
 ## Asynchronous Evolving (Recommended)
 
-The `evolveAsync` mutation evolves NFTs and returns a `trackingId` to check the evolution status later. This method is recommended because it responds faster and prevents blocking the API during large evolution operations.
+The `mintAsync` mutation sends a `evolveNFT` transaction to the blockchain and returns a `trackingId`, which can be used to check the minting status later. This approach is common in blockchain interactions and is recommended because it provides faster responses and prevents the API from blocking during large minting operations.
 
+The following example evolves two NFTs atomically:
 ```graphql
 mutation EvolveNFT {
   evolveAsync(
@@ -49,9 +50,9 @@ Expected response:
 }
 ```
 
-### Check Evolution Status
+### Checking Evolution Status
 
-Use the `evolveResponse` query with the `trackingId` to check the status of the evolution operation.
+Use the `evolveResponse` query with the `trackingId` to check the status of a mint operation.
 
 ```graphql
 query evolveNFTResponse {
@@ -79,7 +80,7 @@ Example response:
 
 ## Synchronous Evolving
 
-The `evolve` mutation evolves NFTs and returns the result, including the success status. It is ideal for synchronous processes but may block the API for longer during large evolution operations.
+The `evolve` mutation evolves NFTs and returns the result, including the success status. It is ideal for synchronous processes, but the response may take several seconds and could block the API for longer during large minting operations.
 
 ```graphql
 mutation EvolveNFT {
@@ -123,7 +124,3 @@ Expected response:
   }
 }
 ```
-
-:::warning
-_**contractAddress**_ must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
-:::
