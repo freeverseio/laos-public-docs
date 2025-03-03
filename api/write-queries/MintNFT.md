@@ -4,8 +4,9 @@ Use the following mutation to mint up to 700 NFTs in one single atomic operation
 
 ## Asynchronous Minting (Recommended)
 
-The `mintAsync` mutation mints NFTs and returns a `trackingId` to check the mint status later. This method is recommended because it responds faster and prevents blocking the API during large minting operations.
+The `mintAsync` mutation sends a `mintNFT` transaction to the blockchain and returns a `trackingId`, which can be used to check the minting status later. This approach is common in blockchain interactions and is recommended because it provides faster responses and prevents the API from blocking during large minting operations.
 
+The following example mints two NFTs, atomically, to different initial owners:
 ```graphql
 mutation MintNFT {
   mintAsync(
@@ -57,7 +58,7 @@ Expected response:
 
 ### Check Mint Status
 
-Use the `mintResponse` query with the `trackingId` to check the status of the mint operation.
+Use the `mintResponse` query with the `trackingId` to check the status of a mint operation.
 
 ```graphql
 query mintNFTResponse {
@@ -83,8 +84,9 @@ Example response:
 
 ## Synchronous Minting
 
-The `mint` mutation mints NFTs and returns the result, including the success status. It is ideal for synchronous processes but may block the API for longer during large minting operations.
+The `mint` mutation mints NFTs and returns the result, including the success status. It is ideal for synchronous processes, but the response may take several seconds and could block the API for longer during large minting operations.
 
+Here is the synchronous version of the example above:
 ```graphql
 mutation MintNFT {
   mint(
@@ -130,7 +132,3 @@ Expected response:
   }
 }
 ```
-
-:::warning
-_**contractAddress**_ must currently be provided in lowercase format in all mutations. In future releases, address parsing will be case insensitive.
-:::
