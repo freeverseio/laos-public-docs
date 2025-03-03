@@ -12,17 +12,7 @@ The [read-only queries](/api/read-queries/AllCollectionAssets.md) of the API can
 
 Needless to say, usage of this API is completely optional. Users can permissionlessly build using the LAOS EVM directly, as described in the rest of the sections of this documentation.
 
-The API endpoints are:
-
-* LAOS Mainnet: [https://api.laosnetwork.io/graphql](https://api.laosnetwork.io/graphql)
-* LAOS Sigma Testnet: [https://testnet.api.laosnetwork.io/graphql](https://testnet.api.laosnetwork.io/graphql)
-
-The following GraphQL Playground endpoints enable developers to explore the API and test queries in real-time:
-
-* LAOS Mainnet: [https://playground.laosnetwork.io](https://playground.laosnetwork.io)
-* LAOS Sigma Testnet: [https://testnet.playground.laosnetwork.io](https://testnet.playground.laosnetwork.io)
-
-
+The API endpoint is: [https://api.laosnetwork.io/v2/graphql](https://api.laosnetwork.io/v2/graphql)
 
 ### Supported Chains
 
