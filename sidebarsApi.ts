@@ -12,7 +12,7 @@ const sidebarsApi: SidebarsConfig = {
         'read-queries/AllCollectionAssets',
         'read-queries/Inventory',
         'read-queries/AssetHistory',
-        'read-queries/ContractPair',
+        'read-queries/LAOSCollection',
       ],
     },
     {
