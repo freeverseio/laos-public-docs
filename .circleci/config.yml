@@ -122,28 +122,6 @@ workflows:
 
       - approval:
           type: approval
-          name: dev-approve-deploy
-          requires:
-            - build-laos-public-docs
-            - deployment-test
-          filters:
-            branches:
-              only:
-                - main
-
-      - approval:
-          type: approval
-          name: stg-approve-deploy
-          requires:
-            - build-laos-public-docs
-            - deployment-test
-          filters:
-            branches:
-              only:
-                - main
-
-      - approval:
-          type: approval
           name: pro-approve-deploy
           requires:
             - deployment-test
@@ -153,26 +131,6 @@ workflows:
               only:
                 - main
       
-      - deploy_to_cluster:
-          name: deploy-to-dev
-          requires:
-            - dev-approve-deploy
-          environment: development
-          filters:
-            branches:
-              only:
-                - main
-          
-      - deploy_to_cluster:
-          name: deploy-to-stg
-          requires:
-            - stg-approve-deploy
-          environment: staging
-          filters:
-            branches:
-              only:
-                - main
-
       - deploy_to_cluster:
           name: deploy-to-pro
           requires:
